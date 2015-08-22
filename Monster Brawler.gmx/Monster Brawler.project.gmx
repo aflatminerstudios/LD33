@@ -8,7 +8,6 @@
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
-    <sprite>sprites\sprite2</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -18,11 +17,17 @@
     <script>scripts\scrGetPlayerRight.gml</script>
     <script>scripts\scrProcessAction.gml</script>
     <script>scripts\scrGetPlayerJump.gml</script>
+    <script>scripts\scrGetPlayerAction1.gml</script>
+    <script>scripts\scrGetPlayerAction2.gml</script>
+    <script>scripts\scrTakeDamage.gml</script>
+    <script>scripts\scrKill.gml</script>
+    <script>scripts\scrSay.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objGameControl</object>
+    <object>objects\objCostume</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmMain</room>

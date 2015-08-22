@@ -1,12 +1,17 @@
-///scrGetPlayerLeft(leftKey, leftPad, padNum)
+///scrGetPlayerLeft(leftKey, axisPad, padNum)
 
 var leftKey = argument0;
-var leftPad = argument1;
+var axisPad = argument1;
 var padNum = argument2;
 
 if (keyboard_check(leftKey)) {
   return -1;
 }
 
+var gpVal = gamepad_axis_value(padNum, axisPad);
+
+if (gpVal < -0.1) {
+  return gpVal;
+}
 
 return 0;

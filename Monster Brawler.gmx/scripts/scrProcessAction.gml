@@ -16,8 +16,15 @@ with (player) {
         phy_linear_velocity_x = maxSpeed * sign(val);
       }
     } else if (key == "Jump") {
-      show_debug_message(jumpForce);
-      physics_apply_force(x, y, 0, jumpForce);
+
+      physics_apply_impulse(x, y, 0, jumpForce);
+      
+    } else if (key == "DoAction1") {
+    
+    } else if (key == "DoAction2") {
+    
+    } else if (key == "Say") {
+      scrSay(x, y, val);
     }
     
     ds_map_delete(actionList, key);
