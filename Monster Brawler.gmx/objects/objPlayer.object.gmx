@@ -31,11 +31,17 @@ playerNum = instance_number(objPlayer);
 
 facing = 1;
 
+sprite = sprPlayer;
+
 //List of actions
 actionList = ds_map_create();
 
 //Life
-hp = 100;
+maxHp = 100;
+hp = maxHp;
+
+//For costumes
+costume = noone;
 
 //Varibles used in movement
 force = 1000;
@@ -206,9 +212,13 @@ doAction2 = scrThrow;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// For testing purposes for now
+            <string>///"Current" variables
 
-
+curForce = force;
+curMaxSpeed = maxSpeed;
+curMaxHp = maxHp;
+curDoAction1 = doAction1;
+curDoAction2 = doAction2;
 </string>
           </argument>
         </arguments>
@@ -314,6 +324,52 @@ if (isJumping) {
           <argument>
             <kind>1</kind>
             <string>///Can collide with attacks
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objCostume">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change "current" variables
+
+other.parent = self.id;
+
+curForce = other.force;
+curMaxspeed = other.maxSpeed;
+
+curMaxHp = other.maxHp;
+hp = min(hp, curMaxHp);
+
+costume = other.id;
+
+curDoAction1 = other.doAction1;
+curDoAction2 = other.doAction2;
+
+sprite_index = other.sprite;
+
+with (other) {
+  x = -500;
+  y = -500;
+  phy_position_x = -500;
+  phy_position_y = -500;
+  alarm[0] = time;
+}
 </string>
           </argument>
         </arguments>

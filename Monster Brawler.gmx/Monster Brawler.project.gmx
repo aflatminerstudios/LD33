@@ -9,6 +9,7 @@
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprBone</sprite>
+    <sprite>sprites\sprDemonCostume</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -42,7 +43,10 @@
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objGameControl</object>
-    <object>objects\objCostume</object>
+    <objects name="Costumes">
+      <object>objects\objCostume</object>
+      <object>objects\objDemonCostume</object>
+    </objects>
     <objects name="Attacks">
       <object>objects\objThrown</object>
       <object>objects\objAttack</object>
