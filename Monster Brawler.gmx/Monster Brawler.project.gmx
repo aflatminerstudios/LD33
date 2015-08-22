@@ -12,6 +12,8 @@
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprTitleBrawl</sprite>
+    <sprite>sprites\sprBone</sprite>
+    <sprite>sprites\sprDemonCostume</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -30,6 +32,7 @@
       <script>scripts\scrGetPlayerJump.gml</script>
     </scripts>
     <scripts name="Actions">
+      <script>scripts\scrThrow.gml</script>
       <script>scripts\scrPunch.gml</script>
       <script>scripts\scrJump.gml</script>
       <script>scripts\scrSay.gml</script>
@@ -48,8 +51,13 @@
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objGameControl</object>
-    <object>objects\objCostume</object>
+    <objects name="Costumes">
+      <object>objects\objCostume</object>
+      <object>objects\objDemonCostume</object>
+    </objects>
     <objects name="Attacks">
+      <object>objects\objThrown</object>
+      <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
     <object>objects\objAFlatMinerLogoControl</object>

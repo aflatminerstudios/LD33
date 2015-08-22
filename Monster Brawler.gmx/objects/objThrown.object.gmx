@@ -25,35 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Base Variables
+            <string>///Base variables
 
 damage = 0;
 scriptCall = 0;
 scriptParams = 0;
 knockback = 0;
-numFrames = 0;
 
-//Size
-xSize = 0;
-ySize = 0;
 
-//Parent object and distance from parent x,y to "topleft" corner, as well as angle
+//Parent object and distance from parent x,y to "topleft" corner
 parent = 0;
 xDist = 0;
 yDist = 0;
-angle = 0;
 
-
-x1 = 0;
-x2 = 0;
-y1 = 0;
-y2 = 0;
+//Direct object throwing
+xForce = 0;
+yForce = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="4" ename="objPlayer">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -70,50 +63,15 @@ y2 = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy object
+            <string>///Hurt the player
 
-instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Set coordinates and check for collision
-
-x1 = parent.x + (xDist * parent.facing);
-x2 = x1 + (xSize * parent.facing);
-y1 = parent.y + yDist;
-y2 = y1 + ySize;
-
-var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);
-
-// If collide, do knockback and damage
-if (c != noone &amp;&amp; !is_undefined(c)) {
-
-  show_debug_message("Punch from " + string(parent.id) + " connected with " + string(c.id));
-
-  with (c) {
-    physics_apply_impulse(c.x, c.y, other.knockback, 0);
+if (other.id != parent.id) {
+  scrTakeDamage(parent.id, other.id, damage);
+  
+  with (other) {
+    physics_apply_impulse(x, y, other.knockback, 0);
   }
   
-  scrTakeDamage(parent, c, damage);
   instance_destroy();
 }
 </string>
@@ -121,7 +79,7 @@ if (c != noone &amp;&amp; !is_undefined(c)) {
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="4" ename="objFloor">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -138,9 +96,9 @@ if (c != noone &amp;&amp; !is_undefined(c)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Temp: Draw collision box
+            <string>///Destroy
 
-draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
+instance_destroy();
 </string>
           </argument>
         </arguments>

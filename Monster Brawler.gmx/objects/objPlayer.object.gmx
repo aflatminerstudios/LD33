@@ -29,11 +29,19 @@
 
 playerNum = instance_number(objPlayer);
 
+facing = 1;
+
+sprite = sprPlayer;
+
 //List of actions
 actionList = ds_map_create();
 
 //Life
-hp = 100;
+maxHp = 100;
+hp = maxHp;
+
+//For costumes
+costume = noone;
 
 //Varibles used in movement
 force = 1000;
@@ -94,21 +102,21 @@ padNum = 0;
           <argument>
             <kind>1</kind>
             <string>/// Action1 variables
-
-damage1 = 10;
-scriptCall1 = 0;
-scriptParams1 = 0;
-knockback1 = 10;
-numFrames1 = 5;
+action1 = 0;
+action1.damage = 10;
+action1.scriptCall = 0;
+action1.scriptParams = 0;
+action1.knockback = 200;
+action1.numFrames = 5;
 
 //Size
-xSize1 = 10;
-ySize1 = 5;
+action1.xSize = 20;
+action1.ySize = 10;
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-xDist1 = 32;
-yDist1 = -40;
-angle1 = 0;
+action1.xDist = 33;
+action1.yDist = -40;
+action1.angle = 0;
 </string>
           </argument>
         </arguments>
@@ -131,21 +139,25 @@ angle1 = 0;
             <kind>1</kind>
             <string>///Action2 variables
 
-damage2 = 0;
-scriptCall2 = 0;
-scriptParams2 = 0;
-knockback2 = 0;
-numFrames2 = 0;
+action2 = 0;
 
-//Size
-xSize2 = 0;
-ySize2 = 0;
+action2.damage = 5;
+action2.scriptCall = 0;
+action2.scriptParams = 0;
+action2.knockback = 200;
 
-//Parent object and distance from parent x,y to "topleft" corner, as well as angle
-parent2 = 0;
-xDist2 = 0;
-yDist2 = 0;
-angle2 = 0;
+action2.sprite = sprBone;
+
+//Parent object and distance from parent x,y to "topleft" corner
+action2.xDist = 40;
+action2.yDist = -40;
+
+//Direct object throwing
+action2.xForce = 7;
+action2.yForce = -8;
+action2.xOffset = 5;
+action2.yOffset = 0;
+
 </string>
           </argument>
         </arguments>
@@ -177,6 +189,9 @@ getUp = scrGetPlayerUp;
 getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
 
+doAction1 = scrPunch;
+doAction2 = scrThrow;
+
 </string>
           </argument>
         </arguments>
@@ -197,9 +212,13 @@ getAction2 = scrGetPlayerAction2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// For testing purposes for now
+            <string>///"Current" variables
 
-
+curForce = force;
+curMaxSpeed = maxSpeed;
+curMaxHp = maxHp;
+curDoAction1 = doAction1;
+curDoAction2 = doAction2;
 </string>
           </argument>
         </arguments>
@@ -282,6 +301,98 @@ if (isJumping) {
   jumpTimeRemaining--; 
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objAttack">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Can collide with attacks
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objCostume">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change "current" variables
+
+other.parent = self.id;
+
+curForce = other.force;
+curMaxspeed = other.maxSpeed;
+
+curMaxHp = other.maxHp;
+hp = min(hp, curMaxHp);
+
+costume = other.id;
+
+curDoAction1 = other.doAction1;
+curDoAction2 = other.doAction2;
+
+sprite_index = other.sprite;
+
+with (other) {
+  x = -500;
+  y = -500;
+  phy_position_x = -500;
+  phy_position_y = -500;
+  alarm[0] = time;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collides with players
 </string>
           </argument>
         </arguments>
