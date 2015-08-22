@@ -12,26 +12,37 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scrGetPlayerAction.gml</script>
-    <script>scripts\scrGetPlayerLeft.gml</script>
-    <script>scripts\scrGetPlayerRight.gml</script>
-    <script>scripts\scrGetPlayerUp.gml</script>
+    <scripts name="Player Action Checks">
+      <script>scripts\scrGetPlayerLeft.gml</script>
+      <script>scripts\scrGetPlayerUp.gml</script>
+      <script>scripts\scrGetPlayerAction1.gml</script>
+      <script>scripts\scrGetPlayerAction2.gml</script>
+      <script>scripts\scrGetPlayerRight.gml</script>
+      <script>scripts\scrGetPlayerAction.gml</script>
+      <script>scripts\scrGetPlayerJump.gml</script>
+    </scripts>
+    <scripts name="Actions">
+      <script>scripts\scrJump.gml</script>
+      <script>scripts\scrSay.gml</script>
+    </scripts>
     <script>scripts\scrProcessAction.gml</script>
-    <script>scripts\scrGetPlayerJump.gml</script>
-    <script>scripts\scrGetPlayerAction1.gml</script>
-    <script>scripts\scrGetPlayerAction2.gml</script>
-    <script>scripts\scrTakeDamage.gml</script>
-    <script>scripts\scrKill.gml</script>
-    <script>scripts\scrSay.gml</script>
-    <script>scripts\scrJump.gml</script>
-    <script>scripts\scrAssignPlayer1.gml</script>
-    <script>scripts\scrAssignPlayer2.gml</script>
+    <scripts name="Damaging">
+      <script>scripts\scrTakeDamage.gml</script>
+      <script>scripts\scrKill.gml</script>
+    </scripts>
+    <scripts name="Assign Player Controls">
+      <script>scripts\scrAssignPlayer1.gml</script>
+      <script>scripts\scrAssignPlayer2.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objGameControl</object>
     <object>objects\objCostume</object>
+    <objects name="Attacks">
+      <object>objects\objAttack</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmMain</room>
