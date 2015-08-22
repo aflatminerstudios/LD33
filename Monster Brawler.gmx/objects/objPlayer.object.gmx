@@ -95,20 +95,19 @@ padNum = 0;
             <kind>1</kind>
             <string>/// Action1 variables
 
-damage1 = 0;
+damage1 = 10;
 scriptCall1 = 0;
 scriptParams1 = 0;
-knockback1 = 0;
+knockback1 = 10;
 numFrames1 = 5;
 
 //Size
-xSize1 = 0;
-ySize1 = 0;
+xSize1 = 10;
+ySize1 = 5;
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-parent1 = 0;
-xDist1 = 0;
-yDist1 = 0;
+xDist1 = 32;
+yDist1 = -40;
 angle1 = 0;
 </string>
           </argument>
