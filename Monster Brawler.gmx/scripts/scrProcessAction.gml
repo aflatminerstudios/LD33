@@ -27,10 +27,17 @@ with (player) {
       if (canJump) {      
         scrJump(player);
       }
-    } else if (key == "DoAction1") {    
-      script_execute(curDoAction1, player, curAction1);
+    } else if (key == "DoAction1") { 
+    
+      if (cdTimer1 <= 0) {
+        script_execute(curDoAction1, player, curAction1);
+        cdTimer1 = player.curCooldown1;
+      }
     } else if (key == "DoAction2") {
-      script_execute(curDoAction2, player, curAction2);
+      if (cdTimer2 <= 0) {
+        script_execute(curDoAction2, player, curAction2);
+        cdTimer2 = player.curCooldown2;
+      }
     } else if (key == "Say") {
       scrSay(x, y, val);
     }

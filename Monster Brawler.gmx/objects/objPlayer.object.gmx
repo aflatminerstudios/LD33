@@ -33,6 +33,9 @@ facing = 1;
 
 sprite = sprPlayer;
 
+cdTimer1 = 0;
+cdTimer2 = 0;
+
 //List of actions
 actionList = ds_map_create();
 
@@ -115,6 +118,8 @@ ds_map_add(action1, "ySize", 10);
 ds_map_add(action1, "xDist", 33);
 ds_map_add(action1, "yDist", -40);
 
+cooldown1 = room_speed / 3;
+
 </string>
           </argument>
         </arguments>
@@ -154,6 +159,7 @@ ds_map_add(action2, "yForce", -10);
 ds_map_add(action2, "xOffset", 3);
 ds_map_add(action2, "yOffset", -1);
 
+cooldown2 = room_speed / 3;
 </string>
           </argument>
         </arguments>
@@ -217,6 +223,9 @@ curDoAction1 = doAction1;
 curDoAction2 = doAction2;
 curAction1 = action1;
 curAction2 = action2;
+
+curCooldown1 = cooldown1;
+curCooldown2 = cooldown2;
 </string>
           </argument>
         </arguments>
@@ -303,6 +312,30 @@ if (isJumping) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Manage cooldowns
+
+cdTimer1--;
+cdTimer2--;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="objAttack">
       <action>
@@ -362,6 +395,10 @@ curAction1 = other.action1;
 curAction2 = other.action2;
 
 sprite_index = other.sprite;
+
+curCooldown1 = other.cooldown1;
+curCooldown2 = other.cooldown2;
+
 
 with (other) {
   x = -500;

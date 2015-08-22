@@ -187,6 +187,11 @@ with (parent) {
   curAction2 = action2;
   
   sprite_index = sprite;
+  
+  curCooldown1 = cooldown1;
+  curCooldown2 = cooldown2;
+  
+  hasCostume = false;
 
 }
 

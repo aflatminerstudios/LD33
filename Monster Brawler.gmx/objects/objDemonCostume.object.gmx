@@ -79,6 +79,7 @@ ds_map_add(action2, "ySize", 10);
 ds_map_add(action2, "xDist", 33);
 ds_map_add(action2, "yDist", -40);
 
+cooldown2 = room_speed / 3;
 </string>
           </argument>
         </arguments>
@@ -117,6 +118,8 @@ ds_map_add(action1, "xForce", 4);
 ds_map_add(action1, "yForce", -8);
 ds_map_add(action1, "xOffset", 3);
 ds_map_add(action1, "yOffset", 0);
+
+cooldown1 = room_speed / 3;
 
 </string>
           </argument>

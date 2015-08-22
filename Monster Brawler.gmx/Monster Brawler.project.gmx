@@ -14,6 +14,7 @@
     <sprite>sprites\sprTitleBrawl</sprite>
     <sprite>sprites\sprBone</sprite>
     <sprite>sprites\sprDemonCostume</sprite>
+    <sprite>sprites\sprTile1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -73,6 +74,7 @@
     <object>objects\objTitleControl</object>
     <object>objects\objPlayerSelectControl</object>
     <object>objects\objTitleBrawl</object>
+    <object>objects\objTile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmMain</room>
