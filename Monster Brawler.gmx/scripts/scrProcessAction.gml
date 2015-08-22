@@ -15,6 +15,12 @@ with (player) {
       if (phy_linear_velocity_x * sign(val) >= maxSpeed) {
         phy_linear_velocity_x = maxSpeed * sign(val);
       }
+      
+      if (sign(val) >= 0) {
+        facing = 1;
+      } else {
+        facing = -1;
+      }
     } else if (key == "Jump") {
     
       if (canJump) {      
@@ -23,7 +29,7 @@ with (player) {
     } else if (key == "DoAction1") {
       script_execute(doAction1, self.id, action1);
     } else if (key == "DoAction2") {
-    
+      script_execute(doAction2, self.id, action2);
     } else if (key == "Say") {
       scrSay(x, y, val);
     }

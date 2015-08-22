@@ -29,6 +29,8 @@
 
 playerNum = instance_number(objPlayer);
 
+facing = 1;
+
 //List of actions
 actionList = ds_map_create();
 
@@ -131,21 +133,25 @@ action1.angle = 0;
             <kind>1</kind>
             <string>///Action2 variables
 
-damage2 = 0;
-scriptCall2 = 0;
-scriptParams2 = 0;
-knockback2 = 0;
-numFrames2 = 0;
+action2 = 0;
 
-//Size
-xSize2 = 0;
-ySize2 = 0;
+action2.damage = 5;
+action2.scriptCall = 0;
+action2.scriptParams = 0;
+action2.knockback = 200;
 
-//Parent object and distance from parent x,y to "topleft" corner, as well as angle
-parent2 = 0;
-xDist2 = 0;
-yDist2 = 0;
-angle2 = 0;
+action2.sprite = sprBone;
+
+//Parent object and distance from parent x,y to "topleft" corner
+action2.xDist = 40;
+action2.yDist = -40;
+
+//Direct object throwing
+action2.xForce = 7;
+action2.yForce = -8;
+action2.xOffset = 5;
+action2.yOffset = 0;
+
 </string>
           </argument>
         </arguments>
@@ -178,6 +184,7 @@ getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
 
 doAction1 = scrPunch;
+doAction2 = scrThrow;
 
 </string>
           </argument>

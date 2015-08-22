@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprBone</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,6 +23,7 @@
       <script>scripts\scrGetPlayerJump.gml</script>
     </scripts>
     <scripts name="Actions">
+      <script>scripts\scrThrow.gml</script>
       <script>scripts\scrPunch.gml</script>
       <script>scripts\scrJump.gml</script>
       <script>scripts\scrSay.gml</script>
@@ -42,6 +44,7 @@
     <object>objects\objGameControl</object>
     <object>objects\objCostume</object>
     <objects name="Attacks">
+      <object>objects\objThrown</object>
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
