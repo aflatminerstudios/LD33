@@ -1,8 +1,8 @@
 ///scrGetPlayerLeft(leftKey, leftPad, padNum)
 
-leftKey = argument0;
-leftPad = argument1;
-padNum = argument2;
+var leftKey = argument0;
+var leftPad = argument1;
+var padNum = argument2;
 
 if (keyboard_check(leftKey)) {
   return -1;

@@ -15,6 +15,9 @@ with (player) {
       if (phy_linear_velocity_x * sign(val) >= maxSpeed) {
         phy_linear_velocity_x = maxSpeed * sign(val);
       }
+    } else if (key == "Jump") {
+      show_debug_message(jumpForce);
+      physics_apply_force(x, y, 0, jumpForce);
     }
     
     ds_map_delete(actionList, key);

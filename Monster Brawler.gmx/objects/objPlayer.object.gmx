@@ -29,14 +29,19 @@
 
 playerNum = instance_number(objPlayer);
 
-// List of actions
+//List of actions
 actionList = ds_map_create();
 
 
-// Varibles used in movement
+//Varibles used in movement
 force = 200;
 maxSpeed = 200;
 
+//Jumping variables
+jumpHeight = sprite_height;
+deltaTime = room_speed;
+
+jumpForce = -1 * (sqrt(2 * gravity.y * (jumpHeight)) + gravity.y * deltaTime * 0.5);
 
 //For player controls
 upKey = 0;
@@ -67,7 +72,7 @@ leftKey = vk_left;
 rightKey = vk_right;
 action1Key = 0;
 action2Key = 0;
-jumpKey = 0;
+jumpKey = vk_space;
 
 upPad = 0;
 downPad = 0;
@@ -104,6 +109,7 @@ getAction = scrGetPlayerAction;
 
 getLeft = scrGetPlayerLeft;
 getRight = scrGetPlayerRight;
+getJump = scrGetPlayerJump;
 </string>
           </argument>
         </arguments>
@@ -155,26 +161,6 @@ if (keyboard_check(leftKey)) {
 script_execute(getAction);
 scrProcessAction(self.id);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
