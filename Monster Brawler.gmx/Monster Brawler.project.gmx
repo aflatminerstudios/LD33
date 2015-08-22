@@ -55,6 +55,7 @@
       <script>scripts\scrGetCostumeList.gml</script>
     </scripts>
     <script>scripts\scrCheckCntrl.gml</script>
+    <script>scripts\scrRoomPositionToGrid.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
