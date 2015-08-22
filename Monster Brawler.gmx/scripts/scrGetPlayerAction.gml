@@ -1,8 +1,7 @@
 ///scrGetPlayerAction()
 
-var left = script_execute(getLeft, leftKey, axisPad, padNum);
-
-var right = script_execute(getRight, rightKey, axisPad, padNum);
+var left = script_execute(getLeft, leftKey, hAxisPad, padNum);
+var right = script_execute(getRight, rightKey, hAxisPad, padNum);
 
 var dir = left + right;
 
@@ -11,6 +10,10 @@ if (dir != 0) {
 }
 
 var jump = script_execute(getJump, jumpKey, jumpPad, padNum);
+
+if (jump == 0) {
+  jump = script_execute(getUp, upKey, vAxisPad, padNum);
+}
 
 if (jump != 0) {
   ds_map_add(actionList, "Jump", jump);

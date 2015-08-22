@@ -16,9 +16,10 @@ with (player) {
         phy_linear_velocity_x = maxSpeed * sign(val);
       }
     } else if (key == "Jump") {
-
-      physics_apply_impulse(x, y, 0, jumpForce);
-      
+    
+      if (canJump) {      
+        scrJump(player);
+      }
     } else if (key == "DoAction1") {
     
     } else if (key == "DoAction2") {

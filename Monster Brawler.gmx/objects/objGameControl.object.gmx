@@ -26,6 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>/// Create players
+
+// Assign controls for player to player 1
+
+p1 = instance_create(96, 480, objPlayer);
+
+p2 = instance_create(896, 480, objPlayer);
+
+scrAssignPlayer1(p1);
+scrAssignPlayer2(p2);
 </string>
           </argument>
         </arguments>

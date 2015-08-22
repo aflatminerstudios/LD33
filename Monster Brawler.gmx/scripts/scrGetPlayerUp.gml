@@ -1,16 +1,16 @@
-///scrGetPlayerRight(rightKey, hAxisPad, padNum)
+///scrGetPlayerUp(upKey, vAxisPad, padNum)
 
-var rightKey = argument0;
+var upKey = argument0;
 var axisPad = argument1;
 var padNum = argument2;
 
-if (keyboard_check(rightKey)) {
+if (keyboard_check_pressed(upKey)) {
   return 1;
 }
 
 var gpVal = gamepad_axis_value(padNum, axisPad);
 
-if (gpVal > 0.1) {
+if (gpVal < 0.1) {
   return gpVal;
 }
 

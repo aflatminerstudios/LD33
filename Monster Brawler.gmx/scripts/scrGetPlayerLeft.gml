@@ -1,4 +1,4 @@
-///scrGetPlayerLeft(leftKey, axisPad, padNum)
+///scrGetPlayerLeft(leftKey, hAxisPad, padNum)
 
 var leftKey = argument0;
 var axisPad = argument1;

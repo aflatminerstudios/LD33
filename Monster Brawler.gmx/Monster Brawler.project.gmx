@@ -15,6 +15,7 @@
     <script>scripts\scrGetPlayerAction.gml</script>
     <script>scripts\scrGetPlayerLeft.gml</script>
     <script>scripts\scrGetPlayerRight.gml</script>
+    <script>scripts\scrGetPlayerUp.gml</script>
     <script>scripts\scrProcessAction.gml</script>
     <script>scripts\scrGetPlayerJump.gml</script>
     <script>scripts\scrGetPlayerAction1.gml</script>
@@ -22,6 +23,9 @@
     <script>scripts\scrTakeDamage.gml</script>
     <script>scripts\scrKill.gml</script>
     <script>scripts\scrSay.gml</script>
+    <script>scripts\scrJump.gml</script>
+    <script>scripts\scrAssignPlayer1.gml</script>
+    <script>scripts\scrAssignPlayer2.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>

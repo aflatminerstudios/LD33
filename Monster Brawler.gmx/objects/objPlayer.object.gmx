@@ -40,15 +40,17 @@ force = 1000;
 maxSpeed = 300;
 
 //Jumping variables
-// Base is 100
-jumpHeight = 200;
+// Base is 600
+jumpHeight = 600;
 deltaTime = 1/room_speed;
 
-jumpForce = -1 * (sqrt(2 * gravity.y * (jumpHeight)) + gravity.y * deltaTime * 0.5);
-minBaseJump = jumpForce;
-maxBaseJump = jumpForce;
-minJump = minBaseJump;
-maxJump = maxBaseJump;
+jumpForce = (sqrt(2 * gravity.y * (jumpHeight)) + gravity.y * deltaTime * 0.5);
+minJumpSpeedUp = 250;
+jumpDownRangeBottom = 50;
+jumpDownRangeTop = 250;
+jumpTimeRemaining = 0;
+isJumping = false;
+canJump = true;
 
 
 //For player controls
@@ -61,7 +63,8 @@ action2Key = 0;
 jumpKey = 0;
 
 //Left stick, probably
-axisPad = 0;
+hAxisPad = 0;
+vAxisPad = 0;
 
 action1Pad = 0;
 action2Pad = 0;
@@ -97,6 +100,7 @@ getAction = scrGetPlayerAction;
 getLeft = scrGetPlayerLeft;
 getRight = scrGetPlayerRight;
 getJump = scrGetPlayerJump;
+getUp = scrGetPlayerUp;
 getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
 
@@ -122,20 +126,7 @@ getAction2 = scrGetPlayerAction2;
             <kind>1</kind>
             <string>/// For testing purposes for now
 
-upKey = vk_up;
-downKey = vk_down;
-leftKey = vk_left;
-rightKey = vk_right;
-action1Key = ord('N');
-action2Key = ord('M');
-jumpKey = vk_space;
 
-axisPad = gp_axislh;
-action1Pad = gp_face3;
-action2Pad = gp_face4;
-jumpPad = gp_face1;
-
-padNum = 0;
 </string>
           </argument>
         </arguments>
@@ -209,12 +200,15 @@ scrProcessAction(self.id);
             <string>///Control jumping
 
 
-if (phy_linear_velocity_y &gt; 0){// &amp;&amp; phy_linear_velocity_y &lt; jumpForce) {
+if (phy_linear_velocity_y &gt; 0){
   physics_apply_impulse(x, y, 0, 10);
 }
 
+// Helps make sure jumping doesn't stop with initial floor collision
+if (isJumping) {
+  jumpTimeRemaining--; 
+}
 
-show_debug_message(phy_linear_velocity_y);
 </string>
           </argument>
         </arguments>
@@ -237,7 +231,14 @@ show_debug_message(phy_linear_velocity_y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop falling
+            <string>///Stop jumping
+
+if (isJumping) {
+  if (other.y &gt; y &amp;&amp; jumpTimeRemaining &lt;= 0) {
+    isJumping = false;
+    canJump = true;
+  } 
+}
 </string>
           </argument>
         </arguments>
