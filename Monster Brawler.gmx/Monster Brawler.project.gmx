@@ -22,6 +22,7 @@
       <script>scripts\scrGetPlayerJump.gml</script>
     </scripts>
     <scripts name="Actions">
+      <script>scripts\scrPunch.gml</script>
       <script>scripts\scrJump.gml</script>
       <script>scripts\scrSay.gml</script>
     </scripts>
@@ -41,7 +42,7 @@
     <object>objects\objGameControl</object>
     <object>objects\objCostume</object>
     <objects name="Attacks">
-      <object>objects\objAttack</object>
+      <object>objects\objPunch</object>
     </objects>
   </objects>
   <rooms name="rooms">

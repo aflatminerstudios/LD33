@@ -93,6 +93,80 @@ padNum = 0;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Action1 variables
+
+damage1 = 0;
+scriptCall1 = 0;
+scriptParams1 = 0;
+knockback1 = 0;
+numFrames1 = 5;
+
+//Size
+xSize1 = 0;
+ySize1 = 0;
+
+//Parent object and distance from parent x,y to "topleft" corner, as well as angle
+parent1 = 0;
+xDist1 = 0;
+yDist1 = 0;
+angle1 = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Action2 variables
+
+damage2 = 0;
+scriptCall2 = 0;
+scriptParams2 = 0;
+knockback2 = 0;
+numFrames2 = 0;
+
+//Size
+xSize2 = 0;
+ySize2 = 0;
+
+//Parent object and distance from parent x,y to "topleft" corner, as well as angle
+parent2 = 0;
+xDist2 = 0;
+yDist2 = 0;
+angle2 = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Script variables
 
 getAction = scrGetPlayerAction;
