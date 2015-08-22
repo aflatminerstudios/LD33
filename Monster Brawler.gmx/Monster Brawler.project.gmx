@@ -54,6 +54,7 @@
       <script>scripts\scrGetNearestEnemy.gml</script>
       <script>scripts\scrGetCostumeList.gml</script>
     </scripts>
+    <script>scripts\scrCheckCntrl.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
@@ -77,10 +78,10 @@
     <object>objects\objTile</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rmMain</room>
     <room>rooms\rmLogo</room>
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
+    <room>rooms\rmMain</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>

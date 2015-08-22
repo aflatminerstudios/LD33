@@ -57,8 +57,8 @@ scrAssignPlayer2(p2);
             <kind>1</kind>
             <string>/// Spawn 2 demon costumes
 
-instance_create(225, 504, objDemonCostume);
-instance_create(992, 504, objDemonCostume);
+instance_create(160, 280, objDemonCostume);
+instance_create(560, 200, objDemonCostume);
 
 
 </string>
