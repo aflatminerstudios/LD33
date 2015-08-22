@@ -21,7 +21,7 @@ with (player) {
         scrJump(player);
       }
     } else if (key == "DoAction1") {
-    
+      script_execute(doAction1, self.id, action1);
     } else if (key == "DoAction2") {
     
     } else if (key == "Say") {

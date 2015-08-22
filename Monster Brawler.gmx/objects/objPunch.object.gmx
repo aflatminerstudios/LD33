@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objAttack</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -100,9 +100,22 @@ instance_destroy();
 x1 = parent.x + xDist;
 x2 = x1 + xSize;
 y1 = parent.y + yDist;
-y2 = y2 + ySize;
+y2 = y1 + ySize;
 
+var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);
 
+// If collide, do knockback and damage
+if (c != noone &amp;&amp; !is_undefined(c)) {
+
+  show_debug_message("Punch from " + string(parent.id) + " connected with " + string(c.id));
+
+  with (c) {
+    physics_apply_impulse(c.x, c.y, other.knockback, 0);
+  }
+  
+  scrTakeDamage(parent, c, damage);
+  instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -126,6 +139,7 @@ y2 = y2 + ySize;
           <argument>
             <kind>1</kind>
             <string>///Temp: Draw collision box
+
 draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
 </string>
           </argument>
@@ -133,7 +147,7 @@ draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>

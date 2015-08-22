@@ -42,6 +42,7 @@
     <object>objects\objGameControl</object>
     <object>objects\objCostume</object>
     <objects name="Attacks">
+      <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
   </objects>

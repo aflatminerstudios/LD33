@@ -94,21 +94,21 @@ padNum = 0;
           <argument>
             <kind>1</kind>
             <string>/// Action1 variables
-
-damage1 = 10;
-scriptCall1 = 0;
-scriptParams1 = 0;
-knockback1 = 10;
-numFrames1 = 5;
+action1 = 0;
+action1.damage = 10;
+action1.scriptCall = 0;
+action1.scriptParams = 0;
+action1.knockback = 200;
+action1.numFrames = 5;
 
 //Size
-xSize1 = 10;
-ySize1 = 5;
+action1.xSize = 20;
+action1.ySize = 10;
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-xDist1 = 32;
-yDist1 = -40;
-angle1 = 0;
+action1.xDist = 33;
+action1.yDist = -40;
+action1.angle = 0;
 </string>
           </argument>
         </arguments>
@@ -176,6 +176,8 @@ getJump = scrGetPlayerJump;
 getUp = scrGetPlayerUp;
 getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
+
+doAction1 = scrPunch;
 
 </string>
           </argument>
@@ -282,6 +284,52 @@ if (isJumping) {
   jumpTimeRemaining--; 
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objAttack">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Can collide with attacks
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collides with players
 </string>
           </argument>
         </arguments>
