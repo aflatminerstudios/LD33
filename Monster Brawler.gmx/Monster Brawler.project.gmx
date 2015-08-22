@@ -56,7 +56,9 @@
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
-    <object>objects\objPlayer</object>
+    <objects name="Player">
+      <object>objects\objPlayer</object>
+    </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>
@@ -73,10 +75,10 @@
     <object>objects\objTitleBrawl</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmMain</room>
     <room>rooms\rmLogo</room>
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
-    <room>rooms\rmMain</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>

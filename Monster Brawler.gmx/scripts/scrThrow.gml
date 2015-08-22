@@ -3,18 +3,20 @@
 var player = argument0;
 var a = argument1;
 
-var o = instance_create(player.x + (a.xDist * player.facing), player.y + a.yDist, objThrown);
+var xDist = ds_map_find_value(a, "xDist");
+var yDist = ds_map_find_value(a, "yDist");
+
+var o = instance_create(player.x + (xDist * player.facing), player.y + yDist, objThrown);
 
 o.parent = player.id;
-o.scriptCall = a.scriptCall;
-o.scriptParams = a.scriptParams;
-o.knockback = a.knockback;
-o.sprite_index = a.sprite;
-o.xForce = a.xForce;
-o.yForce = a.yForce;
 
-o.xOffset = a.xOffset;
-o.yOffset = a.yOffset;
+o.knockback = ds_map_find_value(a, "knockback");
+o.sprite_index = ds_map_find_value(a, "sprite");
+o.xForce = ds_map_find_value(a, "xForce");
+o.yForce = ds_map_find_value(a, "yForce");
+
+o.xOffset = ds_map_find_value(a, "xOffset");
+o.yOffset = ds_map_find_value(a, "yOffset");
 
 o.fixture = physics_fixture_create();
 
@@ -29,7 +31,6 @@ physics_fixture_set_restitution(o.fixture, 0.1);
 o.boundFixture = physics_fixture_bind(o.fixture, o);
 
 
-
 with (o) {
-  physics_apply_impulse(x + xOffset, y + yOffset, xForce * o.parent.facing, yForce);
+  physics_apply_local_impulse(xOffset, yOffset, xForce * o.parent.facing, yForce);
 }

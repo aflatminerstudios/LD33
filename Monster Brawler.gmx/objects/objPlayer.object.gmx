@@ -102,21 +102,19 @@ padNum = 0;
           <argument>
             <kind>1</kind>
             <string>/// Action1 variables
-action1 = 0;
-action1.damage = 10;
-action1.scriptCall = 0;
-action1.scriptParams = 0;
-action1.knockback = 200;
-action1.numFrames = 5;
+action1 = ds_map_create();
+ds_map_add(action1, "damage", 10);
+ds_map_add(action1, "knockback", 200);
+ds_map_add(action1, "numFrames", 5);
 
 //Size
-action1.xSize = 20;
-action1.ySize = 10;
+ds_map_add(action1,"xSize", 20);
+ds_map_add(action1, "ySize", 10);
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-action1.xDist = 33;
-action1.yDist = -40;
-action1.angle = 0;
+ds_map_add(action1, "xDist", 33);
+ds_map_add(action1, "yDist", -40);
+
 </string>
           </argument>
         </arguments>
@@ -139,24 +137,22 @@ action1.angle = 0;
             <kind>1</kind>
             <string>///Action2 variables
 
-action2 = 0;
+action2 = ds_map_create();
 
-action2.damage = 5;
-action2.scriptCall = 0;
-action2.scriptParams = 0;
-action2.knockback = 200;
+ds_map_add(action2, "damage", 5);
+ds_map_add(action2, "knockback", 200);
 
-action2.sprite = sprBone;
+ds_map_add(action2, "sprite", sprBone);
 
 //Parent object and distance from parent x,y to "topleft" corner
-action2.xDist = 40;
-action2.yDist = -40;
+ds_map_add(action2, "xDist", 40);
+ds_map_add(action2, "yDist", -40);
 
 //Direct object throwing
-action2.xForce = 7;
-action2.yForce = -8;
-action2.xOffset = 5;
-action2.yOffset = 0;
+ds_map_add(action2, "xForce", 2);
+ds_map_add(action2, "yForce", -10);
+ds_map_add(action2, "xOffset", 3);
+ds_map_add(action2, "yOffset", -1);
 
 </string>
           </argument>
@@ -219,6 +215,8 @@ curMaxSpeed = maxSpeed;
 curMaxHp = maxHp;
 curDoAction1 = doAction1;
 curDoAction2 = doAction2;
+curAction1 = action1;
+curAction2 = action2;
 </string>
           </argument>
         </arguments>
@@ -360,6 +358,8 @@ costume = other.id;
 
 curDoAction1 = other.doAction1;
 curDoAction2 = other.doAction2;
+curAction1 = other.action1;
+curAction2 = other.action2;
 
 sprite_index = other.sprite;
 

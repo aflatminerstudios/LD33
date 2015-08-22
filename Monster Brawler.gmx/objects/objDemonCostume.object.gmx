@@ -66,21 +66,19 @@ time = room_speed * 15;
           <argument>
             <kind>1</kind>
             <string>/// Action2 variables
-action2 = 0;
-action2.damage = 10;
-action2.scriptCall = 0;
-action2.scriptParams = 0;
-action2.knockback = 200;
-action2.numFrames = 5;
+action2 = ds_map_create();
+ds_map_add(action2, "damage", 10);
+ds_map_add(action2, "knockback", 200);
+ds_map_add(action2, "numFrames", 5);
 
 //Size
-action2.xSize = 20;
-action2.ySize = 10;
+ds_map_add(action2,"xSize", 20);
+ds_map_add(action2, "ySize", 10);
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-action2.xDist = 33;
-action2.yDist = -40;
-action2.angle = 0;
+ds_map_add(action2, "xDist", 33);
+ds_map_add(action2, "yDist", -40);
+
 </string>
           </argument>
         </arguments>
@@ -103,24 +101,22 @@ action2.angle = 0;
             <kind>1</kind>
             <string>///Action1 variables
 
-action1 = 0;
+action1 = ds_map_create();
 
-action1.damage = 5;
-action1.scriptCall = 0;
-action1.scriptParams = 0;
-action1.knockback = 200;
+ds_map_add(action1, "damage", 5);
+ds_map_add(action1, "knockback", 200);
 
-action1.sprite = sprBone;
+ds_map_add(action1, "sprite", sprBone);
 
 //Parent object and distance from parent x,y to "topleft" corner
-action1.xDist = 40;
-action1.yDist = -40;
+ds_map_add(action1, "xDist", 40);
+ds_map_add(action1, "yDist", -40);
 
 //Direct object throwing
-action1.xForce = 7;
-action1.yForce = -8;
-action1.xOffset = 5;
-action1.yOffset = 0;
+ds_map_add(action1, "xForce", 4);
+ds_map_add(action1, "yForce", -8);
+ds_map_add(action1, "xOffset", 3);
+ds_map_add(action1, "yOffset", 0);
 
 </string>
           </argument>

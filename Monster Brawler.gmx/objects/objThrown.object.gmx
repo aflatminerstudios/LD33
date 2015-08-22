@@ -41,6 +41,8 @@ yDist = 0;
 //Direct object throwing
 xForce = 0;
 yForce = 0;
+xOffset = 0;
+yOffset = 0;
 </string>
           </argument>
         </arguments>
@@ -69,7 +71,7 @@ if (other.id != parent.id) {
   scrTakeDamage(parent.id, other.id, damage);
   
   with (other) {
-    physics_apply_impulse(x, y, other.knockback, 0);
+    physics_apply_impulse(x, y, other.knockback * sign(other.phy_linear_velocity_x), 0);
   }
   
   instance_destroy();

@@ -28,9 +28,9 @@ with (player) {
         scrJump(player);
       }
     } else if (key == "DoAction1") {    
-      script_execute(curDoAction1, self.id, action1);
+      script_execute(curDoAction1, player, curAction1);
     } else if (key == "DoAction2") {
-      script_execute(curDoAction2, self.id, action2);
+      script_execute(curDoAction2, player, curAction2);
     } else if (key == "Say") {
       scrSay(x, y, val);
     }

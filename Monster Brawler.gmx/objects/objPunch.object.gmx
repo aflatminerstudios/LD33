@@ -110,7 +110,7 @@ if (c != noone &amp;&amp; !is_undefined(c)) {
   show_debug_message("Punch from " + string(parent.id) + " connected with " + string(c.id));
 
   with (c) {
-    physics_apply_impulse(c.x, c.y, other.knockback, 0);
+    physics_apply_impulse(c.x, c.y, other.knockback * other.parent.facing, 0);
   }
   
   scrTakeDamage(parent, c, damage);
