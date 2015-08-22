@@ -46,6 +46,13 @@
       <script>scripts\scrAssignPlayer1.gml</script>
       <script>scripts\scrAssignPlayer2.gml</script>
     </scripts>
+    <scripts name="AI Queries">
+      <script>scripts\scrGetEnemyList.gml</script>
+      <script>scripts\scrGetDistance.gml</script>
+      <script>scripts\scrGetNearestCostume.gml</script>
+      <script>scripts\scrGetNearestEnemy.gml</script>
+      <script>scripts\scrGetCostumeList.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\objFloor</object>
