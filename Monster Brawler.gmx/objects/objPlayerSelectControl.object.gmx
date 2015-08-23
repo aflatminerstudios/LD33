@@ -116,8 +116,17 @@ global.lastWinner = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change rooms
-room_goto(rmMain);
+            <string>/// Debug (go straight to round complete with wins)
+
+global.player1Wins = 4;
+global.player2Wins = 3;
+global.player3Wins = 2;
+global.player4Wins = 1;
+
+// 0 = tie, 1 = player 1, 2 = player 2, etc.
+global.lastWinner = 0;
+
+room_goto(rmRoundComplete); // test line to go straight to round complete
 </string>
           </argument>
         </arguments>
@@ -138,17 +147,8 @@ room_goto(rmMain);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Debug (go straight to round complete with wins)
-
-global.player1Wins = 4;
-global.player2Wins = 3;
-global.player3Wins = 2;
-global.player4Wins = 1;
-
-// 0 = tie, 1 = player 1, 2 = player 2, etc.
-global.lastWinner = 0;
-
-room_goto(rmRoundComplete); // test line to go straight to round complete
+            <string>/// Change rooms
+room_goto(rmMain);
 </string>
           </argument>
         </arguments>

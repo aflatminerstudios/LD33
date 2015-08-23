@@ -24,4 +24,4 @@ switch (player.playerNum) {
 
 global.lastWinner = player.playerNum;
 
-room_goto(rmRoundcomplete);
+room_goto(rmRoundComplete);
