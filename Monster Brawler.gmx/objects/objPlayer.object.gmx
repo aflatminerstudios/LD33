@@ -532,6 +532,16 @@ curAction2 = other.action2;
 curSprite = other.sprite;
 curSpriteRunning = other.spriteRunning;
 
+switch(sprite_index) {
+  case sprite:
+    sprite_index = curSprite;
+    break;
+    
+  case spriteRunning:
+    sprite_index = curSpriteRunning;
+    break;
+}
+
 curCooldown1 = other.cooldown1;
 curCooldown2 = other.cooldown2;
 
