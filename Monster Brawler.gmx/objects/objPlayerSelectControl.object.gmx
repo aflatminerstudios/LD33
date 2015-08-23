@@ -140,8 +140,8 @@ global.lastWinner = 0;
             <kind>1</kind>
             <string>/// Debug (go straight to round complete with wins)
 
-global.player1Wins = 4;
-global.player2Wins = 3;
+global.player1Wins = 2;
+global.player2Wins = 0;
 global.player3Wins = 2;
 global.player4Wins = 1;
 
