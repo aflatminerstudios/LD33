@@ -122,7 +122,13 @@
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
     </objects>
+
     <object>objects\objIndicator</object>
+
+    <objects name="GameCompleteScreen">
+      <object>objects\objGameCompleteControl</object>
+    </objects>
+
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
@@ -130,6 +136,7 @@
     <room>rooms\rmPlayerSelect</room>
     <room>rooms\rmMain</room>
     <room>rooms\rmRoundComplete</room>
+    <room>rooms\rmGameComplete</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>

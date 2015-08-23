@@ -148,7 +148,7 @@ room_goto(rmRoundComplete); // test line to go straight to round complete
           <argument>
             <kind>1</kind>
             <string>/// Change rooms
-room_goto(rmMain);
+//room_goto(rmMain); // Uncomment when in done testing (&amp; delete other action)-- Micha TODO
 </string>
           </argument>
         </arguments>
