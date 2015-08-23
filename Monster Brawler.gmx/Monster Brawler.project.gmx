@@ -7,6 +7,7 @@
   <sounds name="sound">
     <sound>sound\sndAFlatMinerJingle</sound>
     <sound>sound\musTitleScreen</sound>
+    <sound>sound\musTitleScreen2</sound>
     <sound>sound\musBR1</sound>
     <sound>sound\sndCostumeChange</sound>
     <sound>sound\sndJump</sound>
