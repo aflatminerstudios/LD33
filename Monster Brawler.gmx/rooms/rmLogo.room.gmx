@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="objAFlatMinerLogoControl" x="0" y="0" name="inst_2C8FF620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOverscanOverlay" x="0" y="0" name="inst_658A51E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

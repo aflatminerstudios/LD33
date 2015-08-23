@@ -25,24 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set up selection variables
+            <string>/// Set variables
 
-currentSelection = 0;
-
-numSelections = 2;
-
-selectionX[0] = objPlayerSelectionBoxes.x + 332;
-selectionY[0] = objPlayerSelectionBoxes.y + 140;
-selectionActive[0] = true;
-selectionNumHumans[0] = 1;
-
-selectionX[1] = objPlayerSelectionBoxes.x + 332;
-selectionY[1] = objPlayerSelectionBoxes.y + 290;
-selectionActive[1] = true;
-selectionNumHumans[1] = 2;
-
-// Place selector on the screen
-selector = instance_create(0, 0, objNumPlayersSelector);
+music = musBR1;
+loopMusic = false;
 </string>
           </argument>
         </arguments>
@@ -63,8 +49,35 @@ selector = instance_create(0, 0, objNumPlayersSelector);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Auto skip room in 1/2 seconds (disabled)
-//alarm[0] = room_speed/2;
+            <string>/// Start music
+audio_play_sound(music, 0, loopMusic);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Stop sounds and go to Main Game
+show_debug_message("Moving back to Main Game.");
+audio_stop_sound(music);
+room_goto(rmMain);
 </string>
           </argument>
         </arguments>
@@ -87,8 +100,8 @@ selector = instance_create(0, 0, objNumPlayersSelector);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rmRoundComplete);
-//room_goto(rmMain); // Put back in place -- Micha TODO
+            <string>/// Start post-sound waiting period
+alarm[1] = 0*room_speed+1;
 </string>
           </argument>
         </arguments>
@@ -111,27 +124,13 @@ selector = instance_create(0, 0, objNumPlayersSelector);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check for vertical selection
-
-var directionChosen = 0;
-
-// Check gamepad #1
-var gamePad = 0;
-var gamepadDirection = gamepad_axis_value(gamePad, gp_axislv);
-if(gamepadDirection &lt; -0.3) {
-  directionChosen = -1;
-} else if(gamepadDirection &gt; 0.3) {
-  directionChosen = 1;
+            <string>///Check for start button
+/*
+if (scrCheckController(0))
+{
+   alarm[1] = 1;
 }
-
-// Check keyboard
-if (keyboard_check_pressed(vk_up)) {
-  directionChosen = -1;
-} else if (keyboard_check_pressed(vk_down)) {
-  directionChosen = 1;
-}
-
-currentSelection = (currentSelection + directionChosen + numSelections) % numSelections;
+*/
 </string>
           </argument>
         </arguments>
@@ -152,16 +151,17 @@ currentSelection = (currentSelection + directionChosen + numSelections) % numSel
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Move selector to proper location
+            <string>///Check for controller press
 
-selector.x = selectionX[currentSelection];
-selector.y = selectionY[currentSelection];
-
-global.numHumans = selectionNumHumans[currentSelection];
+if (scrCheckCntrl(0)) {
+  alarm[1] = 1;
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="9" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -178,17 +178,7 @@ global.numHumans = selectionNumHumans[currentSelection];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Check for "select" button
-
-// Check gamepad #1
-var gamePad = 0;
-var gamepadSelect = gamepad_button_check_pressed(gamePad, gp_face1);
-
-// Check keyboard
-var keyboardSelect = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space));
-
-if(gamepadSelect || keyboardSelect)
-  alarm[0] = 1;
+            <string>alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -206,5 +196,8 @@ if(gamepadSelect || keyboardSelect)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>275,275</point>
+  </PhysicsShapePoints>
 </object>

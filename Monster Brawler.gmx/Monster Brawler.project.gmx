@@ -7,6 +7,7 @@
   <sounds name="sound">
     <sound>sound\sndAFlatMinerJingle</sound>
     <sound>sound\musTitleScreen</sound>
+    <sound>sound\musBR1</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
@@ -17,6 +18,7 @@
     <sprite>sprites\sprNumPlayersSelector</sprite>
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
     <sprite>sprites\sprTile1</sprite>
+    <sprite>sprites\sprOverscanOverlay</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -93,12 +95,17 @@
       <object>objects\objPunch</object>
     </objects>
     <object>objects\objTile</object>
+    <object>objects\objOverscanOverlay</object>
+    <objects name="RoundCompleteScreen">
+      <object>objects\objRoundCompleteControl</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
     <room>rooms\rmMain</room>
+    <room>rooms\rmRoundComplete</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>
