@@ -566,7 +566,7 @@ with (other) {
             <string>///Stop jumping
 
 if (isJumping) {
-  if (other.y &gt; y - sprite_height/2 &amp;&amp; jumpTimeRemaining &lt;= 0) {
+  if (other.y &gt; (y - sprite_height) &amp;&amp; jumpTimeRemaining &lt;= 0) {
     isJumping = false;
     canJump = true;
   } 

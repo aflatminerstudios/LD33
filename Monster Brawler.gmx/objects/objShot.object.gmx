@@ -151,7 +151,7 @@ if (other.id != parent.id) {
   scrTakeDamage(parent.id, other.id, damage);
   
   with (other) {
-    physics_apply_local_impulse(0, 0, other.knockback * sign(other.phy_linear_velocity_x), 0);
+    physics_apply_local_impulse(0, 0, other.knockback * sign(other.phy_linear_velocity_x) * -1, 0);
   }
   
   instance_destroy();

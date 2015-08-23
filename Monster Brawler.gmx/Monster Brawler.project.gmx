@@ -110,6 +110,10 @@
     <objects name="Player">
       <object>objects\objPlayer</object>
     </objects>
+    <objects name="SpawnPoints">
+      <object>objects\objCostumeSpawn</object>
+      <object>objects\objInitialCostumeSpawn</object>
+    </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>

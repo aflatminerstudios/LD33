@@ -25,12 +25,87 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Spawn 2 costumes
+            <string>///Randomize
 
-instance_create(160, 280, objWerewolfCostume);
+randomize();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create costume list
 
-instance_create(560, 200, objWerewolfCostume);
+costumeList[0] = objDBCostume;
+costumeList[1] = objWerewolfCostume;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set up timer for next costume spawn
 
+var r = irandom(10);// + 25;
+
+alarm[0] = room_speed * r;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Spawn costumes at initial points
+
+var l = array_length_1d(costumeList) - 1;
+
+with (objInitialCostumeSpawn) {
+  r = irandom(l);
+  
+  instance_create(x, y, other.costumeList[r]);
+}
 
 </string>
           </argument>
@@ -125,6 +200,131 @@ ind.sprite_index = spr3pIndicator;
 ind = instance_create(x, y, objIndicator);
 ind.parent = p4;
 ind.sprite_index = spr4pIndicator;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Get array of spawn points
+
+costumeSpawnPoints[0] = 0;
+
+var i = 0;
+
+with (objCostumeSpawn) {
+  other.costumeSpawnPoints[i] = self.id;
+  i++;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set up timer for next costume spawn
+
+var r = irandom(10) + 25;
+
+alarm[0] = room_speed * r;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawn costume at random spawn point
+
+if (instance_number(objCostume) &lt; instance_number(objCostumeSpawn)) {
+
+  var r = irandom(array_length_1d(costumeSpawnPoints) - 1);
+  
+  var c = costumeSpawnPoints[r];
+  
+  while (position_meeting(c.x, c.y, objCostume) || position_meeting(c.x, c.y, objPlayer)) {
+
+    r = irandom(array_length_1d(costumeSpawnPoints) - 1);
+  
+    c = costumeSpawnPoints[r];
+  }
+
+  r = irandom(array_length_1d(costumeList) - 1);
+  var w = costumeList[r];  
+  with (c) {
+
+    instance_create(x, y, w);
+  
+  }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set up timer for next costume spawn
+
+var r = irandom(10) + 25;
+
+alarm[0] = room_speed * r;
 </string>
           </argument>
         </arguments>
