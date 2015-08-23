@@ -117,8 +117,38 @@ global.lastWinner = 0;
           <argument>
             <kind>1</kind>
             <string>/// Change rooms
-room_goto(rmRoundComplete);
-//room_goto(rmMain); // Put back in place -- Micha TODO
+room_goto(rmMain);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Debug (go straight to round complete with wins)
+
+global.player1Wins = 4;
+global.player2Wins = 3;
+global.player3Wins = 2;
+global.player4Wins = 1;
+
+// 0 = tie, 1 = player 1, 2 = player 2, etc.
+global.lastWinner = 0;
+
+room_goto(rmRoundComplete); // test line to go straight to round complete
 </string>
           </argument>
         </arguments>
