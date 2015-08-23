@@ -89,6 +89,96 @@ audio_play_sound(music, 0, loopMusic);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Add win coins to screen
+
+playerWins[1] = global.player1Wins;
+playerWins[2] = global.player2Wins;
+playerWins[3] = global.player3Wins;
+playerWins[4] = global.player4Wins;
+
+playerCoinLocation[1] = 220;
+playerCoinLocation[2] = 500;
+playerCoinLocation[3] = 780;
+playerCoinLocation[4] = 1060;
+coinY = 360;
+  
+for(var i = 1; i &lt;= 4; i++) {
+  // 2 wins, not this time
+  if(playerWins[i] == 2 &amp;&amp; global.lastWinner != i) {
+    var coin1 = instance_create(playerCoinLocation[i], coinY-80, objWinCoin);
+    coin1.image_speed = 0;
+    var coin2 = instance_create(playerCoinLocation[i], coinY, objWinCoin);
+    coin2.image_speed = 0;
+    instance_create(playerCoinLocation[i], coinY+80, objDottedCoin);
+  }
+  
+  // 2 wins, won this time
+  if(playerWins[i] == 2 &amp;&amp; global.lastWinner == i) {
+    var coin1 = instance_create(playerCoinLocation[i], coinY-80, objWinCoin);
+    coin1.image_speed = 0;
+    var coin2 = instance_create(playerCoinLocation[i], coinY, objWinCoin);
+    instance_create(playerCoinLocation[i], coinY+80, objDottedCoin);
+  }
+  
+  // 1 win, not this time
+  if(playerWins[i] == 1 &amp;&amp; global.lastWinner != i) {
+    var coin1 = instance_create(playerCoinLocation[i], coinY-80, objWinCoin);
+    coin1.image_speed = 0;
+    instance_create(playerCoinLocation[i], coinY, objDottedCoin);
+    instance_create(playerCoinLocation[i], coinY+80, objDottedCoin);
+  }
+  
+  // 1 win, was this time
+  if(playerWins[i] == 1 &amp;&amp; global.lastWinner == i) {
+    var coin1 = instance_create(playerCoinLocation[i], coinY-80, objWinCoin);
+    instance_create(playerCoinLocation[i], coinY, objDottedCoin);
+    instance_create(playerCoinLocation[i], coinY+80, objDottedCoin);
+  }
+  
+  // No wins
+  if(playerWins[i] == 0) {
+    instance_create(playerCoinLocation[i], coinY-80, objDottedCoin);
+    instance_create(playerCoinLocation[i], coinY, objDottedCoin);
+    instance_create(playerCoinLocation[i], coinY+80, objDottedCoin);
+  }
+}
+
+
+/*
+draw_text(240,320,string(global.player1Wins));
+draw_text(520,320,string(global.player2Wins));
+draw_text(800,320,string(global.player3Wins));
+draw_text(1040,320,string(global.player4Wins));
+
+global.player1Wins = 2;
+global.player2Wins = 0;
+global.player3Wins = 2;
+global.player4Wins = 1;
+
+// 0 = tie, 1 = player 1, 2 = player 2, etc.
+global.lastWinner = 0;
+
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="2">
       <action>
@@ -238,7 +328,7 @@ if (allowExit) {
             <string>///Check for keyboard press
 
 if (allowExit) {
-  if (keyboard_check_pressed(vk_anykey)) {
+  if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
     alarm[1] = 1;
   }
 }
@@ -264,20 +354,17 @@ if (allowExit) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw number of wins above each player
+            <string>/// Draw player indicators
 
 draw_set_font(fontKaiju48);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+draw_set_color(c_white);
 
-draw_text(240,320,string(global.player1Wins));
-draw_text(520,320,string(global.player2Wins));
-draw_text(800,320,string(global.player3Wins));
-draw_text(1040,320,string(global.player4Wins));
-
-
-
-
+draw_text(220,630,"P1");
+draw_text(500,630,"P2");
+draw_text(780,630,"P3");
+draw_text(1060,630,"P4");
 
 </string>
           </argument>

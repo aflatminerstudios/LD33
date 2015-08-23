@@ -117,7 +117,7 @@ global.lastWinner = 0;
           <argument>
             <kind>1</kind>
             <string>/// Change rooms
-//room_goto(rmMain); // Uncomment when in done testing (&amp; delete other action)-- Micha TODO
+room_goto(rmMain); // Uncomment when in done testing (&amp; delete other action)-- Micha TODO
 </string>
           </argument>
         </arguments>
@@ -139,16 +139,17 @@ global.lastWinner = 0;
           <argument>
             <kind>1</kind>
             <string>/// Debug (go straight to round complete with wins)
-
+/*
 global.player1Wins = 2;
-global.player2Wins = 0;
+global.player2Wins = 1;
 global.player3Wins = 2;
-global.player4Wins = 1;
+global.player4Wins = 3;
 
 // 0 = tie, 1 = player 1, 2 = player 2, etc.
-global.lastWinner = 0;
+global.lastWinner = 1;
 
 room_goto(rmRoundComplete); // test line to go straight to round complete
+*/
 </string>
           </argument>
         </arguments>

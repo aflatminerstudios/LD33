@@ -35,6 +35,10 @@
     <sprite>sprites\sprDB</sprite>
     <sprite>sprites\sprDBRunning</sprite>
     <sprite>sprites\sprEyebeam</sprite>
+    <sprite>sprites\sprWinCoin</sprite>
+    <sprite>sprites\sprDottedCoin</sprite>
+    <sprite>sprites\sprScoreboard</sprite>
+    <sprite>sprites\sprSpotlight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -91,6 +95,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
+    <font>fonts\fontKaiju96</font>
   </fonts>
   <objects name="objects">
     <objects name="AFlatMinerLogoScreen">
@@ -124,8 +129,11 @@
     </objects>
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
-      <object>objects\objSkeletonDummy</object>
       <object>objects\objRoundCompleteControl</object>
+      <object>objects\objSkeletonDummy</object>
+      <object>objects\objWinCoin</object>
+      <object>objects\objDottedCoin</object>
+      <object>objects\objScoreboardLabel</object>
     </objects>
     <objects name="Tiles">
       <object>objects\objTile</object>
@@ -134,8 +142,8 @@
     <object>objects\objIndicator</object>
     <objects name="GameCompleteScreen">
       <object>objects\objGameCompleteControl</object>
+      <object>objects\objSpotlight</object>
     </objects>
-    <object>objects\object24</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

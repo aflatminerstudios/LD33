@@ -59,6 +59,38 @@ audio_play_sound(music, 0, loopMusic);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Add spotlight to winner
+
+var spotlightY = 520;
+
+if(global.player1Wins &gt;= 3)
+  instance_create(220, spotlightY, objSpotlight);
+else if(global.player2Wins &gt;= 3)
+  instance_create(500, spotlightY, objSpotlight);
+else if(global.player3Wins &gt;= 3)
+  instance_create(780, spotlightY, objSpotlight);
+else if(global.player4Wins &gt;= 3)
+  instance_create(1060, spotlightY, objSpotlight);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="2">
       <action>
@@ -101,10 +133,10 @@ allowExit = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Stop sounds and go to Main Game
+            <string>/// Stop sounds and go to Title Screen
 show_debug_message("Moving back to Main Game.");
 audio_stop_sound(music);
-room_goto(rmMain);
+room_goto(rmTitle);
 </string>
           </argument>
         </arguments>
@@ -208,7 +240,7 @@ if (allowExit) {
             <string>///Check for keyboard press
 
 if (allowExit) {
-  if (keyboard_check_pressed(vk_anykey)) {
+  if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
     alarm[1] = 1;
   }
 }
@@ -234,21 +266,50 @@ if (allowExit) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw number of wins above each player
+            <string>/// Draw player indicators
+
+var indicatorY = 610;
 
 draw_set_font(fontKaiju48);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+draw_set_color(c_white);
 
-draw_text(240,320,string(global.player1Wins));
-draw_text(520,320,string(global.player2Wins));
-draw_text(800,320,string(global.player3Wins));
-draw_text(1040,320,string(global.player4Wins));
+draw_text(220,indicatorY,"P1");
+draw_text(500,indicatorY,"P2");
+draw_text(780,indicatorY,"P3");
+draw_text(1060,indicatorY,"P4");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw VICTORY title
 
+draw_set_font(fontKaiju96);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 
+draw_set_color(c_black);
+draw_text(640+5,150+5,"VICTORY");
 
-
-
+draw_set_color(c_white);
+draw_text(640,150,"VICTORY");
 </string>
           </argument>
         </arguments>
