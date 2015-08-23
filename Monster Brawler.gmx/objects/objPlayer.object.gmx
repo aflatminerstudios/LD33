@@ -90,6 +90,11 @@ isIdle = true;
 image_speed = 30 / room_speed;
 
 tint = c_white;
+
+action1Sound[0] = sndSkeletonPunch1;
+action1Sound[1] = sndSkeletonPunch2;
+action2Sound[0] = sndBoneThrow1;
+action2Sound[1] = sndBoneThrow2;
 </string>
           </argument>
         </arguments>

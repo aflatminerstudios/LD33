@@ -27,11 +27,27 @@ with (player) {
     } else if (key == "DoAction1") { 
     
       if (cdTimer1 <= 0) {
+      
+        var p = player;
+        if (player.costume != noone) {
+          p = player.costume;  
+        }
+
+        audio_play_sound(p.action1Sound[irandom(1)], 10, false);
+      
         script_execute(curDoAction1, player, curAction1);
         cdTimer1 = player.curCooldown1;
       }
     } else if (key == "DoAction2") {
       if (cdTimer2 <= 0) {
+      
+        var p = player;
+        if (player.costume != noone) {
+          p = player.costume;  
+        }
+
+        audio_play_sound(p.action2Sound[irandom(1)], 10, false);
+      
         script_execute(curDoAction2, player, curAction2);
         cdTimer2 = player.curCooldown2;
       }

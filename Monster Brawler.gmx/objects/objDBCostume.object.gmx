@@ -49,6 +49,11 @@ spriteRunning = sprDBRunning;
 spriteJumping = sprDBRunning;
 
 time = room_speed * 15;
+
+action1Sound[0] = sndDBSmack1;
+action1Sound[1] = sndDBSmack2;
+action2Sound[0] = sndEyebeam1;
+action2Sound[1] = sndEyebeam2;
 </string>
           </argument>
         </arguments>

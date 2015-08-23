@@ -49,6 +49,11 @@ spriteRunning = sprDemonCostume;
 spriteJumping = sprDemonCostume;
 
 time = room_speed * 15;
+
+action1Sound[0] = sndWerewolfSwipe1;
+action1Sound[1] = sndWerewolfSwipe2;
+action2Sound[0] = sndWerewolfDash;
+action2Sound[1] = sndWerewolfDash;
 </string>
           </argument>
         </arguments>

@@ -15,6 +15,17 @@
     <sound>sound\sndCursorSelectMove</sound>
     <sound>sound\sndPlayerDeath</sound>
     <sound>sound\sndPlayerHit</sound>
+    <sound>sound\sndBoneThrow1</sound>
+    <sound>sound\sndBoneThrow2</sound>
+    <sound>sound\sndDBSmack1</sound>
+    <sound>sound\sndDBSmack2</sound>
+    <sound>sound\sndSkeletonPunch1</sound>
+    <sound>sound\sndSkeletonPunch2</sound>
+    <sound>sound\sndWerewolfDash</sound>
+    <sound>sound\sndWerewolfSwipe1</sound>
+    <sound>sound\sndWerewolfSwipe2</sound>
+    <sound>sound\sndEyebeam1</sound>
+    <sound>sound\sndEyebeam2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
