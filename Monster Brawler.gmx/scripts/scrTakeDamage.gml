@@ -13,3 +13,11 @@ with (receiver) {
   }
 
 }
+
+with (objGameControl) {
+  if (numPlayers == 1) {
+    with (objPlayer) {
+      scrWinGame(self.id);
+    }
+  }
+}

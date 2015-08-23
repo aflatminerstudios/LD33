@@ -71,6 +71,7 @@
     <script>scripts\scrCheckCntrl.gml</script>
     <script>scripts\scrRoomPositionToGrid.gml</script>
     <script>scripts\scrNullScript.gml</script>
+    <script>scripts\scrWinGame.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>

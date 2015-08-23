@@ -87,6 +87,12 @@ p3 = instance_create(280, 40, objPlayer);
 
 p4 = instance_create(800, 40, objPlayer);
 
+numPlayers = 4;
+
+p1.playerNum = 1;
+p2.playerNum = 2;
+p3.playerNum = 3;
+p4.playerNum = 4;
 
 //Then assign controls as appropriate
 

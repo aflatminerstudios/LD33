@@ -187,6 +187,8 @@ with (parent) {
   curAction2 = action2;
   
   sprite_index = sprite;
+  curSprite = sprite;
+  curSpriteRunning = spriteRunning;
   
   curCooldown1 = cooldown1;
   curCooldown2 = cooldown2;
@@ -194,6 +196,8 @@ with (parent) {
   hasCostume = false;
 
 }
+
+instance_destroy();
 
 </string>
           </argument>

@@ -79,7 +79,7 @@ ds_map_add(action2,"xSize", 20);
 ds_map_add(action2, "ySize", 10);
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-ds_map_add(action2, "xDist", 33);
+ds_map_add(action2, "xDist", sprite_width / 2 + 2);
 ds_map_add(action2, "yDist", -40);
 
 cooldown2 = room_speed / 3;
@@ -113,7 +113,7 @@ ds_map_add(action1, "knockback", 200);
 ds_map_add(action1, "sprite", sprBone);
 
 //Parent object and distance from parent x,y to "topleft" corner
-ds_map_add(action1, "xDist", 40);
+ds_map_add(action1, "xDist", sprite_width / 2 + 2);
 ds_map_add(action1, "yDist", -40);
 
 //Direct object throwing
