@@ -79,13 +79,13 @@ keyboard_clear(vk_anykey);
 
 // Create all 4 players
 
-p1 = instance_create(96, 480, objPlayer);
+p1 = instance_create(240, 600, objPlayer);
 
-p2 = instance_create(896, 480, objPlayer);
+p2 = instance_create(920, 600, objPlayer);
 
-p3 = instance_create(280, 40, objPlayer);
+p3 = instance_create(240, 120, objPlayer);
 
-p4 = instance_create(800, 40, objPlayer);
+p4 = instance_create(840, 80, objPlayer);
 
 numPlayers = 4;
 
