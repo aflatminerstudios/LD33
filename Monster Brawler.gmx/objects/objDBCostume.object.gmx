@@ -46,47 +46,9 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 
 sprite = sprDBRunning;
 spriteRunning = sprDBRunning;
+spriteJumping = sprDBRunning;
 
 time = room_speed * 15;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Action1 variables
-action1 = ds_map_create();
-var nf = 5;
-ds_map_add(action1, "damage", 20);
-ds_map_add(action1, "knockback", 400);
-ds_map_add(action1, "numFrames", nf);
-
-//Size
-ds_map_add(action1,"xSize", 20);
-ds_map_add(action1, "ySize", (sprite_height / nf) * 1.5);
-ds_map_add(action1,"xTotalSize", 20);
-ds_map_add(action1, "yTotalSize", -1 * sprite_height);
-
-
-//Parent object and distance from parent x,y to "topleft" corner, as well as angle
-ds_map_add(action1, "xDist", sprite_width / 2 + 2);
-ds_map_add(action1, "yDist", sprite_height);
-
-cooldown1 = room_speed / 5;
 </string>
           </argument>
         </arguments>
@@ -126,6 +88,45 @@ ds_map_add(action2, "yForce", 0);
 ds_map_add(action2, "travelDist", 500);
 
 cooldown2 = room_speed / 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Action1 variables
+action1 = ds_map_create();
+var nf = 5;
+ds_map_add(action1, "damage", 20);
+ds_map_add(action1, "knockback", 400);
+ds_map_add(action1, "numFrames", nf);
+
+//Size
+ds_map_add(action1,"xSize", 20);
+ds_map_add(action1, "ySize", (sprite_height / nf) * 1.5);
+ds_map_add(action1,"xTotalSize", 20);
+ds_map_add(action1, "yTotalSize", sprite_height);
+
+
+//Parent object and distance from parent x,y to "topleft" corner, as well as angle
+ds_map_add(action1, "xDist", sprite_width / 2 + 2);
+ds_map_add(action1, "yDist", -1 * sprite_height);
+
+cooldown1 = room_speed / 5;
 </string>
           </argument>
         </arguments>

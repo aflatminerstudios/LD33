@@ -38,6 +38,7 @@ xSize = 0;
 ySize = 0;
 xTotalSize = 0;
 yTotalSize = 0;
+swipeDir = 0;
 
 //Parent object and distance from parent x,y to "topleft" corner
 parent = 0;
@@ -112,6 +113,7 @@ if (x1 == x2 &amp;&amp; x1 == y1 &amp;&amp; x1 == y2 &amp;&amp; x1 == 0) {
   y1 = y1 + (yTotalSize / numFrames);
   y2 = y1 + ySize;
 }
+
 
 
 var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);

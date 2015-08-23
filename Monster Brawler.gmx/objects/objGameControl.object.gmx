@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Spawn 2 demon costumes
+            <string>/// Spawn 2 costumes
 
-instance_create(160, 280, objDBCostume);
+instance_create(160, 280, objWerewolfCostume);
 
-instance_create(560, 200, objDBCostume);
+instance_create(560, 200, objWerewolfCostume);
 
 
 </string>

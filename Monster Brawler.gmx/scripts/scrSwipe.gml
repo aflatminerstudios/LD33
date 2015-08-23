@@ -18,4 +18,10 @@ o.xDist = ds_map_find_value(a, "xDist");
 o.yDist = ds_map_find_value(a, "yDist");
 o.angle = ds_map_find_value(a, "angle");
 o.numFrames = ds_map_find_value(a, "numFrames");
+
+if (ds_map_exists(a, "swipeDir")) {
+  o.swipeDir = ds_map_find_value(a, "swipeDir");
+} else {
+  o.swipeDir = 1;
+}
 o.alarm[0] = o.numFrames;
