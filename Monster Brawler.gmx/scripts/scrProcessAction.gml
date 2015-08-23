@@ -11,17 +11,8 @@ with (player) {
     show_debug_message("Processing " + string(key) + " : " + string(val));
     if (key == "MoveHorizontal") {    
           
-      physics_apply_force(x, y, curForce * val, 0);
-  
-      if (phy_linear_velocity_x * sign(val) >= curMaxSpeed) {
-        phy_linear_velocity_x = curMaxSpeed * sign(val);
-      }
+      scrRun(player, val);
       
-      if (sign(val) >= 0) {
-        facing = 1;
-      } else {
-        facing = -1;
-      }
     } else if (key == "Jump") {
     
       if (canJump) {      

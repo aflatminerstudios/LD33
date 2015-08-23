@@ -45,6 +45,8 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 //jumpForce = (sqrt(2 * gravity.y * (jumpHeight)) + gravity.y * deltaTime * 0.5);
 
 sprite = sprDemonCostume;
+spriteRunning = sprDemonCostume;
+
 time = room_speed * 15;
 </string>
           </argument>
