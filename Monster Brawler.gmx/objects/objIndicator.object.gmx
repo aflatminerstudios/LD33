@@ -52,9 +52,11 @@ parent = noone;
             <kind>1</kind>
             <string>///Follow parent bounding box
 
-if (parent != noone) {
+if (parent != noone &amp;&amp; instance_exists(parent)) {
   x = parent.x;
   y = parent.bbox_top;
+} else if (parent != noone) {
+  instance_destroy();
 }
 </string>
           </argument>

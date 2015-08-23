@@ -196,6 +196,16 @@
     <instance objName="objTile" x="520" y="120" name="inst_62A07DA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTile" x="1120" y="440" name="inst_F252CE20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTile" x="1160" y="440" name="inst_51BB3486" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInitialCostumeSpawn" x="480" y="240" name="inst_D98481DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInitialCostumeSpawn" x="480" y="520" name="inst_B0299FB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="200" y="400" name="inst_1BA444E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="280" y="160" name="inst_45BEB820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="1000" y="240" name="inst_8414BF0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="800" y="480" name="inst_1162C98D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="1080" y="640" name="inst_C7268C91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="160" y="640" name="inst_23232AF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="760" y="640" name="inst_E63711D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="760" y="120" name="inst_219EFC49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

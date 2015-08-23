@@ -9,7 +9,7 @@ var yDist = ds_map_find_value(a, "yDist");
 var o = instance_create(player.x + (xDist * player.facing), player.y + yDist, objShot);
 
 o.parent = player.id;
-
+o.damage = ds_map_find_value(a, "damage");
 o.knockback = ds_map_find_value(a, "knockback");
 o.sprite_index = ds_map_find_value(a, "sprite");
 o.xForce = ds_map_find_value(a, "xForce");

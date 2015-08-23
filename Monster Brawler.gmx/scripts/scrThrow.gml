@@ -14,7 +14,7 @@ o.knockback = ds_map_find_value(a, "knockback");
 o.sprite_index = ds_map_find_value(a, "sprite");
 o.xForce = ds_map_find_value(a, "xForce");
 o.yForce = ds_map_find_value(a, "yForce");
-
+o.damage = ds_map_find_value(a, "damage");
 o.xOffset = ds_map_find_value(a, "xOffset");
 o.yOffset = ds_map_find_value(a, "yOffset");
 

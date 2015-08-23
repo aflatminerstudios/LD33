@@ -46,6 +46,7 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 
 sprite = sprDemonCostume;
 spriteRunning = sprDemonCostume;
+spriteJumping = sprDemonCostume;
 
 time = room_speed * 15;
 </string>
@@ -68,21 +69,26 @@ time = room_speed * 15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Action2 variables
-action2 = ds_map_create();
-ds_map_add(action2, "damage", 10);
-ds_map_add(action2, "knockback", 200);
-ds_map_add(action2, "numFrames", 5);
+            <string>/// Action1 variables
+action1 = ds_map_create();
+var nf = 5;
+ds_map_add(action1, "damage", 40);
+ds_map_add(action1, "knockback", 600);
+ds_map_add(action1, "numFrames", nf);
 
 //Size
-ds_map_add(action2,"xSize", 20);
-ds_map_add(action2, "ySize", 10);
+ds_map_add(action1,"xSize", 20);
+ds_map_add(action1, "ySize", (sprite_height / nf) * 1.5);
+ds_map_add(action1,"xTotalSize", 20);
+ds_map_add(action1, "yTotalSize", -1 * sprite_height);
+ds_map_add(action1, "swipeDir", -1);
+
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-ds_map_add(action2, "xDist", sprite_width / 2 + 2);
-ds_map_add(action2, "yDist", -40);
+ds_map_add(action1, "xDist", sprite_width / 2 + 2);
+ds_map_add(action1, "yDist", -1 * (sprite_height / nf) * 1.5);
 
-cooldown2 = room_speed / 3;
+cooldown1 = room_speed / 3;
 </string>
           </argument>
         </arguments>
@@ -103,27 +109,16 @@ cooldown2 = room_speed / 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Action1 variables
+            <string>/// Action2 variables
+action2 = ds_map_create();
 
-action1 = ds_map_create();
+ds_map_add(action2, "knockback", 800);
+ds_map_add(action2, "numFrames", room_speed / 3.5);
 
-ds_map_add(action1, "damage", 5);
-ds_map_add(action1, "knockback", 200);
+ds_map_add(action2, "dashSpeed", 1000);
+ds_map_add(action2, "sprite", sprDemonCostume);
 
-ds_map_add(action1, "sprite", sprBone);
-
-//Parent object and distance from parent x,y to "topleft" corner
-ds_map_add(action1, "xDist", sprite_width / 2 + 2);
-ds_map_add(action1, "yDist", -40);
-
-//Direct object throwing
-ds_map_add(action1, "xForce", 4);
-ds_map_add(action1, "yForce", -8);
-ds_map_add(action1, "xOffset", 3);
-ds_map_add(action1, "yOffset", 0);
-
-cooldown1 = room_speed / 3;
-
+cooldown2 = room_speed / 1;
 </string>
           </argument>
         </arguments>
@@ -146,8 +141,8 @@ cooldown1 = room_speed / 3;
             <kind>1</kind>
             <string>///Script variables
 
-doAction1 = scrThrow;
-doAction2 = scrPunch;
+doAction1 = scrSwipe;
+doAction2 = scrDash;
 
 </string>
           </argument>

@@ -39,6 +39,7 @@
     <sprite>sprites\sprDottedCoin</sprite>
     <sprite>sprites\sprScoreboard</sprite>
     <sprite>sprites\sprSpotlight</sprite>
+    <sprite>sprites\sprFight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -66,8 +67,10 @@
       <script>scripts\scrThrow.gml</script>
       <script>scripts\scrPunch.gml</script>
       <script>scripts\scrSwipe.gml</script>
+      <script>scripts\scrDash.gml</script>
       <script>scripts\scrJump.gml</script>
       <script>scripts\scrShoot.gml</script>
+      <script>scripts\scrStopDash.gml</script>
       <script>scripts\scrSay.gml</script>
       <script>scripts\scrRun.gml</script>
     </scripts>
@@ -92,6 +95,7 @@
     <script>scripts\scrRoomPositionToGrid.gml</script>
     <script>scripts\scrNullScript.gml</script>
     <script>scripts\scrWinGame.gml</script>
+    <script>scripts\scrDrawHealthbar.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
@@ -113,6 +117,10 @@
     <objects name="Player">
       <object>objects\objPlayer</object>
     </objects>
+    <objects name="SpawnPoints">
+      <object>objects\objCostumeSpawn</object>
+      <object>objects\objInitialCostumeSpawn</object>
+    </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>
@@ -126,6 +134,7 @@
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
       <object>objects\objSwipe</object>
+      <object>objects\objDash</object>
     </objects>
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
@@ -144,6 +153,7 @@
       <object>objects\objGameCompleteControl</object>
       <object>objects\objSpotlight</object>
     </objects>
+    <object>objects\objFight</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
