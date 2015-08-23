@@ -171,7 +171,7 @@ time = room_speed * 20;
             <kind>1</kind>
             <string>///Reset player's "current" vars
 
-
+audio_play_sound(sndCostumeChange, 1, false);
 with (parent) {
   curForce = force;
   curMaxspeed = maxSpeed;

@@ -503,6 +503,7 @@ if (isJumping) {
             <kind>1</kind>
             <string>///Change "current" variables
 
+audio_play_sound(sndCostumeChange, 1, false);
 
 if (costume != noone) {
   with (costume) {

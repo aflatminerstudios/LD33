@@ -10,3 +10,5 @@ with (player) {
   jumpTimeRemaining = 15;
   beenReleased = false;
 }
+
+audio_play_sound(sndJump, 1, false);
