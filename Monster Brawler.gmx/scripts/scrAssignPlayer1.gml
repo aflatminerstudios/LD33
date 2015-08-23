@@ -10,8 +10,8 @@ with (player) {
   downKey = ord('S');
   leftKey = ord('A');
   rightKey = ord('D');
-  action1Key = ord('X');
-  action2Key = ord('C');
+  action1Key = ord('C');
+  action2Key = ord('V');
   jumpKey = ord('Z');
   
   hAxisPad = gp_axislh;
@@ -21,5 +21,7 @@ with (player) {
   jumpPad = gp_face1;
   
   padNum = 0;
+  
+  getAction = scrGetPlayerAction;
 
 }

@@ -101,47 +101,6 @@ action1.angle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Action2 variables
-
-action2 = 0;
-
-action2.damage = 5;
-action2.scriptCall = 0;
-action2.scriptParams = 0;
-action2.knockback = 200;
-
-action2.sprite = sprBone;
-
-//Parent object and distance from parent x,y to "topleft" corner
-action2.xDist = 40;
-action2.yDist = -40;
-
-//Direct object throwing
-action2.xForce = 7;
-action2.yForce = -8;
-action2.xOffset = 5;
-action2.yOffset = 0;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Script variables
 
 doAction1 = scrThrow;
@@ -224,10 +183,18 @@ with (parent) {
   
   curDoAction1 = doAction1;
   curDoAction2 = doAction2;
+  curAction1 = action1;
+  curAction2 = action2;
   
   sprite_index = sprite;
+  
+  curCooldown1 = cooldown1;
+  curCooldown2 = cooldown2;
+  
+  hasCostume = false;
 
 }
+
 </string>
           </argument>
         </arguments>

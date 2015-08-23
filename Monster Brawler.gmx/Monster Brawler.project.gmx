@@ -16,6 +16,7 @@
     <sprite>sprites\sprDemonCostume</sprite>
     <sprite>sprites\sprNumPlayersSelector</sprite>
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
+    <sprite>sprites\sprTile1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -25,6 +26,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\script25.gml</script>
+    <scripts name="AI Action Checks">
+      <script>scripts\scrGetAIAction.gml</script>
+    </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
       <script>scripts\scrGetPlayerUp.gml</script>
@@ -48,6 +53,7 @@
     <scripts name="Assign Player Controls">
       <script>scripts\scrAssignPlayer1.gml</script>
       <script>scripts\scrAssignPlayer2.gml</script>
+      <script>scripts\scrAssignAI.gml</script>
     </scripts>
     <scripts name="AI Queries">
       <script>scripts\scrGetEnemyList.gml</script>
@@ -56,6 +62,8 @@
       <script>scripts\scrGetNearestEnemy.gml</script>
       <script>scripts\scrGetCostumeList.gml</script>
     </scripts>
+    <script>scripts\scrCheckCntrl.gml</script>
+    <script>scripts\scrRoomPositionToGrid.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="AFlatMinerLogoScreen">
@@ -71,7 +79,9 @@
       <object>objects\objPlayerSelectionBoxes</object>
     </objects>
     <object>objects\objFloor</object>
-    <object>objects\objPlayer</object>
+    <objects name="Player">
+      <object>objects\objPlayer</object>
+    </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>
@@ -82,6 +92,7 @@
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
+    <object>objects\objTile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

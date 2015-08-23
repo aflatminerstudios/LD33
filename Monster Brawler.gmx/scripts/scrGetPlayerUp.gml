@@ -10,7 +10,7 @@ if (keyboard_check_pressed(upKey)) {
 
 var gpVal = gamepad_axis_value(padNum, axisPad);
 
-if (gpVal < -0.1) {
+if (gpVal < -0.3) {
   return gpVal;
 }
 

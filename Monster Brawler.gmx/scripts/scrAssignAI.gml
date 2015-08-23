@@ -21,5 +21,5 @@ with (player) {
   
   padNum = 1;
   
-  getAction = scrGetPlayerAction;
+  getAction = scrGetAIAction;
 }
