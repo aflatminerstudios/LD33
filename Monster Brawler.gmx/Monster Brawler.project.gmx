@@ -122,13 +122,10 @@
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
     </objects>
-
     <object>objects\objIndicator</object>
-
     <objects name="GameCompleteScreen">
       <object>objects\objGameCompleteControl</object>
     </objects>
-
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
