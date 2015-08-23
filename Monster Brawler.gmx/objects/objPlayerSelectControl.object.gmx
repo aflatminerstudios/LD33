@@ -87,8 +87,38 @@ selector = instance_create(0, 0, objNumPlayersSelector);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//room_goto(rmRoundComplete);
-room_goto(rmMain);
+            <string>/// Reset player wins
+
+global.player1Wins = 0;
+global.player2Wins = 0;
+global.player3Wins = 0;
+global.player4Wins = 0;
+
+// 0 = tie, 1 = player 1, 2 = player 2, etc.
+global.lastWinner = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change rooms
+room_goto(rmRoundComplete);
+//room_goto(rmMain); // Put back in place -- Micha TODO
 </string>
           </argument>
         </arguments>

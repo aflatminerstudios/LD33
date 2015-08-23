@@ -72,6 +72,9 @@
     <script>scripts\scrRoomPositionToGrid.gml</script>
     <script>scripts\scrNullScript.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fontKaiju48</font>
+  </fonts>
   <objects name="objects">
     <objects name="AFlatMinerLogoScreen">
       <object>objects\objAFlatMinerLogoControl</object>
@@ -100,6 +103,7 @@
     </objects>
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
+      <object>objects\objSkeletonDummy</object>
       <object>objects\objRoundCompleteControl</object>
     </objects>
     <objects name="Tiles">
