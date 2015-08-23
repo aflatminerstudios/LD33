@@ -25,7 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed/2;
+            <string>/// Set up selection variables
+
+currentSelection = 0;
+
+numSelections = 2;
+
+selectionX[0] = objPlayerSelectionBoxes.x + 332;
+selectionY[0] = objPlayerSelectionBoxes.y + 145;
+selectionActive[0] = true;
+selectionNumHumans[0] = 1;
+
+selectionX[1] = objPlayerSelectionBoxes.x + 332;
+selectionY[1] = objPlayerSelectionBoxes.y + 300;
+selectionActive[1] = true;
+selectionNumHumans[1] = 2;
+
+// Place selector on the screen
+selector = instance_create(0, 0, objNumPlayersSelector);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Auto skip room in 1/2 seconds (disabled)
+//alarm[0] = room_speed/2;
 </string>
           </argument>
         </arguments>
@@ -49,6 +88,109 @@
           <argument>
             <kind>1</kind>
             <string>room_goto(rmMain);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check for vertical selection
+
+var directionChosen = 0;
+
+// Check gamepad #1
+var gamePad = 0;
+var gamepadDirection = gamepad_axis_value(gamePad, gp_axislv);
+if(gamepadDirection &lt; -0.3) {
+  directionChosen = -1;
+} else if(gamepadDirection &gt; 0.3) {
+  directionChosen = 1;
+}
+
+// Check keyboard
+if (keyboard_check_pressed(vk_up)) {
+  directionChosen = -1;
+} else if (keyboard_check_pressed(vk_down)) {
+  directionChosen = 1;
+}
+
+show_debug_message("directionChosen = " + string(directionChosen));
+
+currentSelection = (currentSelection + directionChosen + numSelections) % numSelections;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move selector to proper location
+
+selector.x = selectionX[currentSelection];
+selector.y = selectionY[currentSelection];
+
+global.numHumans = selectionNumHumans[currentSelection];
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check for "select" button
+
+// Check gamepad #1
+var gamePad = 0;
+var gamepadSelect = gamepad_button_check_pressed(gamePad, gp_face1);
+
+// Check keyboard
+var keyboardSelect = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space));
+
+if(gamepadSelect || keyboardSelect)
+  alarm[0] = 1;
 </string>
           </argument>
         </arguments>

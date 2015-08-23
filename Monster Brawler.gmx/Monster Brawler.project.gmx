@@ -14,11 +14,14 @@
     <sprite>sprites\sprTitleBrawl</sprite>
     <sprite>sprites\sprBone</sprite>
     <sprite>sprites\sprDemonCostume</sprite>
+    <sprite>sprites\sprNumPlayersSelector</sprite>
+    <sprite>sprites\sprPlayerSelectionBoxes</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
     <background>background\bgTitle</background>
     <background>background\bgPlayerSelect</background>
+    <background>background\bgTrees</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -55,6 +58,18 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="AFlatMinerLogoScreen">
+      <object>objects\objAFlatMinerLogoControl</object>
+    </objects>
+    <objects name="TitleScreen">
+      <object>objects\objTitleControl</object>
+      <object>objects\objTitleBrawl</object>
+    </objects>
+    <objects name="PlayerSelectionScreen">
+      <object>objects\objPlayerSelectControl</object>
+      <object>objects\objNumPlayersSelector</object>
+      <object>objects\objPlayerSelectionBoxes</object>
+    </objects>
     <object>objects\objFloor</object>
     <object>objects\objPlayer</object>
     <object>objects\objGameControl</object>
@@ -67,10 +82,6 @@
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
-    <object>objects\objAFlatMinerLogoControl</object>
-    <object>objects\objTitleControl</object>
-    <object>objects\objPlayerSelectControl</object>
-    <object>objects\objTitleBrawl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
