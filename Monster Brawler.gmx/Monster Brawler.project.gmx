@@ -131,6 +131,10 @@
     <objects name="SpawnPoints">
       <object>objects\objCostumeSpawn</object>
       <object>objects\objInitialCostumeSpawn</object>
+      <object>objects\objP1Spawn</object>
+      <object>objects\objP2Spawn</object>
+      <object>objects\objP3Spawn</object>
+      <object>objects\objP4Spawn</object>
     </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
