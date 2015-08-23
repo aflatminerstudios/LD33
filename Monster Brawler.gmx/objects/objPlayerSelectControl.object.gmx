@@ -171,7 +171,7 @@ room_goto(rmRoundComplete); // test line to go straight to round complete
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check for vertical selection
+            <string>/// Check for vertical selection (and play sound)
 
 var directionChosen = 0;
 
@@ -191,7 +191,10 @@ if (keyboard_check_pressed(vk_up)) {
   directionChosen = 1;
 }
 
-currentSelection = (currentSelection + directionChosen + numSelections) % numSelections;
+if(directionChosen != 0) {
+  currentSelection = (currentSelection + directionChosen + numSelections) % numSelections;
+  audio_play_sound(sndCursorSelectMove, 0, false);
+}
 </string>
           </argument>
         </arguments>
@@ -247,8 +250,10 @@ var gamepadSelect = gamepad_button_check_pressed(gamePad, gp_face1);
 // Check keyboard
 var keyboardSelect = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space));
 
-if(gamepadSelect || keyboardSelect)
+if(gamepadSelect || keyboardSelect){
   alarm[0] = 1;
+  audio_play_sound(sndCursorSelectEnter, 0, false);  
+}
 </string>
           </argument>
         </arguments>
