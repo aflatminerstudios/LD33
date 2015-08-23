@@ -32,12 +32,12 @@ currentSelection = 0;
 numSelections = 2;
 
 selectionX[0] = objPlayerSelectionBoxes.x + 332;
-selectionY[0] = objPlayerSelectionBoxes.y + 145;
+selectionY[0] = objPlayerSelectionBoxes.y + 140;
 selectionActive[0] = true;
 selectionNumHumans[0] = 1;
 
 selectionX[1] = objPlayerSelectionBoxes.x + 332;
-selectionY[1] = objPlayerSelectionBoxes.y + 300;
+selectionY[1] = objPlayerSelectionBoxes.y + 290;
 selectionActive[1] = true;
 selectionNumHumans[1] = 2;
 
@@ -130,10 +130,7 @@ if (keyboard_check_pressed(vk_up)) {
   directionChosen = 1;
 }
 
-show_debug_message("directionChosen = " + string(directionChosen));
-
 currentSelection = (currentSelection + directionChosen + numSelections) % numSelections;
-
 </string>
           </argument>
         </arguments>
