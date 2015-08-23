@@ -33,6 +33,7 @@
     <sprite>sprites\spr3pIndicator</sprite>
     <sprite>sprites\spr2pIndicator</sprite>
     <sprite>sprites\sprDB</sprite>
+    <sprite>sprites\sprDBRunning</sprite>
     <sprite>sprites\sprEyebeam</sprite>
   </sprites>
   <backgrounds name="background">

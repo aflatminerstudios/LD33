@@ -516,8 +516,9 @@ other.parent = self.id;
 curForce = other.force;
 curMaxspeed = other.maxSpeed;
 
+var hpPer = hp / curMaxHp;
 curMaxHp = other.maxHp;
-hp = min(hp, curMaxHp);
+hp = hpPer * curMaxHp;
 
 costume = other.id;
 

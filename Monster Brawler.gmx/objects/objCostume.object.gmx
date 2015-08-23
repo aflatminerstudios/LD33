@@ -175,9 +175,10 @@ audio_play_sound(sndCostumeChange, 1, false);
 with (parent) {
   curForce = force;
   curMaxspeed = maxSpeed;
-  
+    
+  var hpPer = hp / curMaxHp;
   curMaxHp = maxHp;
-  hp = min(hp, curMaxHp);
+  hp = hpPer * curMaxHp;
   
   costume = noone;
   

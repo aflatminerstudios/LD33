@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Base variables to add to each one
 
-maxHp = 300;
+maxHp = 150;
 
 parent = noone;
 
@@ -44,8 +44,8 @@ gm = 10 * 5 * phy_mass;
 jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 //jumpForce = (sqrt(2 * gravity.y * (jumpHeight)) + gravity.y * deltaTime * 0.5);
 
-sprite = sprDemonCostume;
-spriteRunning = sprDemonCostume;
+sprite = sprDBRunning;
+spriteRunning = sprDBRunning;
 
 time = room_speed * 15;
 </string>
