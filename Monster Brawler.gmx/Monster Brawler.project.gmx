@@ -175,6 +175,7 @@
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
     <room>rooms\rmMain</room>
+    <room>rooms\rmMainOld</room>
     <room>rooms\rmRoundComplete</room>
     <room>rooms\rmGameComplete</room>
   </rooms>
