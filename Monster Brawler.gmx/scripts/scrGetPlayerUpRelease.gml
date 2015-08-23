@@ -8,6 +8,10 @@ if (keyboard_check_released(upKey)) {
   return 1;
 }
 
+if (gamepad_button_check_released(padNum, gp_padu)) {
+  return 1;
+}
+
 //var gpVal = gamepad_axis_value(padNum, axisPad);
 
 //if (gpVal < -0.3) {
