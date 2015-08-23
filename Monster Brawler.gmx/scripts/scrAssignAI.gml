@@ -1,6 +1,6 @@
-//scrAssignPlayer2(player)
+//scrAssignAI(player)
 
-//Assign controls for player to player 2
+//Assign controls for player to AI
 
 player = argument0;
 
