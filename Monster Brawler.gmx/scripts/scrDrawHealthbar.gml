@@ -1,13 +1,14 @@
 ///scrDrawHealthbar(player)
 
 var player = argument0;
-
+draw_set_font(fontKaiju48);
 with (player) {
   var pct = hp / curMaxHp;
   
   var xPos;
   var yPos;
   var dir;
+  draw_set_halign(fa_center);
   ///Remove this after testing
   if (playerNum == 1) {  
     xPos = 90;
@@ -39,7 +40,7 @@ with (player) {
   var c2 = c_red;
   c = merge_color(c2, c1, pct);    
   
-  draw_text(xPos - (50 * dir), yPos + 10, string(playerNum) + "P");
+  draw_text(xPos - (50 * dir), yPos - 10, string(playerNum) + "P");
   draw_rectangle_color(xPos, yPos, xPos + (barWidth * pct), yPos + barHeight, c, c, c, c, false);
 
 }
