@@ -503,6 +503,13 @@ if (isJumping) {
             <kind>1</kind>
             <string>///Change "current" variables
 
+
+if (costume != noone) {
+  with (costume) {
+    instance_destroy();
+  }
+}
+
 other.parent = self.id;
 
 curForce = other.force;
