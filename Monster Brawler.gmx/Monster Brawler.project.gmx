@@ -27,11 +27,13 @@
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
     <sprite>sprites\sprTile1</sprite>
     <sprite>sprites\sprOverscanOverlay</sprite>
-    <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\sprWerewolf</sprite>
     <sprite>sprites\spr1pIndicator</sprite>
     <sprite>sprites\spr4pIndicator</sprite>
     <sprite>sprites\spr3pIndicator</sprite>
     <sprite>sprites\spr2pIndicator</sprite>
+    <sprite>sprites\sprDB</sprite>
+    <sprite>sprites\sprEyebeam</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -58,7 +60,9 @@
     <scripts name="Actions">
       <script>scripts\scrThrow.gml</script>
       <script>scripts\scrPunch.gml</script>
+      <script>scripts\scrSwipe.gml</script>
       <script>scripts\scrJump.gml</script>
+      <script>scripts\scrShoot.gml</script>
       <script>scripts\scrSay.gml</script>
       <script>scripts\scrRun.gml</script>
     </scripts>
@@ -107,11 +111,15 @@
     <objects name="Costumes">
       <object>objects\objCostume</object>
       <object>objects\objDemonCostume</object>
+      <object>objects\objWerewolfCostume</object>
+      <object>objects\objDBCostume</object>
     </objects>
     <objects name="Attacks">
       <object>objects\objThrown</object>
+      <object>objects\objShot</object>
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
+      <object>objects\objSwipe</object>
     </objects>
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
@@ -122,13 +130,11 @@
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
     </objects>
-
     <object>objects\objIndicator</object>
-
     <objects name="GameCompleteScreen">
       <object>objects\objGameCompleteControl</object>
     </objects>
-
+    <object>objects\object24</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

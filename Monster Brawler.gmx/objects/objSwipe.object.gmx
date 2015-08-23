@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objAttack</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,17 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Spawn 2 demon costumes
+            <string>///Base Variables
 
-instance_create(160, 280, objDBCostume);
+damage = 0;
+scriptCall = 0;
+scriptParams = 0;
+knockback = 0;
+numFrames = 0;
 
-instance_create(560, 200, objDBCostume);
+//Size
+xSize = 0;
+ySize = 0;
+xTotalSize = 0;
+yTotalSize = 0;
+
+//Parent object and distance from parent x,y to "topleft" corner
+parent = 0;
+xDist = 0;
+yDist = 0;
 
 
+x1 = 0;
+x2 = 0;
+y1 = 0;
+y2 = 0;
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,13 +71,15 @@ instance_create(560, 200, objDBCostume);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Clear keyboard input
+            <string>///Destroy object
 
-keyboard_clear(vk_anykey);
+instance_destroy();
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -69,62 +90,69 @@ keyboard_clear(vk_anykey);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objGameControl</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Create players
+            <string>///Set coordinates and check for collision
 
-// Create all 4 players
 
-p1 = instance_create(96, 480, objPlayer);
-
-p2 = instance_create(896, 480, objPlayer);
-
-p3 = instance_create(280, 40, objPlayer);
-
-p4 = instance_create(800, 40, objPlayer);
-
-numPlayers = 4;
-
-// Assign player numbers
-p1.playerNum = 1;
-p2.playerNum = 2;
-p3.playerNum = 3;
-p4.playerNum = 4;
-
-//Then assign controls as appropriate
-
-scrAssignPlayer1(p1);
-
-if (global.numHumans &lt;= 1) {
-  scrAssignAI(p2);  
+//Initially set position
+if (x1 == x2 &amp;&amp; x1 == y1 &amp;&amp; x1 == y2 &amp;&amp; x1 == 0) {
+  x1 = parent.x + (xDist * parent.facing);
+  x2 = x1 + (xSize * parent.facing);
+  y1 = parent.y + yDist;
+  y2 = y1 + ySize;
 } else {
-  scrAssignPlayer2(p2);
+  //Move box down
+  x1 = x1;
+  x2 = x1 + (xSize * parent.facing);
+  y1 = y1 + (yTotalSize / numFrames);
+  y2 = y1 + ySize;
 }
 
-scrAssignAI(p3);
-scrAssignAI(p4);
 
-//Add player indicators
+var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);
 
-var ind = instance_create(x, y, objIndicator);
-ind.parent = p1;
-ind.sprite_index = spr1pIndicator;
+// If collide, do knockback and damage
+if (c != noone &amp;&amp; !is_undefined(c) &amp;&amp; c.id != parent.id) {
 
-ind = instance_create(x, y, objIndicator);
-ind.parent = p2;
-ind.sprite_index = spr2pIndicator;
+  show_debug_message("Swipe from " + string(parent.id) + " connected with " + string(c.id));
 
-ind = instance_create(x, y, objIndicator);
-ind.parent = p3;
-ind.sprite_index = spr3pIndicator;
+  with (c) {
+    physics_apply_impulse(c.x, c.y, other.knockback * other.parent.facing, 0);
+  }
+  
+  scrTakeDamage(parent, c, damage);
+  instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Temp: Draw collision box
 
-ind = instance_create(x, y, objIndicator);
-ind.parent = p4;
-ind.sprite_index = spr4pIndicator;
+draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
 </string>
           </argument>
         </arguments>
@@ -134,13 +162,13 @@ ind.sprite_index = spr4pIndicator;
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0</PhysicsObjectDensity>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
-  <PhysicsObjectAwake>0</PhysicsObjectAwake>
-  <PhysicsObjectKinematic>-1</PhysicsObjectKinematic>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
