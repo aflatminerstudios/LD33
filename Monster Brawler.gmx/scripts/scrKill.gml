@@ -7,6 +7,8 @@ with (objGameControl) {
   numPlayers--;
 }
 
+audio_play_sound(sndPlayerDeath, 1, false);
+
 with (object) {
   instance_destroy();
 }

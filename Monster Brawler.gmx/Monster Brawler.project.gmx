@@ -8,6 +8,13 @@
     <sound>sound\sndAFlatMinerJingle</sound>
     <sound>sound\musTitleScreen</sound>
     <sound>sound\musBR1</sound>
+    <sound>sound\sndCostumeChange</sound>
+    <sound>sound\sndJump</sound>
+    <sound>sound\sndCursorSelectEnter</sound>
+    <sound>sound\sndCursorSelectError</sound>
+    <sound>sound\sndCursorSelectMove</sound>
+    <sound>sound\sndPlayerDeath</sound>
+    <sound>sound\sndPlayerHit</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
@@ -111,6 +118,7 @@
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
     </objects>
+    <object>objects\object18</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
