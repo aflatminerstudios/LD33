@@ -19,6 +19,19 @@ if (jump != 0) {
   ds_map_add(actionList, "Jump", jump);
 }
 
+if (isJumping && !beenReleased) {
+
+  var jumpR = script_execute(getJumpReleased, jumpKey, jumpPad, padNum);
+  
+  if (jumpR == 0) {
+    jumpR = script_execute(getUpReleased, upKey, vAxisPad, padNum);
+  }
+  
+  if (jumpR != 0) {
+    ds_map_add(actionList, "JumpReleased", jump);
+  }
+}
+
 var act1 = script_execute(getAction1, action1Key, action1Pad, padNum);
 
 if (act1 != 0) {

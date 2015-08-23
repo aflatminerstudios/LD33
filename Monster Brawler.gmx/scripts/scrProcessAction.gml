@@ -18,6 +18,12 @@ with (player) {
       if (canJump) {      
         scrJump(player);
       }
+    } else if (key == "JumpReleased") {
+      
+      with (player) {
+        beenReleased = true;
+      }
+    
     } else if (key == "DoAction1") { 
     
       if (cdTimer1 <= 0) {

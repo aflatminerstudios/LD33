@@ -37,8 +37,8 @@ maxSpeed = 200;
 
 
 //Jumping variables
-// Base is 600
-jumpHeight = 400;
+// Base is 400
+jumpHeight = 300;
 deltaTime = 1/room_speed;
 gm = 10 * 5 * phy_mass;
 jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);

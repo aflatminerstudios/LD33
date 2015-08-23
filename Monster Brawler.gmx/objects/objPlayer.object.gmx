@@ -52,8 +52,8 @@ force = 1000;
 maxSpeed = 300;
 
 //Jumping variables
-// Base is 600
-jumpHeight = 600;
+// Base is 400
+jumpHeight = 400;
 deltaTime = 1/room_speed;
 gm = 10 * 5 * phy_mass;
 //jumpForce = sqrt(2 * gravity * (jumpHeight)) + gravity * deltaTime * 0.5;
@@ -64,7 +64,7 @@ jumpDownRangeTop = 250;
 jumpTimeRemaining = 0;
 isJumping = false;
 canJump = true;
-
+beenReleased = true;
 
 //For player controls
 upKey = 0;
@@ -192,6 +192,8 @@ getLeft = scrGetPlayerLeft;
 getRight = scrGetPlayerRight;
 getJump = scrGetPlayerJump;
 getUp = scrGetPlayerUp;
+getJumpReleased = scrGetPlayerJumpRelease;
+getUpReleased = scrGetPlayerUpRelease;
 getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
 
@@ -234,6 +236,62 @@ curCooldown2 = cooldown2;
 curSprite = sprite;
 curSpriteRunning = spriteRunning;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clear input
+
+keyboard_clear(vk_anykey);
+
+gamepad_set_axis_deadzone(0, 0.3);
+gamepad_set_axis_deadzone(1, 0.3);
+
+for (i = 0; i &lt; 1; i++) {
+  gamepad_button_check_pressed(i, gp_face1);
+  gamepad_button_check_pressed(i, gp_face2);
+  gamepad_button_check_pressed(i, gp_face3);
+  gamepad_button_check_pressed(i, gp_face4);
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -314,6 +372,10 @@ if (phy_linear_velocity_y &gt; 0){
 // Helps make sure jumping doesn't stop with initial floor collision
 if (isJumping) {
   jumpTimeRemaining--; 
+  
+  if (jumpTimeRemaining &gt;= 0 &amp;&amp; jumpTimeRemaining % 5 == 0 &amp;&amp; !beenReleased) {
+    physics_apply_impulse(x, y,0 , -1 * jumpForce/4);
+  }
 }
 
 </string>
@@ -363,6 +425,36 @@ cdTimer2--;
             <string>///Change to idle sprite if appropriate
 if (isIdle &amp;&amp; sprite_index != curSprite) {
     sprite_index = curSprite;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objFloor">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stop jumping
+
+if (isJumping) {
+  if (other.y &gt; y &amp;&amp; jumpTimeRemaining &lt;= 0) {
+    isJumping = false;
+    canJump = true;
+  } 
 }
 </string>
           </argument>
@@ -496,36 +588,6 @@ if (isJumping) {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objFloor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Stop jumping
-
-if (isJumping) {
-  if (other.y &gt; y &amp;&amp; jumpTimeRemaining &lt;= 0) {
-    isJumping = false;
-    canJump = true;
-  } 
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
@@ -539,9 +601,9 @@ if (isJumping) {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>80,0</point>
-    <point>80,80</point>
-    <point>0,80</point>
+    <point>8,8</point>
+    <point>72,8</point>
+    <point>72,80</point>
+    <point>8,80</point>
   </PhysicsShapePoints>
 </object>

@@ -36,11 +36,13 @@
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
       <script>scripts\scrGetPlayerUp.gml</script>
+      <script>scripts\scrGetPlayerUpRelease.gml</script>
       <script>scripts\scrGetPlayerAction1.gml</script>
       <script>scripts\scrGetPlayerAction2.gml</script>
       <script>scripts\scrGetPlayerRight.gml</script>
       <script>scripts\scrGetPlayerAction.gml</script>
       <script>scripts\scrGetPlayerJump.gml</script>
+      <script>scripts\scrGetPlayerJumpRelease.gml</script>
     </scripts>
     <scripts name="Actions">
       <script>scripts\scrThrow.gml</script>
@@ -68,6 +70,7 @@
     </scripts>
     <script>scripts\scrCheckCntrl.gml</script>
     <script>scripts\scrRoomPositionToGrid.gml</script>
+    <script>scripts\scrNullScript.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="AFlatMinerLogoScreen">
