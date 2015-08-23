@@ -87,8 +87,8 @@ selector = instance_create(0, 0, objNumPlayersSelector);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rmRoundComplete);
-//room_goto(rmMain); // Put back in place -- Micha TODO
+            <string>//room_goto(rmRoundComplete);
+room_goto(rmMain);
 </string>
           </argument>
         </arguments>

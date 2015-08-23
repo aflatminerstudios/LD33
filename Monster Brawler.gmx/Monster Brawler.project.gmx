@@ -98,6 +98,7 @@
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
       <object>objects\objRoundCompleteControl</object>
+    </objects>
     <objects name="Tiles">
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
