@@ -167,8 +167,17 @@ numPlayers = 4;
 // Assign player numbers
 p1.playerNum = 1;
 p2.playerNum = 2;
-p3.playerNum = 3;
+p3.playerNum = 3
 p4.playerNum = 4;
+
+p1.tint = c_red;
+p2.tint = c_yellow;
+p3.tint = c_blue;
+p4.tint = c_green;
+
+with (objPlayer) {
+  image_blend = tint;
+}
 
 //Then assign controls as appropriate
 
@@ -188,18 +197,22 @@ scrAssignAI(p4);
 var ind = instance_create(x, y, objIndicator);
 ind.parent = p1;
 ind.sprite_index = spr1pIndicator;
+ind.image_blend = ind.parent.tint;
 
 ind = instance_create(x, y, objIndicator);
 ind.parent = p2;
 ind.sprite_index = spr2pIndicator;
+ind.image_blend = ind.parent.tint;
 
 ind = instance_create(x, y, objIndicator);
 ind.parent = p3;
 ind.sprite_index = spr3pIndicator;
+ind.image_blend = ind.parent.tint;
 
 ind = instance_create(x, y, objIndicator);
 ind.parent = p4;
 ind.sprite_index = spr4pIndicator;
+ind.image_blend = ind.parent.tint;
 </string>
           </argument>
         </arguments>
@@ -252,7 +265,7 @@ with (objCostumeSpawn) {
             <kind>1</kind>
             <string>///Set up timer for next costume spawn
 
-var r = irandom(10) + 25;
+var r = irandom(10) + 15;
 
 alarm[0] = room_speed * r;
 </string>
@@ -345,7 +358,7 @@ if (instance_number(objCostume) &lt; instance_number(objCostumeSpawn)) {
             <kind>1</kind>
             <string>///Set up timer for next costume spawn
 
-var r = irandom(10) + 25;
+var r = irandom(10) + 15;
 
 alarm[0] = room_speed * r;
 </string>
