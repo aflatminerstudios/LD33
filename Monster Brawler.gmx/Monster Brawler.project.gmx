@@ -12,6 +12,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprPlayerRunning</sprite>
     <sprite>sprites\sprTitleBrawl</sprite>
     <sprite>sprites\sprBone</sprite>
     <sprite>sprites\sprDemonCostume</sprite>
@@ -19,6 +20,7 @@
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
     <sprite>sprites\sprTile1</sprite>
     <sprite>sprites\sprOverscanOverlay</sprite>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -28,7 +30,6 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script25.gml</script>
     <scripts name="AI Action Checks">
       <script>scripts\scrGetAIAction.gml</script>
     </scripts>
@@ -46,6 +47,7 @@
       <script>scripts\scrPunch.gml</script>
       <script>scripts\scrJump.gml</script>
       <script>scripts\scrSay.gml</script>
+      <script>scripts\scrRun.gml</script>
     </scripts>
     <script>scripts\scrProcessAction.gml</script>
     <scripts name="Damaging">
@@ -80,7 +82,6 @@
       <object>objects\objNumPlayersSelector</object>
       <object>objects\objPlayerSelectionBoxes</object>
     </objects>
-    <object>objects\objFloor</object>
     <objects name="Player">
       <object>objects\objPlayer</object>
     </objects>
@@ -94,10 +95,12 @@
       <object>objects\objAttack</object>
       <object>objects\objPunch</object>
     </objects>
-    <object>objects\objTile</object>
     <object>objects\objOverscanOverlay</object>
     <objects name="RoundCompleteScreen">
       <object>objects\objRoundCompleteControl</object>
+    <objects name="Tiles">
+      <object>objects\objTile</object>
+      <object>objects\objFloor</object>
     </objects>
   </objects>
   <rooms name="rooms">
