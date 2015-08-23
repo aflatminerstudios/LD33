@@ -27,14 +27,29 @@
             <kind>1</kind>
             <string>/// Create players
 
-// Assign controls for player to player 1
+// Create all 4 players
 
 p1 = instance_create(96, 480, objPlayer);
 
 p2 = instance_create(896, 480, objPlayer);
 
+p3 = instance_create(280, 40, objPlayer);
+
+p4 = instance_create(800, 40, objPlayer);
+
+
+//Then assign controls as appropriate
+
 scrAssignPlayer1(p1);
-scrAssignPlayer2(p2);
+
+if (global.numHumans &lt;= 1) {
+  scrAssignAI(p2);  
+} else {
+  scrAssignPlayer2(p2);
+}
+
+scrAssignAI(p3);
+scrAssignAI(p4);
 </string>
           </argument>
         </arguments>

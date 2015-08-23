@@ -21,5 +21,7 @@ with (player) {
   jumpPad = gp_face1;
   
   padNum = 0;
+  
+  getAction = scrGetPlayerAction;
 
 }

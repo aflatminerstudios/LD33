@@ -23,6 +23,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\script25.gml</script>
+    <scripts name="AI Action Checks">
+      <script>scripts\scrGetAIAction.gml</script>
+    </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
       <script>scripts\scrGetPlayerUp.gml</script>
@@ -46,6 +50,7 @@
     <scripts name="Assign Player Controls">
       <script>scripts\scrAssignPlayer1.gml</script>
       <script>scripts\scrAssignPlayer2.gml</script>
+      <script>scripts\scrAssignAI.gml</script>
     </scripts>
     <scripts name="AI Queries">
       <script>scripts\scrGetEnemyList.gml</script>
