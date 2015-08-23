@@ -36,13 +36,44 @@ dashSpeed = 0;
 sprite = 0;
 facing = 0;
 
-show_message(string(sprOverscanOverlay) + " : " + string(sprDemonCostume));
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set parent variables
+
+parent.phy_linear_velocity_x = 0;
+parent.isJumping = true;
+parent.jumpTimeRemaining = 1;
+
+var p = parent;
+if (parent.costume != noone) {
+  p = parent.costume;  
+}
+
+parent.curDoAction1 = p.doAction1;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -67,7 +98,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,10 +116,11 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Make him dash
-phy_linear_velocity_x = dashSpeed;
+parent.phy_linear_velocity_x = dashSpeed * facing;
 
-phy_position_y = phy_position_yprevious;
-phy_linear_velocity_y = 0;
+parent.phy_position_y = parent.phy_position_yprevious;
+parent.phy_linear_velocity_y = 0;
+parent.canJump = false;
 </string>
           </argument>
         </arguments>

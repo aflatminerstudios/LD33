@@ -113,12 +113,12 @@ cooldown1 = room_speed / 3;
 action2 = ds_map_create();
 
 ds_map_add(action2, "knockback", 800);
-ds_map_add(action2, "numFrames", room_speed / 3);
+ds_map_add(action2, "numFrames", room_speed / 3.5);
 
-ds_map_add(action2, "dashSpeed", 5);
-ds_map_add(action2, "sprite", objDemonCostume);
+ds_map_add(action2, "dashSpeed", 1000);
+ds_map_add(action2, "sprite", sprDemonCostume);
 
-cooldown2 = room_speed / 2;
+cooldown2 = room_speed / 1;
 </string>
           </argument>
         </arguments>
