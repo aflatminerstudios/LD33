@@ -28,6 +28,10 @@
     <sprite>sprites\sprTile1</sprite>
     <sprite>sprites\sprOverscanOverlay</sprite>
     <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\spr1pIndicator</sprite>
+    <sprite>sprites\spr4pIndicator</sprite>
+    <sprite>sprites\spr3pIndicator</sprite>
+    <sprite>sprites\spr2pIndicator</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -118,7 +122,7 @@
       <object>objects\objTile</object>
       <object>objects\objFloor</object>
     </objects>
-    <object>objects\object18</object>
+    <object>objects\objIndicator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

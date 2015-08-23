@@ -89,6 +89,7 @@ p4 = instance_create(800, 40, objPlayer);
 
 numPlayers = 4;
 
+// Assign player numbers
 p1.playerNum = 1;
 p2.playerNum = 2;
 p3.playerNum = 3;
@@ -106,6 +107,24 @@ if (global.numHumans &lt;= 1) {
 
 scrAssignAI(p3);
 scrAssignAI(p4);
+
+//Add player indicators
+
+var ind = instance_create(x, y, objIndicator);
+ind.parent = p1;
+ind.sprite_index = spr1pIndicator;
+
+ind = instance_create(x, y, objIndicator);
+ind.parent = p2;
+ind.sprite_index = spr2pIndicator;
+
+ind = instance_create(x, y, objIndicator);
+ind.parent = p3;
+ind.sprite_index = spr3pIndicator;
+
+ind = instance_create(x, y, objIndicator);
+ind.parent = p4;
+ind.sprite_index = spr4pIndicator;
 </string>
           </argument>
         </arguments>
