@@ -9,12 +9,12 @@ var desc = currentGoals[| 0];
 var dataX = currentGoals[| 1];
 var dataY = currentGoals[| 2];
 
-show_debug_message(string(desc) + ": " + string(dataX) + ", " + string(dataY));
+//show_debug_message(string(desc) + ": " + string(dataX) + ", " + string(dataY));
 
 if (desc == "FullMove") {
 
   var dist = scrGetDistance(x, y, dataX, dataY);
-  show_debug_message("Dist = " + string(dist));
+  //show_debug_message("Dist = " + string(dist));
   if (dist < 10) {
     ds_list_clear(currentGoals);
     return 0;

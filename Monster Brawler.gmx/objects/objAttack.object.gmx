@@ -62,6 +62,10 @@ if (instance_exists(parent) &amp;&amp; parent != noone) {
           <argument>
             <kind>1</kind>
             <string>///Set parent back to normal
+
+if (instance_exists(parent) &amp;&amp; parent != noone) {
+  parent.isAction = false;
+}
 </string>
           </argument>
         </arguments>

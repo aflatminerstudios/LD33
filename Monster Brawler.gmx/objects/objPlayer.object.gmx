@@ -368,6 +368,43 @@ jumpWait = -2;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Hack to see if in action or falling
+
+var found = false;
+
+with (objAttack) {
+  if (!is_undefined(parent) &amp;&amp; parent == other.id) {
+    found = true;
+  }
+}
+
+if (!found)  {
+  isAction = false;
+}
+
+if (place_meeting(x, y + 5, objTile) || place_meeting(x, y + 5, objPlayer)) {
+  isFalling = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Check player actions
 //calc_accel = (maxspeed/friction - maxspeed) / deltaTime
 //calc_jumpforce = sqrt(2 * gravity * (jumpheight)) + gravity * deltaTime * 0.5
@@ -394,7 +431,7 @@ if (keyboard_check(leftKey)) {
   }
 }
 */
-
+ds_map_add(actionList, "Say", string(isJumping) + " " + string(isFalling) + " " + string(isAction) + " ")
 script_execute(getAction);
 scrProcessAction(self.id);
 </string>
@@ -527,39 +564,6 @@ if (isIdle &amp;&amp; sprite_index != curSprite &amp;&amp; !isJumping &amp;&amp;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Hack to see if in action
-
-var found = false;
-
-with (objAttack) {
-  if (!is_undefined(parent) &amp;&amp; parent == other.id) {
-    found = true;
-  }
-}
-
-if (!found)  {
-  isAction = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="4" ename="objFloor">
       <action>
@@ -674,6 +678,7 @@ switch(sprite_index) {
   case curSpriteFalling:
     sprite_index = other.spriteFalling;
     break;
+    
   default:
     sprite_index = other.sprite;
     break;

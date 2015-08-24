@@ -46,8 +46,8 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 
 sprite = sprDB;
 spriteRunning = sprDBRunning;
-spriteJumping = sprDBRunning;
-spriteFalling = sprDBRunning;
+spriteJumping = sprDBJump;
+spriteFalling = sprDBFall;
 spriteAction1 = sprDBSwipe;
 spriteAction2 = sprDBRunning;
 

@@ -29,7 +29,7 @@ with (player) {
       if (cdTimer1 <= 0) {
       
         var p = player;
-        if (player.costume != noone) {
+        if (player.costume != noone && instance_exists(player.costume)) {
           p = player.costume;  
         }
 
@@ -42,7 +42,7 @@ with (player) {
       if (cdTimer2 <= 0) {
       
         var p = player;
-        if (player.costume != noone) {
+        if (player.costume != noone && instance_exists(player.costume)) {
           p = player.costume;  
         }
 
