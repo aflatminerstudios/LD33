@@ -67,8 +67,12 @@ yOffset = 0;
             <kind>1</kind>
             <string>///Hurt the player
 
-if (other.id != parent.id) {
-  scrTakeDamage(parent.id, other.id, damage);
+if (parent != noone &amp;&amp; !instance_exists(parent)) {
+  parent = noone;
+  instance_destroy();
+}
+if (parent == noone || other.id != parent.id) {
+  scrTakeDamage(parent, other.id, damage);
   with (other) {
     physics_apply_local_impulse(0, 0, other.knockback * sign(other.phy_linear_velocity_x), 0);
   }

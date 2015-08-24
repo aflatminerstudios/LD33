@@ -187,9 +187,22 @@ with (parent) {
   curAction1 = action1;
   curAction2 = action2;
   
-  sprite_index = sprite;
   curSprite = sprite;
   curSpriteRunning = spriteRunning;
+  curSpriteJumping = spriteJumping;
+  switch(sprite_index) {
+  case other.sprite:
+    sprite_index = curSprite;
+    break;
+    
+  case other.spriteRunning:
+    sprite_index = curSpriteRunning;
+    break;
+    
+  case other.spriteJumping:
+    sprite_index = curSpriteJumping;
+    break;
+  }
   
   curCooldown1 = cooldown1;
   curCooldown2 = cooldown2;
