@@ -83,6 +83,7 @@
       <sprite>sprites\sprDBRack</sprite>
       <sprite>sprites\sprDBRunning</sprite>
       <sprite>sprites\sprEyebeam</sprite>
+      <sprite>sprites\sprDBSwipe</sprite>
     </sprites>
     <sprites name="Werewolf">
       <sprite>sprites\sprWerewolfRack</sprite>
