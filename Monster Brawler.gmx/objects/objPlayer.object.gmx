@@ -95,6 +95,7 @@ action1Sound[0] = sndSkeletonPunch1;
 action1Sound[1] = sndSkeletonPunch2;
 action2Sound[0] = sndBoneThrow1;
 action2Sound[1] = sndBoneThrow2;
+
 </string>
           </argument>
         </arguments>
@@ -278,6 +279,37 @@ for (i = 0; i &lt; 1; i++) {
   gamepad_button_check_pressed(i, gp_face4);
 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create AI variables
+
+
+//currentGoals will have 3 items in this order: node, target, and step of path
+currentGoals = ds_list_create();
+
+//goals is a list of nodes in the order the player should travel
+goals = ds_list_create();
+
+//Used for jumping
+jumpWait = -2;
 </string>
           </argument>
         </arguments>

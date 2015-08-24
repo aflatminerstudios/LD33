@@ -7,6 +7,7 @@ var ghost = instance_create(player.x, player.y, objGhost);
 if (player.getAction == scrGetAIAction) {
   /////DO SOMETHING FOR AI
   scrAssignAI(ghost);
+  ghost.getAction = scrGetAIGhostAction;
 } else {
   switch (player.playerNum) {
     case 1:
