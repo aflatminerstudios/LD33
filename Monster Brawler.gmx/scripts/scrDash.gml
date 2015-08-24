@@ -35,3 +35,21 @@ o.facing = player.facing;
 player.curDoAction1 = scrStopDash;
 
 o.alarm[0] = o.numFrames;
+
+player.sprite_index = player.curSpriteAction2;
+player.isAction = true;
+
+
+o.getLeft = player.getLeft;
+o.getRight = player.getRight;
+o.getJump = player.getJump;
+o.getUp = player.getUp;
+o.getJumpReleased = player.getJumpReleased;
+o.getUpReleased = player.getUpReleased;
+
+player.getLeft = scrNullScript;
+player.getRight = scrNullScript;
+player.getJump = scrNullScript;
+player.getUp = scrNullScript;
+player.getJumpReleased = scrNullScript;
+player.getUpReleased = scrNullScript;

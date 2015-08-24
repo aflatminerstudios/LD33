@@ -99,6 +99,13 @@ if (parent.costume != noone) {
 }
 
 parent.curDoAction1 = p.doAction1;
+
+parent.getLeft = getLeft;
+parent.getRight = getRight;
+parent.getJump = getJump;
+parent.getUp = getUp;
+parent.getJumpReleased = getJumpReleased;
+parent.getUpReleased = getUpReleased;
 </string>
           </argument>
         </arguments>

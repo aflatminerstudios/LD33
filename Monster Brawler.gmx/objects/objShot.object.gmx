@@ -122,8 +122,10 @@ phy_position_y = phy_position_yprevious;
             <kind>1</kind>
             <string>///Destroy after a certain distance
 
-if (abs(phy_position_x - parent.phy_position_x) &gt; travelDist) {
-  instance_destroy();
+if (parent != noone &amp;&amp; instance_exists(parent)){ 
+  if (abs(phy_position_x - parent.phy_position_x) &gt; travelDist) {
+    instance_destroy();
+  }
 }
 </string>
           </argument>
@@ -173,8 +175,12 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Hurt the player
+if (parent != noone &amp;&amp; !instance_exists(parent)) {
+  parent = noone;
+  instance_destroy();
+}
 
-if (other.id != parent.id) {
+if (parent != noone &amp;&amp; other.id != parent.id) {
   scrTakeDamage(parent.id, other.id, damage);
   
   with (other) {
