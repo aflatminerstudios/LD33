@@ -102,7 +102,11 @@ x2 = x1 + (xSize * parent.facing);
 y1 = parent.y + yDist;
 y2 = y1 + ySize;
 
-var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);
+var c;
+
+with (parent) {
+  c = collision_rectangle(other.x1, other.y1, other.x2, other.y2, objPlayer, true, true);
+}
 
 // If collide, do knockback and damage
 if (c != noone &amp;&amp; !is_undefined(c) &amp;&amp; c.id != parent.id) {

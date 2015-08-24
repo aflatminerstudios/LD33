@@ -114,12 +114,13 @@ if (x1 == x2 &amp;&amp; x1 == y1 &amp;&amp; x1 == y2 &amp;&amp; x1 == 0) {
   y2 = y1 + ySize;
 }
 
+var c;
 
-
-var c = collision_rectangle(x1, y1, x2, y2, objPlayer, true, true);
-
+with (parent) {
+  c = collision_rectangle(other.x1, other.y1, other.x2, other.y2, objPlayer, true, true);
+}
 // If collide, do knockback and damage
-if (c != noone &amp;&amp; !is_undefined(c) &amp;&amp; c.id != parent.id) {
+if (c != noone &amp;&amp; !is_undefined(c)) {
 
   show_debug_message("Swipe from " + string(parent.id) + " connected with " + string(c.id));
 
