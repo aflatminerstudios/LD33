@@ -43,7 +43,6 @@
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
     <sprite>sprites\sprTile1</sprite>
     <sprite>sprites\sprOverscanOverlay</sprite>
-    <sprite>sprites\sprWerewolf</sprite>
     <sprite>sprites\spr1pIndicator</sprite>
     <sprite>sprites\spr4pIndicator</sprite>
     <sprite>sprites\spr3pIndicator</sprite>
@@ -57,6 +56,7 @@
     <sprite>sprites\sprSpotlight</sprite>
     <sprite>sprites\sprFight</sprite>
     <sprite>sprites\sprGhost</sprite>
+    <sprite>sprites\sprWerewolf</sprite>
     <sprite>sprites\sprWerewolfRunning</sprite>
     <sprite>sprites\sprPressButtonToContinue</sprite>
     <sprite>sprites\sprConfetti</sprite>
