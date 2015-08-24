@@ -11,8 +11,10 @@ with (player) {
     show_debug_message("Processing " + string(key) + " : " + string(val));
     if (key == "MoveHorizontal") {                 
       x += moveSpeed * val;
+      hFacing = sign(val);
     } else if (key == "MoveVertical") {
       y += moveSpeed * val;    
+      vFacing = sign(val);      
     } else if (key == "Jump") {
     
 
