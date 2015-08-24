@@ -108,6 +108,7 @@
       <script>scripts\scrGetNearestEnemy.gml</script>
       <script>scripts\scrGetNearestCostume.gml</script>
       <script>scripts\scrNodeGetLowestCost.gml</script>
+      <script>scripts\scrGetNearestNode.gml</script>
       <script>scripts\scrGetDistance.gml</script>
     </scripts>
     <scripts name="Damaging">

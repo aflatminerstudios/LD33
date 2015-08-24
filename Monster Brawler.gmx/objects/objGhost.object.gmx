@@ -98,6 +98,8 @@ action1Sound[0] = 0;
 action1Sound[1] = 0;
 action2Sound[0] = 0;
 action2Sound[1] = 0;
+
+currentGoals = ds_list_create();
 </string>
           </argument>
         </arguments>
