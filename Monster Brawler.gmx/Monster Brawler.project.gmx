@@ -73,6 +73,17 @@
       <script>scripts\scrGetAIAction.gml</script>
       <script>scripts\scrGetAIGhostAction.gml</script>
     </scripts>
+    <scripts name="Actions">
+      <script>scripts\scrThrow.gml</script>
+      <script>scripts\scrPunch.gml</script>
+      <script>scripts\scrSwipe.gml</script>
+      <script>scripts\scrDash.gml</script>
+      <script>scripts\scrJump.gml</script>
+      <script>scripts\scrShoot.gml</script>
+      <script>scripts\scrStopDash.gml</script>
+      <script>scripts\scrSay.gml</script>
+      <script>scripts\scrRun.gml</script>
+    </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
       <script>scripts\scrGetPlayerUpHold.gml</script>
@@ -85,17 +96,6 @@
       <script>scripts\scrGetPlayerAction.gml</script>
       <script>scripts\scrGetPlayerJump.gml</script>
       <script>scripts\scrGetPlayerJumpRelease.gml</script>
-    </scripts>
-    <scripts name="Actions">
-      <script>scripts\scrThrow.gml</script>
-      <script>scripts\scrPunch.gml</script>
-      <script>scripts\scrSwipe.gml</script>
-      <script>scripts\scrDash.gml</script>
-      <script>scripts\scrJump.gml</script>
-      <script>scripts\scrShoot.gml</script>
-      <script>scripts\scrStopDash.gml</script>
-      <script>scripts\scrSay.gml</script>
-      <script>scripts\scrRun.gml</script>
     </scripts>
     <script>scripts\scrProcessAction.gml</script>
     <script>scripts\scrCreateGhost.gml</script>
@@ -127,6 +127,8 @@
     <script>scripts\scrGoToRandomGameRoom.gml</script>
     <script>scripts\scrGoToNextGameRoom.gml</script>
     <script>scripts\scrProcessGhostAction.gml</script>
+    <script>scripts\scrAIChoose.gml</script>
+    <script>scripts\scrGetPath.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>

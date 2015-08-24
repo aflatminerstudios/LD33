@@ -2,8 +2,23 @@
 
 var n;
 var i;
+
+// Get costume type if one exists
+var cType;
+if (costume != noone && !is_undefined(costume) && instance_exists(costume)) {
+  cType = costume.object_index;
+} else {
+  cType = noone;
+}
+
+
+
 //currentGoals will have 3 items in this order: node, target, and step of path
 if (ds_list_empty(currentGoals)) {
+  
+ /* if (ds_list_empty(goals)) {
+    scrAIChoose(cType);
+  }*/  
   n = scrGetNearestNode(self.id);
 
   ds_list_add(currentGoals, n);
@@ -26,7 +41,7 @@ if (step * 2 > l) {
 var desc = n.paths[i, step * 2];
 var data = n.paths[i, step * 2 + 1];
 
-ds_map_add(actionList, "Say", string(desc) + " " + string(jumpWait));
+//ds_map_add(actionList, "Say", string(desc) + " " + string(jumpWait));
 /*show_debug_message("Orders from " + string(n)); 
 show_debug_message("Using path " + string(i) + " on step " + string(step));
 with (objAIControl) {
@@ -95,21 +110,25 @@ if (desc == "MoveHorizontal") {
 
 }
 
-if (place_meeting(x, y, objPlayer)) {
-  ds_map_add(actionList, "DoAction1", 1);
-}
+
+var o = instance_place(x, y, objPlayer);
 if (place_meeting(x, y + (sprite_height - 1), objPlayer)) {
-  ds_map_add(actionList, "MoveHorizontal", 1);
+  o = instance_place(x + sprite_width - 5, y, objPlayer);
+  if (o != noone && o.sprite_index == sprTile1 && o.x > x) {
+    ds_map_add(actionList, "MoveHorizontal", -1);
+  } else {
+    ds_map_add(actionList, "MoveHorizontal", 1);
+  }
+} else if (o != noone) {
+  ds_map_add(actionList, "DoAction1", 1);
+  
+  ds_list_clear(currentGoals);  
+  ds_map_add(actionList, "MoveHorizontal", sign(o.x - x));
 }
 
-var cType;
+
+
 // Use action2 randomly as appropriate
-if (costume != noone && !is_undefined(costume) && instance_exists(costume)) {
-  cType = costume.object_index;
-} else {
-  cType = noone;
-}
-
 var r = random(1);
 
 switch (cType) {
@@ -133,9 +152,12 @@ switch (cType) {
       with (objPlayer) {
         if (self.id != other.id) {
           if (x == other.x) {
-            ds_map_add(actionList, "DoAction2", 1); 
+            other.inLine = true;
           }
-        }
+        }        
+      }
+      if (inLine) {
+        ds_map_add(actionList, "DoAction2", 1); 
       }
     }
        

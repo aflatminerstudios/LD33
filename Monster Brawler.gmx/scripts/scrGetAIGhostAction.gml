@@ -20,13 +20,17 @@ if (desc == "FullMove") {
     return 0;
   }
   
-  if (x < dataX) {
+  if (abs(x - dataX) < 5) {
+    //Do nothing
+  } else if (x < dataX) {
     ds_map_add(actionList, "MoveHorizontal", 1);
   } else if (x > dataX) {
     ds_map_add(actionList, "MoveHorizontal", -1);    
   }
   
-  if (y < dataY) {
+  if (abs(y - dataY) < 5) {
+    //Do nothing
+  } else if (y < dataY) {
     ds_map_add(actionList, "MoveVertical", 1);
   } else if (y > dataY) {
     ds_map_add(actionList, "MoveVertical", -1);    

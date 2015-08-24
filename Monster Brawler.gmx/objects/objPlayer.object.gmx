@@ -309,6 +309,8 @@ currentGoals = ds_list_create();
 
 //goals is a list of nodes in the order the player should travel
 goals = ds_list_create();
+previousNode = noone;
+
 
 //Used for jumping
 jumpWait = -2;
