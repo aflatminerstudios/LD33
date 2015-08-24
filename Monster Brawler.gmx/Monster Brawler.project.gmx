@@ -73,6 +73,7 @@
       <sprite>sprites\sprPlayerFalling</sprite>
       <sprite>sprites\sprBone</sprite>
       <sprite>sprites\sprPlayerPunch</sprite>
+      <sprite>sprites\sprBoneThrow</sprite>
     </sprites>
     <sprites name="Doodlybop">
       <sprite>sprites\sprDB</sprite>
@@ -90,7 +91,7 @@
       <sprite>sprites\sprGhost</sprite>
     </sprites>
     <sprite>sprites\sprDemonCostume</sprite>
-    <sprite>sprites\sprOverscanOverlay</sprite>    
+    <sprite>sprites\sprOverscanOverlay</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>

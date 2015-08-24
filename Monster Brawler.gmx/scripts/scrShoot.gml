@@ -34,3 +34,8 @@ o.boundFixture = physics_fixture_bind(o.fixture, o);
 with (o) {
   physics_apply_local_impulse(xOffset, yOffset, xForce * o.parent.facing, yForce);
 }
+
+o.alarm[0] = 1;
+
+player.sprite_index = player.curSpriteAction2;
+player.isAction = true;
