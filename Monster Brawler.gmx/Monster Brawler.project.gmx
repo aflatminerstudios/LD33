@@ -28,6 +28,7 @@
     <sound>sound\sndEyebeam1</sound>
     <sound>sound\sndEyebeam2</sound>
     <sound>sound\musFight</sound>
+    <sound>sound\musVictory</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>

@@ -57,7 +57,7 @@ if(global.player1Wins &gt;= 3 ||
             <kind>1</kind>
             <string>/// Set variables
 
-music = musBR1;
+music = musFight;
 loopMusic = false;
 
 alarm[2] = room_speed*1.5;
@@ -83,8 +83,10 @@ allowExit = false;
           <argument>
             <kind>1</kind>
             <string>/// Start music
-audio_stop_all();
-audio_play_sound(music, 0, loopMusic);
+if(!audio_is_playing(music)){
+  audio_stop_all();
+  audio_play_sound(music, 0, loopMusic);
+}
 
 </string>
           </argument>
@@ -224,7 +226,6 @@ allowExit = true;
             <kind>1</kind>
             <string>/// Stop sounds and go to Main Game
 show_debug_message("Moving back to Main Game.");
-audio_stop_sound(music);
 scrGoToNextGameRoom();
 </string>
           </argument>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Set variables
 
-music = musBR1;
+music = musVictory;
 loopMusic = false;
 
 alarm[2] = room_speed*1.5;
