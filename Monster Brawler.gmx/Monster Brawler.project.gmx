@@ -56,6 +56,8 @@
     <sprite>sprites\sprFight</sprite>
     <sprite>sprites\sprGhost</sprite>
     <sprite>sprites\sprWerewolfRunning</sprite>
+    <sprite>sprites\sprPressButtonToContinue</sprite>
+    <sprite>sprites\sprConfetti</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -181,6 +183,9 @@
     </objects>
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
+    <object>objects\objPressButtonToContinue</object>
+    <object>objects\objConfetti</object>
+    <object>objects\objConfettiCreator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

@@ -62,6 +62,9 @@ loopMusic = false;
 
 alarm[2] = room_speed*1.5;
 allowExit = false;
+with(objPressButtonToContinue){
+  visible = false;
+}
 </string>
           </argument>
         </arguments>
@@ -202,6 +205,9 @@ global.lastWinner = 0;
             <kind>1</kind>
             <string>/// Allow button presses to leave the screen
 allowExit = true;
+with(objPressButtonToContinue){
+  visible = true;
+}
 </string>
           </argument>
         </arguments>
@@ -304,6 +310,9 @@ if (scrCheckController(0))
 
 if (allowExit) {
   if (scrCheckCntrl(0)) {
+    alarm[1] = 1;
+  }
+  if (scrCheckCntrl(1)) {
     alarm[1] = 1;
   }
 }

@@ -128,6 +128,9 @@ alarm[1] = 0*room_speed+1;
 if (scrCheckCntrl(0)) {
   alarm[1] = 1;
 }
+if (scrCheckCntrl(1)) {
+  alarm[1] = 1;
+}
 </string>
           </argument>
         </arguments>

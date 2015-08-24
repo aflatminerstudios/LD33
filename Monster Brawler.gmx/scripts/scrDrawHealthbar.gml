@@ -9,22 +9,22 @@ with (player) {
   var yPos;
   var dir;
   draw_set_halign(fa_center);
-  ///Remove this after testing
+  draw_set_valign(fa_top);
   if (playerNum == 1) {  
     xPos = 90;
-    yPos = 30;
+    yPos = 20;
     dir = 1;
   } else if (playerNum == 2) {
     xPos = 1200;
-    yPos = 30;  
+    yPos = 20;  
     dir = -1;
   } else if (playerNum == 3) {
     xPos = 90;
-    yPos = 690;  
+    yPos = 670;  
     dir = 1;
   } else if (playerNum == 4) {
     xPos = 1200;
-    yPos = 690;  
+    yPos = 670;  
     dir = -1;
   }
 

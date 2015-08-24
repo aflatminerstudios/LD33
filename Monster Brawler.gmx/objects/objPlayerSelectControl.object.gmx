@@ -96,6 +96,30 @@ if(!audio_is_playing(music))
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set up analog repeat variables
+
+analogHigh = false;
+analogHigh2 = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -207,10 +231,33 @@ var directionChosen = 0;
 // Check gamepad #1
 var gamePad = 0;
 var gamepadDirection = gamepad_axis_value(gamePad, gp_axislv);
+
 if(gamepadDirection &lt; -0.3) {
-  directionChosen = -1;
+  if(!analogHigh)
+    directionChosen = -1;
+  analogHigh = true;
 } else if(gamepadDirection &gt; 0.3) {
-  directionChosen = 1;
+  if(!analogHigh)
+    directionChosen = 1;
+  analogHigh = true;
+} else {
+  analogHigh = false;
+}
+
+// Check gamepad #2
+var gamePad2 = 1;
+var gamepadDirection2 = gamepad_axis_value(gamePad2, gp_axislv);
+
+if(gamepadDirection2 &lt; -0.3) {
+  if(!analogHigh2)
+    directionChosen = -1;
+  analogHigh2 = true;
+} else if(gamepadDirection2 &gt; 0.3) {
+  if(!analogHigh2)
+    directionChosen = 1;
+  analogHigh2 = true;
+} else {
+  analogHigh2 = false;
 }
 
 // Check keyboard
@@ -280,13 +327,16 @@ global.numHumans = selectionNumHumans[currentSelection];
             <string>///Check for "select" button
 
 // Check gamepad #1
-var gamePad = 0;
-var gamepadSelect = gamepad_button_check_pressed(gamePad, gp_face1);
+var gamePad1 = 0;
+var gamepadSelect1 = gamepad_button_check_pressed(gamePad1, gp_face1);
+
+var gamePad2 = 1;
+var gamepadSelect2 = gamepad_button_check_pressed(gamePad2, gp_face1);
 
 // Check keyboard
 var keyboardSelect = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space));
 
-if(gamepadSelect || keyboardSelect){
+if(gamepadSelect1 || gamepadSelect2 || keyboardSelect){
   alarm[0] = 1;
   audio_play_sound(sndCursorSelectEnter, 0, false);  
 }

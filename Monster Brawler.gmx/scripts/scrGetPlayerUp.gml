@@ -12,12 +12,12 @@ if (gamepad_button_check_pressed(padNum, gp_padu)) {
   return 1;
 }
 
+/*
 var gpVal = gamepad_axis_value(padNum, axisPad);
 
 if (gpVal > -0.3) {
   return gpVal;
 }
-
-
+*/
 
 return 0;

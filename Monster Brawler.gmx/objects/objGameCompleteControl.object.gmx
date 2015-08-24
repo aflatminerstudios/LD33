@@ -32,6 +32,9 @@ loopMusic = false;
 
 alarm[2] = room_speed*1.5;
 allowExit = false;
+with(objPressButtonToContinue){
+  visible = false;
+}
 </string>
           </argument>
         </arguments>
@@ -76,18 +79,23 @@ audio_play_sound(music, 0, loopMusic);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Add spotlight to winner
+            <string>/// Add spotlight &amp; confetti to winner
 
 var spotlightY = 520;
 
-if(global.player1Wins &gt;= 3)
+if(global.player1Wins &gt;= 3) {
   instance_create(220, spotlightY, objSpotlight);
-else if(global.player2Wins &gt;= 3)
+  instance_create(220, 0, objConfettiCreator);
+} else if(global.player2Wins &gt;= 3) {
   instance_create(500, spotlightY, objSpotlight);
-else if(global.player3Wins &gt;= 3)
+  instance_create(500, 0, objConfettiCreator);
+} else if(global.player3Wins &gt;= 3) {
   instance_create(780, spotlightY, objSpotlight);
-else if(global.player4Wins &gt;= 3)
+  instance_create(780, 0, objConfettiCreator);
+} else if(global.player4Wins &gt;= 3) {
   instance_create(1060, spotlightY, objSpotlight);
+  instance_create(1060, 0, objConfettiCreator);
+}
 </string>
           </argument>
         </arguments>
@@ -112,6 +120,9 @@ else if(global.player4Wins &gt;= 3)
             <kind>1</kind>
             <string>/// Allow button presses to leave the screen
 allowExit = true;
+with(objPressButtonToContinue){
+  visible = true;
+}
 </string>
           </argument>
         </arguments>
@@ -215,6 +226,9 @@ if (scrCheckController(0))
 
 if (allowExit) {
   if (scrCheckCntrl(0)) {
+    alarm[1] = 1;
+  }
+  if (scrCheckCntrl(1)) {
     alarm[1] = 1;
   }
 }

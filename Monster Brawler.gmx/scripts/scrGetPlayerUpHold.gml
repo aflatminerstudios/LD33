@@ -19,6 +19,4 @@ if (gpVal < -0.1) {
 }
 
 
-
-
 return 0;

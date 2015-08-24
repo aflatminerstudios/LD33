@@ -56,6 +56,7 @@
     <instance objName="objSkeletonDummy" x="780" y="520" name="inst_DA8594FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSkeletonDummy" x="1060" y="520" name="inst_51816A64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGameCompleteControl" x="0" y="0" name="inst_CBF374DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPressButtonToContinue" x="640" y="690" name="inst_91F06F52" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
