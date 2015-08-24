@@ -6,13 +6,8 @@ var val = argument1;
 
 with (player) {
 
-  if (sprite_index != curSpriteRunning && !isJumping & !isAction ) {
-      if (isFalling && !place_meeting(x, y + 5, objTile) && !place_meeting(x, y + 5, objPlayer)) {
-        // Do nothing
-        // Hackity hack! Don't talk back!
-      } else {
-        sprite_index = curSpriteRunning;
-      }  
+  if (sprite_index != curSpriteRunning && !isJumping && !isFalling && !isAction) {
+    sprite_index = curSpriteRunning;
   }
 
   physics_apply_force(x, y, curForce * val, 0);

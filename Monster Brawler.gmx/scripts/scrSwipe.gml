@@ -25,7 +25,3 @@ if (ds_map_exists(a, "swipeDir")) {
   o.swipeDir = 1;
 }
 o.alarm[0] = o.numFrames;
-
-
-player.sprite_index = player.curSpriteAction1;
-player.isAction = true;
