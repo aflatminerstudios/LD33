@@ -344,6 +344,29 @@ if(!audio_is_playing(music))
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>////Initialize alarm 1
+
+alarm[1] = -10;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="1" enumb="0">
       <action>
@@ -364,6 +387,41 @@ if(!audio_is_playing(music))
             <kind>1</kind>
             <string>/// Turn off music when leaving room
 audio_stop_sound(music);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End game
+
+var m = 0;
+var which = noone;
+
+with (objPlayer) {
+  if (hp &gt; m) {
+    which = self.id;
+    m = hp;
+  }
+}
+
+scrWinGame(which);
 </string>
           </argument>
         </arguments>
@@ -434,6 +492,43 @@ if (instance_number(objCostume) &lt; instance_number(objCostumeSpawn)) {
 var r = irandom(3) + 4;
 
 alarm[0] = room_speed * r;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Checks if timer should start to end game
+
+var timeToGo = true;
+
+with (objPlayer) {
+  if (getAction == scrGetPlayerAction) {
+    timeToGo = false;
+  }
+}
+
+
+if (timeToGo &amp;&amp; alarm[1] == -10) {
+
+  alarm[1] = 15 * room_speed;
+}
 </string>
           </argument>
         </arguments>

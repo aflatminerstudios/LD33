@@ -93,6 +93,8 @@
       <sprite>sprites\sprWerewolf</sprite>
       <sprite>sprites\sprWerewolfRunning</sprite>
       <sprite>sprites\sprWerewolfDash</sprite>
+      <sprite>sprites\sprWerewolfJump</sprite>
+      <sprite>sprites\sprWerewolfFall</sprite>
     </sprites>
     <sprites name="Ghost">
       <sprite>sprites\sprGhost</sprite>

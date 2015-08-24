@@ -381,9 +381,51 @@ with (objAttack) {
 if (!found)  {
   isAction = false;
 }
+var offset = 5;
 
-if (place_meeting(x, y + 5, objTile) || place_meeting(x, y + 5, objPlayer)) {
+if (sprite_index = sprWerewolfFall || sprite_index = sprDBFall) {
+  offset = 10;
+}
+
+var col = collision_rectangle(x - sprite_width / 2 , y + offset, x + sprite_width / 2, y + offset + 40, objPlayer, true, true);
+var col2 = collision_rectangle(x - sprite_width / 2 , y + offset, x + sprite_width / 2, y + offset + 40, objTile, true, true);
+
+if (col != noone || col2 != noone) {
   isFalling = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hack for jump/fall animation stopping
+if (isFalling || isJumping) {
+
+  var sl = sprite_get_number(sprite_index);
+
+  if ((sl - 1) == image_index) {
+    image_speed = 0;
+  } else {
+    image_speed = 30 / room_speed;
+  }
+
+} else {
+  image_speed = 30 / room_speed;
 }
 </string>
           </argument>
@@ -431,7 +473,7 @@ if (keyboard_check(leftKey)) {
   }
 }
 */
-ds_map_add(actionList, "Say", string(isJumping) + " " + string(isFalling) + " " + string(isAction) + " ")
+//ds_map_add(actionList, "Say", string(isJumping) + " " + string(isFalling) + " " + string(isAction) + " ")
 script_execute(getAction);
 scrProcessAction(self.id);
 </string>

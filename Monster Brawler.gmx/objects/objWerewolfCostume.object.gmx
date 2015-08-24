@@ -46,8 +46,8 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 
 sprite = sprWerewolf;
 spriteRunning = sprWerewolfRunning;
-spriteJumping = sprWerewolfRunning;
-spriteFalling = sprWerewolfRunning;
+spriteJumping = sprWerewolfJump;
+spriteFalling = sprWerewolfFall;
 spriteAction1 = sprWerewolfSwipe;
 spriteAction2 = sprWerewolfDash;
 
