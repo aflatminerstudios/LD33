@@ -36,7 +36,7 @@ spriteRunning = sprPlayerRunning;
 spriteJumping = sprPlayerJumping;
 spriteFalling = sprPlayerFalling;
 spriteAction1 = sprPlayerPunch;
-spriteAction2 = sprPlayer;
+spriteAction2 = sprBoneThrow;
 
 cdTimer1 = 0;
 cdTimer2 = 0;
