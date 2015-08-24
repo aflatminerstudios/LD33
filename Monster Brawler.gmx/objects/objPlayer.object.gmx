@@ -350,7 +350,7 @@ if (keyboard_check(leftKey)) {
 */
 
 script_execute(getAction);
-scrProcessGhostAction(self.id);
+scrProcessAction(self.id);
 </string>
           </argument>
         </arguments>

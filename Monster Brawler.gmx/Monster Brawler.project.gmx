@@ -52,6 +52,8 @@
     <sprite>sprites\sprScoreboard</sprite>
     <sprite>sprites\sprSpotlight</sprite>
     <sprite>sprites\sprFight</sprite>
+    <sprite>sprites\sprGhost</sprite>
+    <sprite>sprites\sprWerewolfRunning</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -111,6 +113,7 @@
     <script>scripts\scrWinGame.gml</script>
     <script>scripts\scrDrawHealthbar.gml</script>
     <script>scripts\scrProcessGhostAction.gml</script>
+    <script>scripts\scrCreateGhost.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>

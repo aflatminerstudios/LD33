@@ -10,5 +10,8 @@ with (objGameControl) {
 audio_play_sound(sndPlayerDeath, 1, false);
 
 with (object) {
+
+  scrCreateGhost(object);
+
   instance_destroy();
 }
