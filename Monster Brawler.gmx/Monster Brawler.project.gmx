@@ -69,6 +69,7 @@
   <scripts name="scripts">
     <scripts name="AI Action Checks">
       <script>scripts\scrGetAIAction.gml</script>
+      <script>scripts\scrGetAIGhostAction.gml</script>
     </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
@@ -95,6 +96,18 @@
       <script>scripts\scrRun.gml</script>
     </scripts>
     <script>scripts\scrProcessAction.gml</script>
+    <script>scripts\scrCreateGhost.gml</script>
+    <scripts name="AI Queries">
+      <script>scripts\scrGetEnemyList.gml</script>
+      <script>scripts\scrGetNodeList.gml</script>
+      <script>scripts\scrGetDistance.gml</script>
+      <script>scripts\scrGetNodeCosts.gml</script>
+      <script>scripts\scrGetNearestEnemy.gml</script>
+      <script>scripts\scrGetNearestCostume.gml</script>
+      <script>scripts\scrNodeGetLowestCost.gml</script>
+      <script>scripts\scrGetNearestNode.gml</script>
+      <script>scripts\scrGetCostumeList.gml</script>
+    </scripts>
     <scripts name="Damaging">
       <script>scripts\scrTakeDamage.gml</script>
       <script>scripts\scrKill.gml</script>
@@ -104,13 +117,6 @@
       <script>scripts\scrAssignPlayer2.gml</script>
       <script>scripts\scrAssignAI.gml</script>
     </scripts>
-    <scripts name="AI Queries">
-      <script>scripts\scrGetEnemyList.gml</script>
-      <script>scripts\scrGetDistance.gml</script>
-      <script>scripts\scrGetNearestCostume.gml</script>
-      <script>scripts\scrGetNearestEnemy.gml</script>
-      <script>scripts\scrGetCostumeList.gml</script>
-    </scripts>
     <script>scripts\scrCheckCntrl.gml</script>
     <script>scripts\scrRoomPositionToGrid.gml</script>
     <script>scripts\scrNullScript.gml</script>
@@ -119,7 +125,6 @@
     <script>scripts\scrGoToRandomGameRoom.gml</script>
     <script>scripts\scrGoToNextGameRoom.gml</script>
     <script>scripts\scrProcessGhostAction.gml</script>
-    <script>scripts\scrCreateGhost.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
@@ -149,6 +154,7 @@
       <object>objects\objP3Spawn</object>
       <object>objects\objP4Spawn</object>
     </objects>
+    <object>objects\objAIControl</object>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>
@@ -180,12 +186,14 @@
     <objects name="GameCompleteScreen">
       <object>objects\objGameCompleteControl</object>
       <object>objects\objSpotlight</object>
+      <object>objects\objConfetti</object>
+      <object>objects\objConfettiCreator</object>
     </objects>
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
-    <object>objects\objPressButtonToContinue</object>
-    <object>objects\objConfetti</object>
-    <object>objects\objConfettiCreator</object>
+    <object>objects\objPressButtonToContinue</object>    
+    <object>objects\objNavNode</object>
+
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

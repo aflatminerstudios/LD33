@@ -8,7 +8,7 @@ with (player) {
     var key = ds_map_find_first(actionList);
     
     var val = ds_map_find_value(actionList, key);
-    show_debug_message("Processing " + string(key) + " : " + string(val));
+    //show_debug_message("Processing " + string(key) + " : " + string(val));
     if (key == "MoveHorizontal") {                 
       x += moveSpeed * val;
       hFacing = sign(val);
