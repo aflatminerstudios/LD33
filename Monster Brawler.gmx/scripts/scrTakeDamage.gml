@@ -17,9 +17,15 @@ with (receiver) {
 }
 
 with (objGameControl) {
-  if (numPlayers == 1) {
+  if (numPlayers == 1) {    
+    var winner;
     with (objPlayer) {
-      scrWinGame(self.id);
+      other.winner = self.id;
+     
+    }
+    with (objGameControl) {
+      win = other.winner
+      alarm[2] = room_speed / 1.5;
     }
   }
 }
