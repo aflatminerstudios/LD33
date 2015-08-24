@@ -6,7 +6,7 @@ var val = argument1;
 
 with (player) {
 
-  if (sprite_index == curSprite) {
+  if (sprite_index != curSpriteRunning && !isJumping) {
     sprite_index = curSpriteRunning;
   }
 
