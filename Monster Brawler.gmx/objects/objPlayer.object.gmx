@@ -203,6 +203,8 @@ getJumpReleased = scrGetPlayerJumpRelease;
 getUpReleased = scrGetPlayerUpRelease;
 getAction1 = scrGetPlayerAction1;
 getAction2 = scrGetPlayerAction2;
+getUpHold = scrGetPlayerUpHold;
+getDown = scrGetPlayerDown;
 
 doAction1 = scrPunch;
 doAction2 = scrThrow;

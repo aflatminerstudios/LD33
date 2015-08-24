@@ -53,6 +53,8 @@
     <sprite>sprites\sprScoreboard</sprite>
     <sprite>sprites\sprSpotlight</sprite>
     <sprite>sprites\sprFight</sprite>
+    <sprite>sprites\sprGhost</sprite>
+    <sprite>sprites\sprWerewolfRunning</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -67,6 +69,8 @@
     </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
+      <script>scripts\scrGetPlayerUpHold.gml</script>
+      <script>scripts\scrGetPlayerDown.gml</script>
       <script>scripts\scrGetPlayerUp.gml</script>
       <script>scripts\scrGetPlayerUpRelease.gml</script>
       <script>scripts\scrGetPlayerAction1.gml</script>
@@ -111,6 +115,8 @@
     <script>scripts\scrDrawHealthbar.gml</script>
     <script>scripts\scrGoToRandomGameRoom.gml</script>
     <script>scripts\scrGoToNextGameRoom.gml</script>
+    <script>scripts\scrProcessGhostAction.gml</script>
+    <script>scripts\scrCreateGhost.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
@@ -173,6 +179,7 @@
       <object>objects\objSpotlight</object>
     </objects>
     <object>objects\objFight</object>
+    <object>objects\objGhost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
