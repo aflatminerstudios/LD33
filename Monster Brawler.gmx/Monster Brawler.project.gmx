@@ -59,11 +59,17 @@
       <sprite>sprites\sprSpotlight</sprite>
     </sprites>
     <sprites name="Battle Screen">
+      <sprites name="Traps and Buttons">
+        <sprite>sprites\sprTrap</sprite>
+        <sprite>sprites\sprButtonUp</sprite>
+        <sprite>sprites\sprButtonPressed</sprite>
+      </sprites>
       <sprite>sprites\spr1pIndicator</sprite>
       <sprite>sprites\sprFight</sprite>
       <sprite>sprites\spr2pIndicator</sprite>
       <sprite>sprites\spr3pIndicator</sprite>
       <sprite>sprites\spr4pIndicator</sprite>
+      <sprite>sprites\sprCostumeChange</sprite>
     </sprites>
     <sprites name="Tiles">
       <sprite>sprites\sprTile1</sprite>
@@ -250,6 +256,11 @@
     <object>objects\objInstructionsControl</object>
     <object>objects\objAFlatLogoMedium</object>
     <object>objects\objSpriteTrail</object>
+    <object>objects\objCostumeChange</object>
+    <objects name="Traps and Buttons">
+      <object>objects\objTrap</object>
+      <object>objects\objButton</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

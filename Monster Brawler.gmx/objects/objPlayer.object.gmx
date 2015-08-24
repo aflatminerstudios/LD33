@@ -681,6 +681,7 @@ if (isJumping) {
             <string>///Change "current" variables
 
 audio_play_sound(sndCostumeChange, 1, false);
+instance_create(x,y, objCostumeChange);
 
 if (costume != noone) {
   with (costume) {

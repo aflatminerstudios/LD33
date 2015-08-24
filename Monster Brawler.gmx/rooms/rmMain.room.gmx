@@ -181,6 +181,10 @@
     <instance objName="objCostumeSpawn" x="840" y="480" name="inst_47A6CBD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCostumeSpawn" x="360" y="480" name="inst_5E4C208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objP2Spawn" x="1000" y="480" name="inst_A67F48F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objButton" x="560" y="320" name="inst_2DAB6E7E" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objButton" x="440" y="520" name="inst_FF8B23F7" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objButton" x="800" y="520" name="inst_3656E112" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objButton" x="680" y="320" name="inst_53E3D1E7" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
