@@ -84,8 +84,8 @@ ds_map_add(action2, "knockback", 50);
 ds_map_add(action2, "sprite", sprEyebeam);
 
 //Parent object and distance from parent x,y to "topleft" corner
-ds_map_add(action2, "xDist", sprite_width/2 + 2);
-ds_map_add(action2, "yDist", -40);
+ds_map_add(action2, "xDist", sprite_width/2 - 2);
+ds_map_add(action2, "yDist", -70);
 
 //Direct object throwing
 ds_map_add(action2, "xForce", 120);
