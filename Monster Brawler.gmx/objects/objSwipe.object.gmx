@@ -113,7 +113,7 @@ if (parent != noone &amp;&amp; !instance_exists(parent)) {
     //Move box down
     x1 = x1 + (xTotalSize / numFrames);
     x2 = x1 + (xSize * parent.facing);
-    y1 = y1 + (yTotalSize / numFrames);
+    y1 = y1 + (yTotalSize / numFrames) * swipeDir;
     y2 = y1 + ySize;
   }
   
@@ -159,7 +159,7 @@ if (parent != noone &amp;&amp; !instance_exists(parent)) {
             <kind>1</kind>
             <string>///Temp: Off:Draw collision box
 
-//draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
+//draw_rectangle_color(x1, y1, x2, y2, c_yellow, c_yellow, c_yellow, c_yellow, false);
 </string>
           </argument>
         </arguments>

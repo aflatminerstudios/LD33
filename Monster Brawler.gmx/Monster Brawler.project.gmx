@@ -86,6 +86,7 @@
     </sprites>
     <sprites name="Werewolf">
       <sprite>sprites\sprWerewolfRack</sprite>
+      <sprite>sprites\sprWerewolfSwipe</sprite>
       <sprite>sprites\sprWerewolf</sprite>
       <sprite>sprites\sprWerewolfRunning</sprite>
       <sprite>sprites\sprWerewolfDash</sprite>
