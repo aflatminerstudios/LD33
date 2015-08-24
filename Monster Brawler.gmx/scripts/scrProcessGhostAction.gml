@@ -12,6 +12,7 @@ with (player) {
     if (key == "MoveHorizontal") {                 
       x += moveSpeed * val;
       hFacing = sign(val);
+      image_xscale = hFacing;
     } else if (key == "MoveVertical") {
       y += moveSpeed * val;    
       vFacing = sign(val);      

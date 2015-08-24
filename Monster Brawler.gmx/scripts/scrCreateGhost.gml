@@ -3,6 +3,7 @@
 var player = argument0;
 
 var ghost = instance_create(player.x, player.y, objGhost);
+ghost.image_blend = player.image_blend;
 
 if (player.getAction == scrGetAIAction) {
   /////DO SOMETHING FOR AI
