@@ -161,12 +161,12 @@ ds_map_add(action2, "knockback", 200);
 ds_map_add(action2, "sprite", sprBone);
 
 //Parent object and distance from parent x,y to "topleft" corner
-ds_map_add(action2, "xDist", sprite_width/2 + 2);
+ds_map_add(action2, "xDist", sprite_width/2 - 10);
 ds_map_add(action2, "yDist", -40);
 
 //Direct object throwing
 ds_map_add(action2, "xForce", 2);
-ds_map_add(action2, "yForce", -10);
+ds_map_add(action2, "yForce", -8);
 ds_map_add(action2, "xOffset", 3);
 ds_map_add(action2, "yOffset", -1);
 
