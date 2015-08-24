@@ -37,6 +37,8 @@
     <sprite>sprites\sprTitleBrawl</sprite>
     <sprite>sprites\sprBone</sprite>
     <sprite>sprites\sprDemonCostume</sprite>
+    <sprite>sprites\sprDBRack</sprite>
+    <sprite>sprites\sprWerewolfRack</sprite>
     <sprite>sprites\sprNumPlayersSelector</sprite>
     <sprite>sprites\sprPlayerSelectionBoxes</sprite>
     <sprite>sprites\sprTile1</sprite>
@@ -180,18 +182,19 @@
     <objects name="GameCompleteScreen">
       <object>objects\objGameCompleteControl</object>
       <object>objects\objSpotlight</object>
+      <object>objects\objConfetti</object>
+      <object>objects\objConfettiCreator</object>
     </objects>
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
     <object>objects\objPressButtonToContinue</object>
-    <object>objects\objConfetti</object>
-    <object>objects\objConfettiCreator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
     <room>rooms\rmMain</room>
+    <room>rooms\rmMain2</room>
     <room>rooms\rmMainOld</room>
     <room>rooms\rmRoundComplete</room>
     <room>rooms\rmGameComplete</room>

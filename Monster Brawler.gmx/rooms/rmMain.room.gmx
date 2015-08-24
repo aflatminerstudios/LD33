@@ -174,12 +174,12 @@
     <instance objName="objTile" x="680" y="280" name="inst_239004AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTile" x="720" y="280" name="inst_74A91989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objP1Spawn" x="240" y="480" name="inst_94E49385" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objInitialCostumeSpawn" x="600" y="240" name="inst_8B0831F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objInitialCostumeSpawn" x="600" y="640" name="inst_D5AF4604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCostumeSpawn" x="160" y="640" name="inst_0512F042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCostumeSpawn" x="1120" y="640" name="inst_7DF9B3A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCostumeSpawn" x="840" y="440" name="inst_47A6CBD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCostumeSpawn" x="360" y="440" name="inst_5E4C208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInitialCostumeSpawn" x="600" y="280" name="inst_8B0831F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInitialCostumeSpawn" x="600" y="680" name="inst_D5AF4604" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="160" y="680" name="inst_0512F042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="1120" y="680" name="inst_7DF9B3A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="840" y="480" name="inst_47A6CBD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCostumeSpawn" x="360" y="480" name="inst_5E4C208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objP2Spawn" x="1000" y="480" name="inst_A67F48F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

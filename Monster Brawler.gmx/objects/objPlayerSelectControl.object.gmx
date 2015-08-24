@@ -244,6 +244,13 @@ if(gamepadDirection &lt; -0.3) {
   analogHigh = false;
 }
 
+if(gamepad_button_check_pressed(gamePad, gp_padu))
+  directionChosen = -1;
+else if(gamepad_button_check_pressed(gamePad, gp_padd))
+  directionChosen = 1;
+
+
+
 // Check gamepad #2
 var gamePad2 = 1;
 var gamepadDirection2 = gamepad_axis_value(gamePad2, gp_axislv);
@@ -259,6 +266,13 @@ if(gamepadDirection2 &lt; -0.3) {
 } else {
   analogHigh2 = false;
 }
+
+if(gamepad_button_check_pressed(gamePad2, gp_padu))
+  directionChosen = -1;
+else if(gamepad_button_check_pressed(gamePad2, gp_padd))
+  directionChosen = 1;
+
+
 
 // Check keyboard
 if (keyboard_check_pressed(vk_up)) {
