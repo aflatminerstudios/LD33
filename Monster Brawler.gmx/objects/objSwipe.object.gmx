@@ -99,37 +99,41 @@ instance_destroy();
             <kind>1</kind>
             <string>///Set coordinates and check for collision
 
-
-//Initially set position
-if (x1 == x2 &amp;&amp; x1 == y1 &amp;&amp; x1 == y2 &amp;&amp; x1 == 0) {
-  x1 = parent.x + (xDist * parent.facing);
-  x2 = x1 + (xSize * parent.facing);
-  y1 = parent.y + yDist;
-  y2 = y1 + ySize;
+if (parent != noone &amp;&amp; !instance_exists(parent)) {
+  instance_destroy();
 } else {
-  //Move box down
-  x1 = x1;
-  x2 = x1 + (xSize * parent.facing);
-  y1 = y1 + (yTotalSize / numFrames);
-  y2 = y1 + ySize;
-}
 
-var c;
-
-with (parent) {
-  c = collision_rectangle(other.x1, other.y1, other.x2, other.y2, objPlayer, true, true);
-}
-// If collide, do knockback and damage
-if (c != noone &amp;&amp; !is_undefined(c)) {
-
-  show_debug_message("Swipe from " + string(parent.id) + " connected with " + string(c.id));
-
-  with (c) {
-    physics_apply_impulse(c.x, c.y, other.knockback * other.parent.facing, 0);
+  //Initially set position
+  if (x1 == x2 &amp;&amp; x1 == y1 &amp;&amp; x1 == y2 &amp;&amp; x1 == 0) {
+    x1 = parent.x + (xDist * parent.facing);
+    x2 = x1 + (xSize * parent.facing);
+    y1 = parent.y + yDist;
+    y2 = y1 + ySize;
+  } else {
+    //Move box down
+    x1 = x1;
+    x2 = x1 + (xSize * parent.facing);
+    y1 = y1 + (yTotalSize / numFrames);
+    y2 = y1 + ySize;
   }
   
-  scrTakeDamage(parent, c, damage);
-  instance_destroy();
+  var c;
+  
+  with (parent) {
+    c = collision_rectangle(other.x1, other.y1, other.x2, other.y2, objPlayer, true, true);
+  }
+  // If collide, do knockback and damage
+  if (c != noone &amp;&amp; !is_undefined(c)) {
+  
+    //show_debug_message("Swipe from " + string(parent.id) + " connected with " + string(c.id));
+  
+    with (c) {
+      physics_apply_impulse(c.x, c.y, other.knockback * other.parent.facing, 0);
+    }
+    
+    scrTakeDamage(parent, c, damage);
+    instance_destroy();
+  }
 }
 </string>
           </argument>
