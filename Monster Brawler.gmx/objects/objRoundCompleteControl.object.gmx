@@ -83,6 +83,7 @@ allowExit = false;
           <argument>
             <kind>1</kind>
             <string>/// Start music
+audio_stop_all();
 audio_play_sound(music, 0, loopMusic);
 
 </string>
@@ -224,7 +225,7 @@ allowExit = true;
             <string>/// Stop sounds and go to Main Game
 show_debug_message("Moving back to Main Game.");
 audio_stop_sound(music);
-room_goto(rmMain);
+scrGoToNextGameRoom();
 </string>
           </argument>
         </arguments>

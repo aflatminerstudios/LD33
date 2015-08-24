@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Set up idle sprite
 sprite_index = sprPlayer;
+image_speed = 40/room_speed;
 </string>
           </argument>
         </arguments>

@@ -53,6 +53,7 @@ allowExit = false;
           <argument>
             <kind>1</kind>
             <string>/// Start music
+audio_stop_all();
 audio_play_sound(music, 0, loopMusic);
 
 </string>

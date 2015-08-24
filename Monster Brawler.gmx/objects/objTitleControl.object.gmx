@@ -28,7 +28,7 @@
             <string>/// Set variables
 
 music = musTitleScreen;  // Replace with title screen music
-loopMusic = false;
+loopMusic = true;
 </string>
           </argument>
         </arguments>
@@ -74,9 +74,8 @@ audio_play_sound(music, 0, loopMusic);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Stop sounds and goto title screen room
+            <string>/// Goto player select screen
 show_debug_message("Moving to player select screen.");
-audio_stop_sound(music);
 room_goto(rmPlayerSelect);
 </string>
           </argument>

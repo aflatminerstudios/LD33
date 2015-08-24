@@ -69,6 +69,33 @@ selector = instance_create(0, 0, objNumPlayersSelector);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set music variables and start music
+
+music = musTitleScreen;  // Replace with title screen music
+loopMusic = true;
+
+if(!audio_is_playing(music))
+  audio_play_sound(music, 0, loopMusic);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -116,8 +143,9 @@ global.lastWinner = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change rooms
-room_goto(rmMain); // Uncomment when in done testing (&amp; delete other action)-- Micha TODO
+            <string>/// Stop music and change rooms
+audio_stop_sound(music);
+scrGoToNextGameRoom();
 </string>
           </argument>
         </arguments>

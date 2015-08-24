@@ -27,6 +27,7 @@
     <sound>sound\sndWerewolfSwipe2</sound>
     <sound>sound\sndEyebeam1</sound>
     <sound>sound\sndEyebeam2</sound>
+    <sound>sound\musFight</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprFloor</sprite>
@@ -108,6 +109,8 @@
     <script>scripts\scrNullScript.gml</script>
     <script>scripts\scrWinGame.gml</script>
     <script>scripts\scrDrawHealthbar.gml</script>
+    <script>scripts\scrGoToRandomGameRoom.gml</script>
+    <script>scripts\scrGoToNextGameRoom.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
