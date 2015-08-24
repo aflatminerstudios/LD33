@@ -5,7 +5,7 @@ var costumeList = scrGetCostumeList();
 var nearest = noone;
 var minDist = 10000;
 
-if (is_array(costumeList)) {
+if (is_array(costumeList) && costumeList[0] != noone) {
 
   for (var i = 0; i < array_length_1d(costumeList); ++i) {
     var dist;

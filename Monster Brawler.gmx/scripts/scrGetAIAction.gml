@@ -84,7 +84,7 @@ if (place_meeting(x, y + (sprite_height - 1), objPlayer)) {
 
 var cType;
 // Use action2 randomly as appropriate
-if (costume != noone) {
+if (costume != noone && !is_undefined(costume) && instance_exists(costume)) {
   cType = costume.object_index;
 } else {
   cType = noone;
