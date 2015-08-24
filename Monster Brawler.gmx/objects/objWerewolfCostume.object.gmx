@@ -48,6 +48,8 @@ sprite = sprWerewolf;
 spriteRunning = sprWerewolfRunning;
 spriteJumping = sprWerewolfRunning;
 spriteFalling = sprWerewolfRunning;
+spriteAction1 = sprWerewolfRunning;
+spriteAction2 = sprWerewolfRunning;
 
 time = room_speed * 15;
 

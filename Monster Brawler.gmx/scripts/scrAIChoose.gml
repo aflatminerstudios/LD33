@@ -23,4 +23,3 @@ if (cList[0] != noone) {
 
 nearestEnemy = scrGetNearestEnemy(node);
 
-

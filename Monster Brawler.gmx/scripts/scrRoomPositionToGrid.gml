@@ -12,4 +12,3 @@ gridPos[1] = floor(yPos / tileSize);
 return gridPos;
 
 
-

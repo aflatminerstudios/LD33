@@ -48,6 +48,9 @@ sprite = sprDB;
 spriteRunning = sprDBRunning;
 spriteJumping = sprDBRunning;
 spriteFalling = sprDBRunning;
+spriteAction1 = sprDBRunning;
+spriteAction2 = sprDBRunning;
+
 
 time = room_speed * 15;
 

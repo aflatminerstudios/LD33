@@ -35,9 +35,13 @@ sprite = sprPlayer;
 spriteRunning = sprPlayerRunning;
 spriteJumping = sprPlayerJumping;
 spriteFalling = sprPlayerFalling;
+spriteAction1 = sprPlayerPunch;
+spriteAction2 = sprPlayer;
 
 cdTimer1 = 0;
 cdTimer2 = 0;
+
+isAction = false;
 
 //List of actions
 actionList = ds_map_create();
@@ -127,12 +131,12 @@ ds_map_add(action1, "knockback", 200);
 ds_map_add(action1, "numFrames", 5);
 
 //Size
-ds_map_add(action1,"xSize", 20);
-ds_map_add(action1, "ySize", 10);
+ds_map_add(action1,"xSize", 24);
+ds_map_add(action1, "ySize", 9);
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-ds_map_add(action1, "xDist", sprite_width / 2 + 2);
-ds_map_add(action1, "yDist", -50);
+ds_map_add(action1, "xDist", 14);
+ds_map_add(action1, "yDist", -38);
 
 cooldown1 = room_speed / 3;
 
@@ -251,6 +255,8 @@ curSprite = sprite;
 curSpriteRunning = spriteRunning;
 curSpriteJumping = spriteJumping;
 curSpriteFalling = spriteFalling;
+curSpriteAction1 = spriteAction1;
+curSpriteAction2 = spriteAction2;
 </string>
           </argument>
         </arguments>
@@ -474,7 +480,7 @@ cdTimer2--;
             <kind>1</kind>
             <string>///Handle jumping/falling sprites
 
-if (phy_linear_velocity_y &gt; 0 &amp;&amp; sprite_index != curSpriteFalling &amp;&amp; !place_meeting(x, y + 5, objTile)) {
+if (phy_linear_velocity_y &gt; 0 &amp;&amp; sprite_index != curSpriteFalling &amp;&amp; !place_meeting(x, y + 5, objTile) &amp;&amp; !isAction) {
 
   //So much hack in that if statement
   
@@ -483,7 +489,7 @@ if (phy_linear_velocity_y &gt; 0 &amp;&amp; sprite_index != curSpriteFalling &am
   isIdle = false;
   isFalling = true;
   
-} else if (isJumping &amp;&amp; !isFalling &amp;&amp; sprite_index != curSpriteJumping) {
+} else if (isJumping &amp;&amp; !isFalling &amp;&amp; sprite_index != curSpriteJumping &amp;&amp; !isAction) {
 
   sprite_index = curSpriteJumping;
   isIdle = false;
@@ -509,13 +515,46 @@ if (phy_linear_velocity_y &gt; 0 &amp;&amp; sprite_index != curSpriteFalling &am
           <argument>
             <kind>1</kind>
             <string>///Change to idle sprite if appropriate
-if (isIdle &amp;&amp; sprite_index != curSprite &amp;&amp; !isJumping) {
+if (isIdle &amp;&amp; sprite_index != curSprite &amp;&amp; !isJumping &amp;&amp; !isAction) {
   if (isFalling &amp;&amp; !place_meeting(x, y + 5, objTile) &amp;&amp; !place_meeting(x, y + 5, objPlayer)) {
     // Do nothing
     // Hackity hack! Don't talk back!
   } else {
     sprite_index = curSprite;
   }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hack to see if in action
+
+var found = false;
+
+with (objAttack) {
+  if (!is_undefined(parent) &amp;&amp; parent == other.id) {
+    found = true;
+  }
+}
+
+if (!found)  {
+  isAction = false;
 }
 </string>
           </argument>
@@ -635,13 +674,17 @@ switch(sprite_index) {
   case curSpriteFalling:
     sprite_index = other.spriteFalling;
     break;
+  default:
+    sprite_index = other.sprite;
+    break;
 }
 
 curSprite = other.sprite;
 curSpriteRunning = other.spriteRunning;
 curSpriteJumping = other.spriteJumping;
 curSpriteFalling = other.spriteFalling;
-
+curSpriteAction1 = other.spriteAction1;
+curSpriteAction2 = other.spriteAction2;
 
 
 curCooldown1 = other.cooldown1;

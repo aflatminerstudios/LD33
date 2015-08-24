@@ -9,4 +9,3 @@ for (i = 0; i < array_length_1d(node.indices); i++) {
 }
 
 return list;
-

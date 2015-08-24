@@ -17,3 +17,6 @@ o.yDist = ds_map_find_value(a, "yDist");
 o.angle = ds_map_find_value(a, "angle");
 
 o.alarm[0] = ds_map_find_value(a, "numFrames");
+
+player.sprite_index = player.curSpriteAction1;
+player.isAction = true;

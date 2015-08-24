@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>objAttack</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -97,7 +97,7 @@ instance_destroy();
             <kind>1</kind>
             <string>///Set coordinates and check for collision
 if (parent != noone &amp;&amp; !instance_exists(parent)) {
-  instance_destroy();
+  alarm[0] = 1;
 } else {
   
   x1 = parent.x + (xDist * parent.facing);
@@ -121,7 +121,7 @@ if (parent != noone &amp;&amp; !instance_exists(parent)) {
     }
     
     scrTakeDamage(parent, c, damage);
-    instance_destroy();
+    alarm[0] = 1;
   }
 }
 </string>
@@ -146,9 +146,9 @@ if (parent != noone &amp;&amp; !instance_exists(parent)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Temp: Draw collision box
+            <string>///Temp: Off: Draw collision box
 
-draw_rectangle_color(x1, y1, x2, y2, c_red, c_red, c_red, c_red, true);
+//draw_rectangle_color(x1, y1, x2, y2, c_yellow, c_yellow, c_yellow, c_yellow, false);
 </string>
           </argument>
         </arguments>

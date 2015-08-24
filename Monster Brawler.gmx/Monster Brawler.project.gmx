@@ -65,6 +65,7 @@
     <sprite>sprites\sprPlayerJumping</sprite>
     <sprite>sprites\sprPlayerFalling</sprite>
     <sprite>sprites\sprWerewolf</sprite>
+    <sprite>sprites\sprPlayerPunch</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
