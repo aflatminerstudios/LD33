@@ -61,6 +61,9 @@
     <sprite>sprites\sprWerewolfRunning</sprite>
     <sprite>sprites\sprWerewolfDash</sprite>
     <sprite>sprites\sprPressButtonToContinue</sprite>
+    <sprite>sprites\sprPressCreditsButton</sprite>
+    <sprite>sprites\sprCreditsList</sprite>
+    <sprite>sprites\sprAFlatLogoMedium</sprite>
     <sprite>sprites\sprConfetti</sprite>
     <sprite>sprites\sprPlayerJumping</sprite>
     <sprite>sprites\sprPlayerFalling</sprite>
@@ -206,7 +209,11 @@
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
     <object>objects\objPressButtonToContinue</object>
+    <object>objects\objPressCreditsButton</object>
     <object>objects\objNavNode</object>
+    <object>objects\objCreditsList</object>
+    <object>objects\objCreditsControl</object>
+    <object>objects\objAFlatLogoMedium</object>
     <object>objects\objSpriteTrail</object>
   </objects>
   <rooms name="rooms">
@@ -218,6 +225,7 @@
     <room>rooms\rmMainOld</room>
     <room>rooms\rmRoundComplete</room>
     <room>rooms\rmGameComplete</room>
+    <room>rooms\rmCredits</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>
