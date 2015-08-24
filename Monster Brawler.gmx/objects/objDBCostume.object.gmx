@@ -47,6 +47,7 @@ jumpForce = (sqrt(2 * gm * (jumpHeight)) + gm * deltaTime * 0.5);
 sprite = sprDB;
 spriteRunning = sprDBRunning;
 spriteJumping = sprDBRunning;
+spriteFalling = sprDBRunning;
 
 time = room_speed * 15;
 

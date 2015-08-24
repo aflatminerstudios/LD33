@@ -9,6 +9,7 @@ with (player) {
   isJumping = true;
   jumpTimeRemaining = 15;
   beenReleased = false;
+  isFalling = false;
 }
 
 audio_play_sound(sndJump, 1, false);

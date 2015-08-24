@@ -58,11 +58,13 @@
     <sprite>sprites\sprSpotlight</sprite>
     <sprite>sprites\sprFight</sprite>
     <sprite>sprites\sprGhost</sprite>
-    <sprite>sprites\sprWerewolf</sprite>
     <sprite>sprites\sprWerewolfRunning</sprite>
     <sprite>sprites\sprWerewolfDash</sprite>
     <sprite>sprites\sprPressButtonToContinue</sprite>
     <sprite>sprites\sprConfetti</sprite>
+    <sprite>sprites\sprPlayerJumping</sprite>
+    <sprite>sprites\sprPlayerFalling</sprite>
+    <sprite>sprites\sprWerewolf</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>

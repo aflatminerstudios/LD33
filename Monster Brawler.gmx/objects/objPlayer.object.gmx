@@ -33,7 +33,8 @@ facing = 1;
 
 sprite = sprPlayer;
 spriteRunning = sprPlayerRunning;
-spriteJumping = sprPlayerRunning;
+spriteJumping = sprPlayerJumping;
+spriteFalling = sprPlayerFalling;
 
 cdTimer1 = 0;
 cdTimer2 = 0;
@@ -64,6 +65,8 @@ jumpDownRangeBottom = 50;
 jumpDownRangeTop = 250;
 jumpTimeRemaining = 0;
 isJumping = false;
+
+isFalling = false;
 canJump = true;
 beenReleased = true;
 
@@ -247,6 +250,7 @@ curCooldown2 = cooldown2;
 curSprite = sprite;
 curSpriteRunning = spriteRunning;
 curSpriteJumping = spriteJumping;
+curSpriteFalling = spriteFalling;
 </string>
           </argument>
         </arguments>
@@ -420,6 +424,7 @@ if (isJumping) {
   
   if (jumpTimeRemaining &gt;= 0 &amp;&amp; jumpTimeRemaining % 5 == 0 &amp;&amp; !beenReleased) {
     physics_apply_impulse(x, y,0 , -1 * jumpForce/4);
+    isFalling = false;
   }
 }
 
@@ -467,9 +472,50 @@ cdTimer2--;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Handle jumping/falling sprites
+
+if (phy_linear_velocity_y &gt; 0 &amp;&amp; sprite_index != curSpriteFalling &amp;&amp; !place_meeting(x, y + 5, objTile)) {
+
+  //So much hack in that if statement
+  
+  
+  sprite_index  = curSpriteFalling;
+  isIdle = false;
+  isFalling = true;
+  
+} else if (isJumping &amp;&amp; !isFalling &amp;&amp; sprite_index != curSpriteJumping) {
+
+  sprite_index = curSpriteJumping;
+  isIdle = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Change to idle sprite if appropriate
-if (isIdle &amp;&amp; sprite_index != curSprite) {
+if (isIdle &amp;&amp; sprite_index != curSprite &amp;&amp; !isJumping) {
+  if (isFalling &amp;&amp; !place_meeting(x, y + 5, objTile) &amp;&amp; !place_meeting(x, y + 5, objPlayer)) {
+    // Do nothing
+    // Hackity hack! Don't talk back!
+  } else {
     sprite_index = curSprite;
+  }
 }
 </string>
           </argument>
@@ -496,9 +542,10 @@ if (isIdle &amp;&amp; sprite_index != curSprite) {
             <string>///Stop jumping
 
 if (isJumping) {
-  if (other.y &gt; y &amp;&amp; jumpTimeRemaining &lt;= 0) {
+  if (other.y + 1 &gt; y &amp;&amp; jumpTimeRemaining &lt;= 0) {
     isJumping = false;
     canJump = true;
+    isFalling = false;
   } 
 }
 </string>
@@ -572,23 +619,30 @@ curDoAction2 = other.doAction2;
 curAction1 = other.action1;
 curAction2 = other.action2;
 
+switch(sprite_index) {
+  case curSprite:
+    sprite_index = other.sprite;
+    break;
+    
+  case curSpriteRunning:
+    sprite_index = other.spriteRunning;
+    break;
+    
+  case curSpriteJumping:
+    sprite_index = other.spriteJumping;
+    break;
+    
+  case curSpriteFalling:
+    sprite_index = other.spriteFalling;
+    break;
+}
+
 curSprite = other.sprite;
 curSpriteRunning = other.spriteRunning;
 curSpriteJumping = other.spriteJumping;
+curSpriteFalling = other.spriteFalling;
 
-switch(sprite_index) {
-  case sprite:
-    sprite_index = curSprite;
-    break;
-    
-  case spriteRunning:
-    sprite_index = curSpriteRunning;
-    break;
-    
-  case spriteJumping:
-    sprite_index = curSpriteJumping;
-    break;
-}
+
 
 curCooldown1 = other.cooldown1;
 curCooldown2 = other.cooldown2;
@@ -629,6 +683,7 @@ if (isJumping) {
   if (other.y &gt; (y - sprite_height) &amp;&amp; jumpTimeRemaining &lt;= 0) {
     isJumping = false;
     canJump = true;
+    isFalling = false;
   } 
 }
 </string>
@@ -687,7 +742,7 @@ scrDrawHealthbar(self.id);
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectRestitution>0.0500000007450581</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>

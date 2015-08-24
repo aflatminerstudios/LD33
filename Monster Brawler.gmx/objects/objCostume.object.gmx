@@ -190,6 +190,8 @@ with (parent) {
   curSprite = sprite;
   curSpriteRunning = spriteRunning;
   curSpriteJumping = spriteJumping;
+  curSpriteFalling = spriteFalling;
+  
   switch(sprite_index) {
   case other.sprite:
     sprite_index = curSprite;
