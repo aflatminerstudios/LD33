@@ -288,11 +288,17 @@ var indicatorY = 610;
 draw_set_font(fontKaiju48);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_color(c_white);
 
+draw_set_color(c_red);
 draw_text(220,indicatorY,"P1");
+
+draw_set_color(c_yellow);
 draw_text(500,indicatorY,"P2");
+
+draw_set_color(c_blue);
 draw_text(780,indicatorY,"P3");
+
+draw_set_color(c_lime);
 draw_text(1060,indicatorY,"P4");
 </string>
           </argument>
