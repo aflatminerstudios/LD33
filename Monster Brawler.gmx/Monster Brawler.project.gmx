@@ -101,7 +101,12 @@
       <script>scripts\scrGetPlayerJumpRelease.gml</script>
     </scripts>
     <script>scripts\scrProcessAction.gml</script>
+    <script>scripts\scrProcessGhostAction.gml</script>
     <script>scripts\scrCreateGhost.gml</script>
+    <scripts name="Do-nothing AI Scripts">
+      <script>scripts\scrGetPath.gml</script>
+      <script>scripts\scrAIChoose.gml</script>
+    </scripts>
     <scripts name="AI Queries">
       <script>scripts\scrGetEnemyList.gml</script>
       <script>scripts\scrGetNodeList.gml</script>
@@ -129,9 +134,6 @@
     <script>scripts\scrDrawHealthbar.gml</script>
     <script>scripts\scrGoToRandomGameRoom.gml</script>
     <script>scripts\scrGoToNextGameRoom.gml</script>
-    <script>scripts\scrProcessGhostAction.gml</script>
-    <script>scripts\scrAIChoose.gml</script>
-    <script>scripts\scrGetPath.gml</script>
     <script>scripts\scrCreateTrailSprite.gml</script>
   </scripts>
   <fonts name="fonts">
