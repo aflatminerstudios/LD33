@@ -34,6 +34,8 @@
     <sprite>sprites\sprFloor</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprPlayerRunning</sprite>
+    <sprite>sprites\sprTitleMonsters</sprite>
+    <sprite>sprites\sprTitleBrawlWhite</sprite>
     <sprite>sprites\sprTitleBrawl</sprite>
     <sprite>sprites\sprBone</sprite>
     <sprite>sprites\sprDemonCostume</sprite>
@@ -58,6 +60,7 @@
     <sprite>sprites\sprGhost</sprite>
     <sprite>sprites\sprWerewolf</sprite>
     <sprite>sprites\sprWerewolfRunning</sprite>
+    <sprite>sprites\sprWerewolfDash</sprite>
     <sprite>sprites\sprPressButtonToContinue</sprite>
     <sprite>sprites\sprConfetti</sprite>
   </sprites>
@@ -127,6 +130,7 @@
     <script>scripts\scrGoToRandomGameRoom.gml</script>
     <script>scripts\scrGoToNextGameRoom.gml</script>
     <script>scripts\scrProcessGhostAction.gml</script>
+    <script>scripts\scrCreateTrailSprite.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
@@ -138,7 +142,9 @@
     </objects>
     <objects name="TitleScreen">
       <object>objects\objTitleControl</object>
+      <object>objects\objTitleMonsters</object>
       <object>objects\objTitleBrawl</object>
+      <object>objects\objTitleBrawlWhite</object>
     </objects>
     <objects name="PlayerSelectionScreen">
       <object>objects\objPlayerSelectControl</object>
@@ -195,6 +201,7 @@
     <object>objects\objGhost</object>
     <object>objects\objPressButtonToContinue</object>
     <object>objects\objNavNode</object>
+    <object>objects\objSpriteTrail</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>

@@ -20,9 +20,6 @@
   <width>772</width>
   <height>281</height>
   <frames>
-    <frame index="0">images\sprTitleBrawl_0.png</frame>
-    <frame index="1">images\sprTitleBrawl_1.png</frame>
-    <frame index="2">images\sprTitleBrawl_2.png</frame>
-    <frame index="3">images\sprTitleBrawl_3.png</frame>
+    <frame index="0">images\sprTitleBrawlWhite_0.png</frame>
   </frames>
 </sprite>

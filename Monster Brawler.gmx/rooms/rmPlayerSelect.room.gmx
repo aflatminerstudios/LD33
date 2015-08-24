@@ -52,8 +52,11 @@
   </views>
   <instances>
     <instance objName="objPlayerSelectControl" x="0" y="0" name="inst_D298E3A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerSelectionBoxes" x="620" y="0" name="inst_12B388AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPressButtonToContinue" x="357" y="519" name="inst_C082A78F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayerSelectionBoxes" x="577" y="0" name="inst_12B388AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPressButtonToContinue" x="316" y="580" name="inst_C082A78F" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="objTitleMonsters" x="322" y="141" name="inst_54864F51" locked="0" code="" scaleX="0.649999976158142" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objTitleBrawlWhite" x="334" y="280" name="inst_4B37522C" locked="0" code="" scaleX="0.649999976158142" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objTitleBrawl" x="324" y="274" name="inst_96554DCF" locked="0" code="" scaleX="0.649999976158142" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
