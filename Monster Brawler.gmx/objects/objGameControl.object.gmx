@@ -287,7 +287,7 @@ with (objCostumeSpawn) {
             <kind>1</kind>
             <string>///Set up timer for next costume spawn
 
-var r = irandom(10) + 15;
+var r = irandom(4) + 3;
 
 alarm[0] = room_speed * r;
 </string>
@@ -431,7 +431,7 @@ if (instance_number(objCostume) &lt; instance_number(objCostumeSpawn)) {
             <kind>1</kind>
             <string>///Set up timer for next costume spawn
 
-var r = irandom(10) + 10;
+var r = irandom(3) + 4;
 
 alarm[0] = room_speed * r;
 </string>
