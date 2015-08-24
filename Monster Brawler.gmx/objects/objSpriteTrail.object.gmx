@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objAttack</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,46 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Base Variables
+            <string>/// Set up variables
 
-parent = noone;
-knockback = 0;
-numFrames = 0;
+// Use scrCreateTrailSprite to create trails
 
-dashSpeed = 0;
+blendColor = c_blue;
 
-sprite = 0;
-facing = 0;
+timeToLive = 0;
 
-spriteTrailTTL = 5;
-spriteTrailTimeBetween = 2;
-spriteTrailColor = c_gray;
-alarm[1] = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Add new sprite trail
-scrCreateTrailSprite(parent.id, spriteTrailTTL, spriteTrailColor);
-alarm[1] = spriteTrailTimeBetween;
+furthestDepth = 100;
+closestDepth = depth;
 </string>
           </argument>
         </arguments>
@@ -87,47 +57,14 @@ alarm[1] = spriteTrailTimeBetween;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set parent variables
-
-parent.phy_linear_velocity_x = 0;
-parent.isJumping = true;
-parent.jumpTimeRemaining = 1;
-
-var p = parent;
-if (parent.costume != noone) {
-  p = parent.costume;  
-}
-
-parent.curDoAction1 = p.doAction1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destroy object
-
+            <string>/// Destroy self
 instance_destroy();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -144,17 +81,38 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Make him dash
-
-if (parent != noone &amp;&amp; !instance_exists(parent)) {
-  instance_destroy();
+            <string>/// Adjust depth
+if(alarm[0] &gt; 0) {
+  depth = lerp(furthestDepth, closestDepth, alarm[0]/timeToLive);
+  image_alpha = lerp(0, 1, alarm[0]/timeToLive);
 } else {
-  parent.phy_linear_velocity_x = dashSpeed * facing;
-  
-  parent.phy_position_y = parent.phy_position_yprevious;
-  parent.phy_linear_velocity_y = 0;
-  parent.canJump = false;
+  depth = furthestDepth;
+  image_alpha = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, blendColor, image_alpha);
+
 </string>
           </argument>
         </arguments>

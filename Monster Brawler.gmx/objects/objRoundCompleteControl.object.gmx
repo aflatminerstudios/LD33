@@ -60,7 +60,7 @@ if(global.player1Wins &gt;= 3 ||
 music = musFight;
 loopMusic = false;
 
-alarm[2] = room_speed*1.5;
+alarm[2] = room_speed*1;
 allowExit = false;
 with(objPressButtonToContinue){
   visible = false;
