@@ -42,6 +42,9 @@
       <sprite>sprites\sprPlayerSelectionBoxes</sprite>
       <sprite>sprites\sprNumPlayersSelector</sprite>
     </sprites>
+    <sprites name="Instructions Screen">
+      <sprite>sprites\sprInstructions</sprite>
+    </sprites>
     <sprites name="Credits Screen">
       <sprite>sprites\sprAFlatLogoMedium</sprite>
       <sprite>sprites\sprCreditsList</sprite>
@@ -236,7 +239,9 @@
     <object>objects\objPressCreditsButton</object>
     <object>objects\objNavNode</object>
     <object>objects\objCreditsList</object>
+    <object>objects\objInstructions</object>
     <object>objects\objCreditsControl</object>
+    <object>objects\objInstructionsControl</object>
     <object>objects\objAFlatLogoMedium</object>
     <object>objects\objSpriteTrail</object>
   </objects>
@@ -244,6 +249,7 @@
     <room>rooms\rmLogo</room>
     <room>rooms\rmTitle</room>
     <room>rooms\rmPlayerSelect</room>
+    <room>rooms\rmInstructions</room>
     <room>rooms\rmMain</room>
     <room>rooms\rmMain2</room>
     <room>rooms\rmMainOld</room>

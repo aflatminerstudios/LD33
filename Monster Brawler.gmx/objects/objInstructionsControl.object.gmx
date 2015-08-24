@@ -27,8 +27,14 @@
             <kind>1</kind>
             <string>/// Set variables
 
-music = musTitleScreen;  // Replace with title screen music
+music = musTitleScreen2;
 loopMusic = true;
+
+alarm[2] = room_speed*1;
+allowExit = false;
+with(objPressButtonToContinue){
+  visible = false;
+}
 </string>
           </argument>
         </arguments>
@@ -49,12 +55,41 @@ loopMusic = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start music if not already playng
+            <string>/// Start music if not already playing
+/*
 if(!audio_is_playing(music)){
   audio_stop_all();
   audio_play_sound(music, 0, loopMusic);
 }
+*/
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Allow button presses to leave the screen
+allowExit = true;
+with(objPressButtonToContinue){
+  visible = true;
+}
 </string>
           </argument>
         </arguments>
@@ -77,33 +112,10 @@ if(!audio_is_playing(music)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Goto player select screen
-show_debug_message("Moving to player select screen.");
-room_goto(rmPlayerSelect);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Start post-sound waiting period
-alarm[1] = 0*room_speed+1;
+            <string>/// Stop music and change rooms
+audio_stop_sound(music);
+audio_stop_all(); // Hack because it wasn't stopping the music
+scrGoToNextGameRoom();
 </string>
           </argument>
         </arguments>
@@ -126,48 +138,42 @@ alarm[1] = 0*room_speed+1;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check for start button
+/*
+if (scrCheckController(0))
+{
+   alarm[1] = 1;
+}
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Check for controller press
 
-if (scrCheckCntrl(0)) {
-  alarm[1] = 1;
-}
-if (scrCheckCntrl(1)) {
-  alarm[1] = 1;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Check for "select" button
-
-// Check gamepad #1
-var gamePad1 = 0;
-var gamepadSelect1 = gamepad_button_check_pressed(gamePad1, gp_face1);
-
-var gamePad2 = 1;
-var gamepadSelect2 = gamepad_button_check_pressed(gamePad2, gp_face1);
-
-// Check keyboard
-var keyboardSelect = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space));
-
-if(gamepadSelect1 || gamepadSelect2 || keyboardSelect){
-  alarm[1] = 1;  
+if (allowExit) {
+  if (scrCheckCntrl(0)) {
+    alarm[1] = 1;
+  }
+  if (scrCheckCntrl(1)) {
+    alarm[1] = 1;
+  }
 }
 </string>
           </argument>
@@ -189,16 +195,13 @@ if(gamepadSelect1 || gamepadSelect2 || keyboardSelect){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check for Credits button 'C' or gamepad Y
+            <string>///Check for keyboard press
 
-if (gamepad_button_check_pressed(0, gp_face4)) {
-    room_goto(rmCredits);
-} else if (gamepad_button_check_pressed(1, gp_face4)) {
-    room_goto(rmCredits);
-} else if (keyboard_check_pressed(ord('C'))) {
-    room_goto(rmCredits);
+if (allowExit) {
+  if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
+    alarm[1] = 1;
+  }
 }
-
 </string>
           </argument>
         </arguments>

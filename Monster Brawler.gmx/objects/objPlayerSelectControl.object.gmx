@@ -167,9 +167,12 @@ global.lastWinner = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Stop music and change rooms
+            <string>/// Stop music and change rooms (moved to Instructions)
+/*
 audio_stop_sound(music);
 scrGoToNextGameRoom();
+*/
+room_goto(rmInstructions);
 </string>
           </argument>
         </arguments>
