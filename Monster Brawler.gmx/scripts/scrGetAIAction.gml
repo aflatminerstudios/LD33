@@ -113,12 +113,13 @@ if (desc == "MoveHorizontal") {
 
 var o = instance_place(x, y, objPlayer);
 if (place_meeting(x, y + (sprite_height - 1), objPlayer)) {
-  o = instance_place(x + sprite_width - 5, y, objPlayer);
+  /*o = instance_place(x + sprite_width - 5, y, objPlayer);
   if (o != noone && o.sprite_index == sprTile1 && o.x > x) {
     ds_map_add(actionList, "MoveHorizontal", -1);
   } else {
     ds_map_add(actionList, "MoveHorizontal", 1);
-  }
+  }*/
+  ds_map_add(actionList, "Jump", 1);
 } else if (o != noone) {
   ds_map_add(actionList, "DoAction1", 1);
   
