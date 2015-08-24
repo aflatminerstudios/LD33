@@ -9,6 +9,15 @@ if (dir != 0) {
   ds_map_add(actionList, "MoveHorizontal", dir);  
 }
 
+var up = script_execute(getUpHold, upKey, vAxisPad, padNum);
+var down = script_execute(getDown, downKey, vAxisPad, padNum);
+
+dir = up + down;
+
+if (dir != 0) {
+  ds_map_add(actionList, "MoveVertical", dir);  
+}
+
 var jump = script_execute(getJump, jumpKey, jumpPad, padNum);
 
 if (jump == 0) {

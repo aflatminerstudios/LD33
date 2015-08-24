@@ -66,6 +66,8 @@
     </scripts>
     <scripts name="Player Action Checks">
       <script>scripts\scrGetPlayerLeft.gml</script>
+      <script>scripts\scrGetPlayerUpHold.gml</script>
+      <script>scripts\scrGetPlayerDown.gml</script>
       <script>scripts\scrGetPlayerUp.gml</script>
       <script>scripts\scrGetPlayerUpRelease.gml</script>
       <script>scripts\scrGetPlayerAction1.gml</script>
@@ -108,6 +110,7 @@
     <script>scripts\scrNullScript.gml</script>
     <script>scripts\scrWinGame.gml</script>
     <script>scripts\scrDrawHealthbar.gml</script>
+    <script>scripts\scrProcessGhostAction.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontKaiju48</font>
@@ -170,6 +173,7 @@
       <object>objects\objSpotlight</object>
     </objects>
     <object>objects\objFight</object>
+    <object>objects\objGhost</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmLogo</room>
