@@ -31,41 +31,66 @@
     <sound>sound\musVictory</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sprFloor</sprite>
-    <sprite>sprites\sprPlayer</sprite>
-    <sprite>sprites\sprPlayerRunning</sprite>
-    <sprite>sprites\sprTitleMonsters</sprite>
-    <sprite>sprites\sprTitleBrawlWhite</sprite>
-    <sprite>sprites\sprTitleBrawl</sprite>
-    <sprite>sprites\sprBone</sprite>
+    <sprites name="Title Screen">
+      <sprite>sprites\sprTitleMonsters</sprite>
+      <sprite>sprites\sprTitleBrawlWhite</sprite>
+      <sprite>sprites\sprTitleBrawl</sprite>
+      <sprite>sprites\sprPressButtonToContinue</sprite>
+      <sprite>sprites\sprPressCreditsButton</sprite>
+    </sprites>
+    <sprites name="Player Select">
+      <sprite>sprites\sprPlayerSelectionBoxes</sprite>
+      <sprite>sprites\sprNumPlayersSelector</sprite>
+    </sprites>
+    <sprites name="Credits Screen">
+      <sprite>sprites\sprAFlatLogoMedium</sprite>
+      <sprite>sprites\sprCreditsList</sprite>
+    </sprites>
+    <sprites name="Round Complete Screen">
+      <sprite>sprites\sprScoreboard</sprite>
+      <sprite>sprites\sprDottedCoin</sprite>
+      <sprite>sprites\sprWinCoin</sprite>
+    </sprites>
+    <sprites name="Victory Screen">
+      <sprite>sprites\sprConfetti</sprite>
+      <sprite>sprites\sprSpotlight</sprite>
+    </sprites>
+    <sprites name="Battle Screen">
+      <sprite>sprites\spr1pIndicator</sprite>
+      <sprite>sprites\sprFight</sprite>
+      <sprite>sprites\spr2pIndicator</sprite>
+      <sprite>sprites\spr3pIndicator</sprite>
+      <sprite>sprites\spr4pIndicator</sprite>
+    </sprites>
+    <sprites name="Tiles">
+      <sprite>sprites\sprTile1</sprite>
+      <sprite>sprites\sprFloor</sprite>
+    </sprites>
+    <sprites name="Skeleton">
+      <sprite>sprites\sprPlayer</sprite>
+      <sprite>sprites\sprPlayerRunning</sprite>
+      <sprite>sprites\sprPlayerJumping</sprite>
+      <sprite>sprites\sprPlayerFalling</sprite>
+      <sprite>sprites\sprBone</sprite>
+      <sprite>sprites\sprPlayerPunch</sprite>
+    </sprites>
+    <sprites name="Doodlybop">
+      <sprite>sprites\sprDB</sprite>
+      <sprite>sprites\sprDBRack</sprite>
+      <sprite>sprites\sprDBRunning</sprite>
+      <sprite>sprites\sprEyebeam</sprite>
+    </sprites>
+    <sprites name="Werewolf">
+      <sprite>sprites\sprWerewolfRack</sprite>
+      <sprite>sprites\sprWerewolf</sprite>
+      <sprite>sprites\sprWerewolfRunning</sprite>
+      <sprite>sprites\sprWerewolfDash</sprite>
+    </sprites>
+    <sprites name="Ghost">
+      <sprite>sprites\sprGhost</sprite>
+    </sprites>
     <sprite>sprites\sprDemonCostume</sprite>
-    <sprite>sprites\sprDBRack</sprite>
-    <sprite>sprites\sprWerewolfRack</sprite>
-    <sprite>sprites\sprNumPlayersSelector</sprite>
-    <sprite>sprites\sprPlayerSelectionBoxes</sprite>
-    <sprite>sprites\sprTile1</sprite>
-    <sprite>sprites\sprOverscanOverlay</sprite>
-    <sprite>sprites\spr1pIndicator</sprite>
-    <sprite>sprites\spr4pIndicator</sprite>
-    <sprite>sprites\spr3pIndicator</sprite>
-    <sprite>sprites\spr2pIndicator</sprite>
-    <sprite>sprites\sprDB</sprite>
-    <sprite>sprites\sprDBRunning</sprite>
-    <sprite>sprites\sprEyebeam</sprite>
-    <sprite>sprites\sprWinCoin</sprite>
-    <sprite>sprites\sprDottedCoin</sprite>
-    <sprite>sprites\sprScoreboard</sprite>
-    <sprite>sprites\sprSpotlight</sprite>
-    <sprite>sprites\sprFight</sprite>
-    <sprite>sprites\sprGhost</sprite>
-    <sprite>sprites\sprWerewolfRunning</sprite>
-    <sprite>sprites\sprWerewolfDash</sprite>
-    <sprite>sprites\sprPressButtonToContinue</sprite>
-    <sprite>sprites\sprConfetti</sprite>
-    <sprite>sprites\sprPlayerJumping</sprite>
-    <sprite>sprites\sprPlayerFalling</sprite>
-    <sprite>sprites\sprWerewolf</sprite>
-    <sprite>sprites\sprPlayerPunch</sprite>
+    <sprite>sprites\sprOverscanOverlay</sprite>    
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>
@@ -207,7 +232,11 @@
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
     <object>objects\objPressButtonToContinue</object>
+    <object>objects\objPressCreditsButton</object>
     <object>objects\objNavNode</object>
+    <object>objects\objCreditsList</object>
+    <object>objects\objCreditsControl</object>
+    <object>objects\objAFlatLogoMedium</object>
     <object>objects\objSpriteTrail</object>
   </objects>
   <rooms name="rooms">
@@ -219,6 +248,7 @@
     <room>rooms\rmMainOld</room>
     <room>rooms\rmRoundComplete</room>
     <room>rooms\rmGameComplete</room>
+    <room>rooms\rmCredits</room>
   </rooms>
   <constants number="2">
     <constant name="KEYBOARD">0</constant>
