@@ -95,6 +95,7 @@
     </sprites>
     <sprite>sprites\sprDemonCostume</sprite>
     <sprite>sprites\sprOverscanOverlay</sprite>
+    <sprite>sprites\sprDBSwipe</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgAFlatMinerLogo</background>

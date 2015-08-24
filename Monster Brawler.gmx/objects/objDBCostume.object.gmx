@@ -48,7 +48,7 @@ sprite = sprDB;
 spriteRunning = sprDBRunning;
 spriteJumping = sprDBRunning;
 spriteFalling = sprDBRunning;
-spriteAction1 = sprDBRunning;
+spriteAction1 = sprDBSwipe;
 spriteAction2 = sprDBRunning;
 
 
@@ -125,15 +125,15 @@ ds_map_add(action1, "knockback", 400);
 ds_map_add(action1, "numFrames", nf);
 
 //Size
-ds_map_add(action1,"xSize", 20);
-ds_map_add(action1, "ySize", (sprite_get_height(sprDB) / nf) * 1.5);
-ds_map_add(action1,"xTotalSize", 20);
-ds_map_add(action1, "yTotalSize", sprite_height);
+ds_map_add(action1,"xSize", 36);
+ds_map_add(action1, "ySize", 82);
+ds_map_add(action1,"xTotalSize", 31);
+ds_map_add(action1, "yTotalSize", 33);
 
 
 //Parent object and distance from parent x,y to "topleft" corner, as well as angle
-ds_map_add(action1, "xDist", sprite_get_width(sprDB) / 2 + 2);
-ds_map_add(action1, "yDist", -1 * sprite_get_height(sprDB)/ nf);
+ds_map_add(action1, "xDist", 35);
+ds_map_add(action1, "yDist", -110);
 
 cooldown1 = room_speed / 5;
 </string>
