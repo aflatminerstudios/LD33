@@ -5,7 +5,7 @@ var enemyList = scrGetEnemyList();
 var nearest = noone;
 var minDist = 10000;
 
-if (is_array(enemyList)) {
+if (is_array(enemyList) && enemyList[0] != noone) {
 
   for (var i = 0; i < array_length_1d(enemyList); ++i) {
     var dist;

@@ -116,11 +116,16 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Make him dash
-parent.phy_linear_velocity_x = dashSpeed * facing;
 
-parent.phy_position_y = parent.phy_position_yprevious;
-parent.phy_linear_velocity_y = 0;
-parent.canJump = false;
+if (parent != noone &amp;&amp; !instance_exists(parent)) {
+  instance_destroy();
+} else {
+  parent.phy_linear_velocity_x = dashSpeed * facing;
+  
+  parent.phy_position_y = parent.phy_position_yprevious;
+  parent.phy_linear_velocity_y = 0;
+  parent.canJump = false;
+}
 </string>
           </argument>
         </arguments>

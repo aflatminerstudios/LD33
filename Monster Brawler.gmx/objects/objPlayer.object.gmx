@@ -33,6 +33,7 @@ facing = 1;
 
 sprite = sprPlayer;
 spriteRunning = sprPlayerRunning;
+spriteJumping = sprPlayerRunning;
 
 cdTimer1 = 0;
 cdTimer2 = 0;
@@ -53,7 +54,7 @@ maxSpeed = 300;
 
 //Jumping variables
 // Base is 400
-jumpHeight = 400;
+jumpHeight = 450;
 deltaTime = 1/room_speed;
 gm = 10 * 5 * phy_mass;
 //jumpForce = sqrt(2 * gravity * (jumpHeight)) + gravity * deltaTime * 0.5;
@@ -245,6 +246,7 @@ curCooldown2 = cooldown2;
 
 curSprite = sprite;
 curSpriteRunning = spriteRunning;
+curSpriteJumping = spriteJumping;
 </string>
           </argument>
         </arguments>
@@ -570,6 +572,7 @@ curAction2 = other.action2;
 
 curSprite = other.sprite;
 curSpriteRunning = other.spriteRunning;
+curSpriteJumping = other.spriteJumping;
 
 switch(sprite_index) {
   case sprite:
@@ -578,6 +581,10 @@ switch(sprite_index) {
     
   case spriteRunning:
     sprite_index = curSpriteRunning;
+    break;
+    
+  case spriteJumping:
+    sprite_index = curSpriteJumping;
     break;
 }
 

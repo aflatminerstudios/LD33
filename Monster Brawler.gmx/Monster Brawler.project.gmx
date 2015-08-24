@@ -102,13 +102,13 @@
     <scripts name="AI Queries">
       <script>scripts\scrGetEnemyList.gml</script>
       <script>scripts\scrGetNodeList.gml</script>
-      <script>scripts\scrGetDistance.gml</script>
+      <script>scripts\scrGetCostumeList.gml</script>
       <script>scripts\scrGetNodeCosts.gml</script>
+      <script>scripts\scrGetNearestNode.gml</script>
       <script>scripts\scrGetNearestEnemy.gml</script>
       <script>scripts\scrGetNearestCostume.gml</script>
       <script>scripts\scrNodeGetLowestCost.gml</script>
-      <script>scripts\scrGetNearestNode.gml</script>
-      <script>scripts\scrGetCostumeList.gml</script>
+      <script>scripts\scrGetDistance.gml</script>
     </scripts>
     <scripts name="Damaging">
       <script>scripts\scrTakeDamage.gml</script>
@@ -193,7 +193,7 @@
     </objects>
     <object>objects\objFight</object>
     <object>objects\objGhost</object>
-    <object>objects\objPressButtonToContinue</object>    
+    <object>objects\objPressButtonToContinue</object>
     <object>objects\objNavNode</object>
   </objects>
   <rooms name="rooms">
