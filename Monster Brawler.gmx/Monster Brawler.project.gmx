@@ -167,7 +167,7 @@
       <script>scripts\scrKill.gml</script>
     </scripts>
     <scripts name="Assign Player Controls">
-      <script>scripts\scrAssignPlayer2.gml</script>
+      <script>scripts\scrAssignPlayer1.gml</script>
       <script>scripts\scrAssignPlayer2.gml</script>
       <script>scripts\scrAssignAI.gml</script>
     </scripts>

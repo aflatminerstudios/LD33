@@ -1,10 +1,11 @@
-//scrAssignPlayer2(player)
+//scrAssignPlayer1(player)
 
-//Assign controls for player to player 2
+//Assign controls for player to player 1
 
 player = argument0;
 
 with (player) {
+
   upKey = vk_up;
   downKey = vk_down;
   leftKey = vk_left;
@@ -19,7 +20,8 @@ with (player) {
   action2Pad = gp_face4;
   jumpPad = gp_face1;
   
-  padNum = 1;
+  
+  padNum = 0;
   
   getAction = scrGetPlayerAction;
 }

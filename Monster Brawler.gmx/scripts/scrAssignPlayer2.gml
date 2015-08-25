@@ -2,16 +2,18 @@
 
 //Assign controls for player to player 2
 
+///scrAssignPlayer2(player)
+
 player = argument0;
 
 with (player) {
-  upKey = vk_up;
-  downKey = vk_down;
-  leftKey = vk_left;
-  rightKey = vk_right;
-  action1Key = 190;
-  action2Key = 191;
-  jumpKey = 188;
+  upKey = ord('W');
+  downKey = ord('S');
+  leftKey = ord('A');
+  rightKey = ord('D');
+  action1Key = ord('C');
+  action2Key = ord('V');
+  jumpKey = ord('Z');
   
   hAxisPad = gp_axislh;
   vAxisPad = gp_axislv;
