@@ -9,6 +9,7 @@ audio_play_sound(sndPlayerHit, 1, false);
 with (receiver) {
 
   hp -= amount;
+  instance_create(x,y, objDamageIndicator);
   
   if (hp <= 0) {
     scrKill(receiver, attacker);

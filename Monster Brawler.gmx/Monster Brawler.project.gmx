@@ -70,6 +70,7 @@
       <sprite>sprites\spr3pIndicator</sprite>
       <sprite>sprites\spr4pIndicator</sprite>
       <sprite>sprites\sprCostumeChange</sprite>
+      <sprite>sprites\sprDamageIndicator</sprite>
     </sprites>
     <sprites name="Tiles">
       <sprite>sprites\sprTile1</sprite>
@@ -258,6 +259,7 @@
     <object>objects\objAFlatLogoMedium</object>
     <object>objects\objSpriteTrail</object>
     <object>objects\objCostumeChange</object>
+    <object>objects\objDamageIndicator</object>
     <objects name="Traps and Buttons">
       <object>objects\objTrap</object>
       <object>objects\objButton</object>
