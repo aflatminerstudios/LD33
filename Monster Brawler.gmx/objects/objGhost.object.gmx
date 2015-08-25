@@ -252,7 +252,7 @@ var p = collision_point(x, y, objPlayer, true, true);
 if (p != noone) {
 
   with (p) {
-    physics_apply_impulse(other.x, other.y, 25 * other.hFacing, 25 * other.vFacing);
+    physics_apply_impulse(other.x, other.y, 35 * other.hFacing, 35 * other.vFacing);
   }
 
 }

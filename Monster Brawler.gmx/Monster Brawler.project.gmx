@@ -189,12 +189,6 @@
     <objects name="AFlatMinerLogoScreen">
       <object>objects\objAFlatMinerLogoControl</object>
     </objects>
-    <objects name="TitleScreen">
-      <object>objects\objTitleControl</object>
-      <object>objects\objTitleMonsters</object>
-      <object>objects\objTitleBrawl</object>
-      <object>objects\objTitleBrawlWhite</object>
-    </objects>
     <objects name="PlayerSelectionScreen">
       <object>objects\objPlayerSelectControl</object>
       <object>objects\objNumPlayersSelector</object>
@@ -212,6 +206,12 @@
       <object>objects\objP4Spawn</object>
     </objects>
     <object>objects\objAIControl</object>
+    <objects name="TitleScreen">
+      <object>objects\objTitleControl</object>
+      <object>objects\objTitleMonsters</object>
+      <object>objects\objTitleBrawl</object>
+      <object>objects\objTitleBrawlWhite</object>
+    </objects>
     <object>objects\objGameControl</object>
     <objects name="Costumes">
       <object>objects\objCostume</object>

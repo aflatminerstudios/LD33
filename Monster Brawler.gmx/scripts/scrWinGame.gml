@@ -1,8 +1,8 @@
-///scrWinGame(player)
+///scrWinGame(playerNum)
 
-var player = argument0;
+var playerNum = argument0;
 
-switch (player.playerNum) {
+switch (player) {
   case 1:
     global.player1Wins++;  
     break;
@@ -22,6 +22,6 @@ switch (player.playerNum) {
 }
 
 
-global.lastWinner = player.playerNum;
+global.lastWinner = playerNum;
 
 room_goto(rmRoundComplete);
