@@ -89,23 +89,27 @@ alarm[1] = spriteTrailTimeBetween;
             <kind>1</kind>
             <string>///Set parent variables
 
-parent.phy_linear_velocity_x = 0;
-parent.isJumping = true;
-parent.jumpTimeRemaining = 1;
+if (parent != noone  &amp;&amp; instance_exists(parent) &amp;&amp; !is_undefined(parent)) {
 
-var p = parent;
-if (parent.costume != noone) {
-  p = parent.costume;  
+  parent.phy_linear_velocity_x = 0;
+  parent.isJumping = true;
+  parent.jumpTimeRemaining = 1;
+  
+  var p = parent;
+  if (parent.costume != noone) {
+    p = parent.costume;  
+  }
+  
+  parent.curDoAction1 = p.doAction1;
+  
+  parent.getLeft = getLeft;
+  parent.getRight = getRight;
+  parent.getJump = getJump;
+  parent.getUp = getUp;
+  parent.getJumpReleased = getJumpReleased;
+  parent.getUpReleased = getUpReleased;
+
 }
-
-parent.curDoAction1 = p.doAction1;
-
-parent.getLeft = getLeft;
-parent.getRight = getRight;
-parent.getJump = getJump;
-parent.getUp = getUp;
-parent.getJumpReleased = getJumpReleased;
-parent.getUpReleased = getUpReleased;
 </string>
           </argument>
         </arguments>

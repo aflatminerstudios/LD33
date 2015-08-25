@@ -11,7 +11,7 @@ audio_play_sound(sndPlayerDeath, 1, false);
 
 with (object) {
 
-  scrCreateGhost(object.playerNum);
+  scrCreateGhost(object);
 
   instance_destroy();
 }

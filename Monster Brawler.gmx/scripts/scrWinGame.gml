@@ -2,7 +2,7 @@
 
 var playerNum = argument0;
 
-switch (player) {
+switch (playerNum) {
   case 1:
     global.player1Wins++;  
     break;

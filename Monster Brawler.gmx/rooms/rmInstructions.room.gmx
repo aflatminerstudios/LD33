@@ -52,8 +52,7 @@
   </views>
   <instances>
     <instance objName="objPressButtonToContinue" x="640" y="680" name="inst_C082A78F" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="objAFlatLogoMedium" x="305" y="211" name="inst_37FBC0F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objInstructions" x="911" y="301" name="inst_E29230FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInstructions" x="640" y="360" name="inst_E29230FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objInstructionsControl" x="5" y="8" name="inst_BFE8AAD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

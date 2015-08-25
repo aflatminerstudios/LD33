@@ -47,7 +47,7 @@ isAction = false;
 actionList = ds_map_create();
 
 //Life
-maxHp = 100;
+maxHp = 150;
 hp = maxHp;
 
 //For costumes

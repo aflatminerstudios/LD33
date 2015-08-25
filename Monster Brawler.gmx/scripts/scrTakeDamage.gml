@@ -21,7 +21,7 @@ with (objGameControl) {
   if (numPlayers == 1) {    
     var winner;
     with (objPlayer) {
-      other.winner = self.id;
+      other.winner = self.playerNum;
      
     }
     with (objGameControl) {

@@ -85,7 +85,7 @@ if (p != noone &amp;&amp; !is_undefined(p) &amp;&amp; instance_exists(p)) {
   var trapX = x;
   var trapY = y;
   with (p) {
-    physics_apply_impulse(pX, pY, 0, -500 * sign(image_yscale));
+    physics_apply_impulse(pX, pY, 0, -700 * sign(image_yscale));
   }
   
   var damageToDo = 0.05*p.maxHp;

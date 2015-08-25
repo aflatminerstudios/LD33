@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Base variables to add to each one
 
-maxHp = 150;
+maxHp = 200;
 
 parent = noone;
 
