@@ -113,6 +113,7 @@
     <background>background\bgTitle</background>
     <background>background\bgPlayerSelect</background>
     <background>background\bgTrees</background>
+    <background>background\bgTrees2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
