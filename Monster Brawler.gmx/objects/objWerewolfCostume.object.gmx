@@ -32,7 +32,7 @@ maxHp = 300;
 parent = noone;
 
 //Movement
-force = 1500;
+force = 1300;
 maxSpeed = 200;
 
 
