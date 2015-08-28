@@ -89,14 +89,14 @@ alarm[1] = spriteTrailTimeBetween;
             <kind>1</kind>
             <string>///Set parent variables
 
-if (parent != noone  &amp;&amp; instance_exists(parent) &amp;&amp; !is_undefined(parent)) {
+if (!is_undefined(parent) &amp;&amp; parent != noone  &amp;&amp; instance_exists(parent)) {
 
   parent.phy_linear_velocity_x = 0;
   parent.isJumping = true;
   parent.jumpTimeRemaining = 1;
   
   var p = parent;
-  if (parent.costume != noone) {
+  if (!is_undefined(parent.costume) &amp;&amp; parent.costume != noone &amp;&amp; instance_exists(parent.costume)) {
     p = parent.costume;  
   }
   
